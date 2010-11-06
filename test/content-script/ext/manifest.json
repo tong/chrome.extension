@@ -1,0 +1,13 @@
+{
+	"name": "hxchrome",
+	"version": "1.0",
+	"description": "Content script communication test",
+	
+	"background_page": "main.html",
+	"content_scripts": [{
+		"matches": ["http://*/*"],
+		"js": ["content.js"],
+		"run_at": "document_end"
+	}],
+	"permissions": [ "tabs", "http://*/*","https://*/*" ]
+}
