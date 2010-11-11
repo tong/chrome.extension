@@ -6,5 +6,5 @@ package chrome;
 	static function setPopup( details : Dynamic ) : Void;
 	static function setTitle( details : Dynamic ) : Void;
 	static function show( tabId : Int ) : Void;
-	static var onClicked(default,null) : Event<Tab-Void>;
+	static var onClicked(default,null) : Event<Tab->Void>;
 }
