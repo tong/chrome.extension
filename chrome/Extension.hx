@@ -6,7 +6,7 @@ import js.Dom;
 	static var lastError : Dynamic;
 	static var inIncognitoContext : Dynamic;
 	static function connect( extensionId : String, connectInfo : Dynamic ) : Port;
-	static function getBackgroundPage() : js.Window;
+	static function getBackgroundPage() : Dynamic; //?
 	static function getURL( path : String ) : String;
 	static function getViews( ?fetchProperties : Dynamic ) : Array<js.Window>;
 	static function sendRequest( ?extensionId : String, request : Dynamic, responseCallback : Dynamic->Void ) : Void;
