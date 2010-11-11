@@ -1,4 +1,4 @@
-<project name="chrome-extension" url="http://disktree.net" license="public">
+<project name="chrome-extension" url="http://disktree.net" license="Public">
 	<user name="tong"/>
 	<description>Chrome browser extension type definitions</description>
 	<version name="1.0">Initial release</version>
