@@ -1,5 +1,5 @@
 <project name="chrome-extension" url="http://disktree.net" license="Public">
 	<user name="tong"/>
 	<description>Chrome browser extension type definitions</description>
-	<version name="1.1">Added idle, i18n</version>
+	<version name="1.2">Added omnibox</version>
 </project>

@@ -6,5 +6,6 @@ Google chrome browser extension typedef signatures and content script communicat
 
 LINKS
 -----
+https://github.com/tong/chrome.extension
 http://code.google.com/chrome/extensions
 http://haxe.org/doc/remoting
