@@ -5,6 +5,7 @@ typedef Tab = {
 	var index : Int;
 	var windowId : Int;
 	var selected : Bool;
+	var pinned : Bool;
 	var url : String;
 	var title : String;
 	var favIconUrl : String;
