@@ -17,6 +17,7 @@ private typedef ExtensionInfo = {
 }
 
 @:native("chrome.management") extern class Management {
+	static function get( id : String, cb : ExtensionInfo->Void ) : Void;
 	static function getAll( cb : ExtensionInfo->Void ) : Void;
 	static function launchApp( id : String, ?cb : Void->Void ) : Void;
 	static function setEnabled( id : String, enabled : Bool, ?cb : Void->Void ) : Void;
