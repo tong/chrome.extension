@@ -22,9 +22,7 @@ class ExtensionHost {
 	}
 	
 	function handleContentScriptMessage( data : String ) {
-		processRequest( data, ctx );
-		var response = processRequest( data, ctx );
-		port.postMessage( response );
+		port.postMessage( processRequest( data, ctx ) );
 	}
 	
 	public static function processRequest( data : String, ctx : Context ) : String {

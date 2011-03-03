@@ -3,17 +3,29 @@ package chrome.remoting;
 import js.Dom;
 import haxe.remoting.AsyncConnection;
 
-class ExtensionConnection implements AsyncConnection, implements Dynamic<AsyncConnection> {
+/*
+private typedef Data = {
+	var id : String;
+	var error : String;
+}
+*/
+
+/**
+*/
+class ExtensionConnection implements AsyncConnection,
+						  implements Dynamic<AsyncConnection> {
 	
-	var data : { id : String, error : Dynamic -> Void };
+	var data : { id : String, error : Dynamic->Void };
 	var path : Array<String>;
 	var event : js.Event;
 	var div : Dynamic; //js.HtmlDom;
 	var onResult : Dynamic->Void;
 	
 	function new( data, path, divName : String = "ext_com" ) {
+		
 		this.data = data;
 		this.path = path;
+		
 		event = untyped document.createEvent( 'Event' );
 		untyped event.initEvent( 'chrome.site.event', true, true );
 		div = js.Lib.document.getElementById( divName );

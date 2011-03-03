@@ -3,6 +3,9 @@ CHROME.EXTENSION
 ================
 Google chrome browser extension typedef signatures and content script communication.
 
+
+LINKS
+-----
 http://code.google.com/chrome/extensions
 https://github.com/tong/chrome.extension
 http://haxe.org/doc/remoting

@@ -2,14 +2,21 @@ package chrome;
 
 import js.Dom;
 
+/**
+	Utility to communicate with a chrome extension from website
+*/
 class ExtensionConnection {
-
+	
+	/** */
 	public dynamic function onMessage( t : String ) : Void;
+	/** */
 	public var connected(default,null) : Bool;
 	
 	var div : Dynamic; // js.HtmlDom;
 	var event : js.Event;
 	
+	/**
+	*/
 	public function new( id : String, divName : String = "ext_com" ) {
 		event = untyped document.createEvent( 'Event' );
 		untyped event.initEvent( 'chrome.site.event', true, true );
@@ -18,6 +25,8 @@ class ExtensionConnection {
 		connected = false;
 	}
 	
+	/**
+	*/
 	public function send( t : String ) {
 		div.innerText = t;
 		div.dispatchEvent( event );
