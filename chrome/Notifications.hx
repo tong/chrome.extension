@@ -6,5 +6,5 @@ package chrome;
 	//static function checkPermissions() : Int;
 	//static function requestPermission() : Void;
 	function show() : Void;
-	
+	function cancel() : Void;
 }
