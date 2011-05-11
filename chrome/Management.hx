@@ -12,6 +12,7 @@ private typedef ExtensionInfo = {
 	var enabled : Bool;
 	var isApp : Bool;
 	var appLaunchUrl : String;
+	var homepageUrl : String;
 	var optionsUrl : String;
 	var icons : Array<IconInfo>;
 }

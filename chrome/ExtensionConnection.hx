@@ -3,14 +3,14 @@ package chrome;
 import js.Dom;
 
 /**
-	Utility to communicate with a chrome extension from website
+	Connection to communicate with a chrome extension (from websites)
 */
 class ExtensionConnection {
 	
-	/** */
+	/** Extension sends data callback */
 	public dynamic function onMessage( t : String ) : Void;
 	/** */
-	public var connected(default,null) : Bool;
+	//public var connected(default,null) : Bool;
 	
 	var div : Dynamic; // js.HtmlDom;
 	var event : js.Event;
