@@ -24,5 +24,5 @@ private typedef CookieStore = {
 	static function getAllCookieStores( cb : Array<Cookie>->Void ) : Void;
 	static function remove( details : Dynamic, ?cb : Dynamic->Void ) : Void;
 	static function set( details : Dynamic, ?cb : Cookie->Void ) : Void;
-	static var onChanged(default,null) : Event<Bool->Cookie->Void>;
+	static var onChanged(default,null) : Event<Bool->Cookie->String->Void>;
 }

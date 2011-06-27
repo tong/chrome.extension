@@ -10,6 +10,8 @@ import js.Dom;
 	static function getURL( path : String ) : String;
 	static function getViews( ?fetchProperties : Dynamic ) : Array<js.Window>;
 	static function sendRequest( ?extensionId : String, request : Dynamic, responseCallback : Dynamic->Void ) : Void;
+	static function isAllowedFileSchemeAccess( cb : : Bool->Void ) : Void;
+	static function isAllowedIncognitoAccess( cb : : Bool->Void ) : Void;
 	static var onConnect(default,null) : chrome.Event<Port->Void>;
 	static var onConnectExternal(default,null) : chrome.Event<Port->Void>;
 	static var onRequest(default,null) : chrome.Event<Dynamic->MessageSender->(Dynamic->Void)->Void>;
