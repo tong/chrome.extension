@@ -8,7 +8,7 @@ import js.Dom;
 class ExtensionConnection {
 	
 	/** Extension sends data callback */
-	public dynamic function onMessage( t : String ) : Void;
+	public dynamic function onMessage( t : String ) {}
 	/** */
 	//public var connected(default,null) : Bool;
 	

@@ -5,7 +5,7 @@ package chrome;
 class ExtensionHost {
 	
 	/** */
-	public dynamic function onMessage( t : String ) : Void;
+	public dynamic function onMessage( t : String ) {}
 	
 	var port : chrome.Port;
 	
