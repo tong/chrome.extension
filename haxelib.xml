@@ -1,5 +1,5 @@
 <project name="chrome-extension" url="http://disktree.net" license="Public">
 	<user name="tong"/>
 	<description>Chrome browser extension type definitions</description>
-	<version name="1.5">API updates (12)</version>
+	<version name="1.13">API updates (13)</version>
 </project>

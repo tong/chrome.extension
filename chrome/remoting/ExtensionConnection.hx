@@ -17,6 +17,7 @@ class ExtensionConnection implements AsyncConnection,
 	
 	var data : { id : String, error : Dynamic->Void };
 	var path : Array<String>;
+	var divName : String;
 	var event : js.Event;
 	var div : Dynamic; //js.HtmlDom;
 	var onResult : Dynamic->Void;
@@ -25,6 +26,7 @@ class ExtensionConnection implements AsyncConnection,
 		
 		this.data = data;
 		this.path = path;
+		this.divName = divName;
 		
 		event = untyped document.createEvent( 'Event' );
 		untyped event.initEvent( 'chrome.site.event', true, true );
@@ -33,7 +35,7 @@ class ExtensionConnection implements AsyncConnection,
 	}
 	
 	public function resolve( name : String ) : AsyncConnection {
-		var c = new ExtensionConnection( data, path.copy() );
+		var c = new ExtensionConnection( data, path.copy(), divName );
 		c.path.push( name );
 		return c;
 	}
@@ -70,8 +72,8 @@ class ExtensionConnection implements AsyncConnection,
 			onResult( ret );
 	}
 	
-	public static function connect( id : String ) {
-		return new ExtensionConnection({ id : id, error : function(e) throw e },[]);
+	public static function connect( id : String, ?divName : String ) {
+		return new ExtensionConnection( { id : id, error : function(e) throw e }, [], divName );
 	}
 	
 }

@@ -5,5 +5,6 @@ typedef ProxyRules = {
 	var proxyForHttp : ProxyServer;
 	var proxyForHttps : ProxyServer;
 	var proxyForFtp : ProxyServer;
-	var socksProxy : ProxyServer;
+	var fallbackProxy : ProxyServer;
+	var bypassList : Array<String>;
 }
