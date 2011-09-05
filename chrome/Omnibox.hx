@@ -1,6 +1,6 @@
 package chrome;
 
-private typedef SuggestResult = {
+typedef SuggestResult = {
 	var content : String;
 	var description : String;
 }
