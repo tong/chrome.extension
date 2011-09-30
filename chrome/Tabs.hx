@@ -19,7 +19,7 @@ package chrome;
 	static var onCreated(default,null) : Event<Tab->Void>;
 	static var onDetached(default,null) : Event<Int->Dynamic->Void>;
 	static var onMoved(default,null) : Event<Int->Dynamic->Void>;
-	static var onRemoved(default,null) : Event<Int->Void>;
+	static var onRemoved(default,null) : Event<Int->Dynamic->Void>;
 	static var onSelectionChanged(default,null) : Event<Int->Dynamic->Void>;
 	static var onUpdated(default,null) : Event<Int->Dynamic->Tab->Void>;
 }
