@@ -1,6 +1,6 @@
 package chrome;
 
-private typedef FileHandlerExecuteEventDetails = {
+typedef FileHandlerExecuteEventDetails = {
 	var entries : Array<Dynamic>;
 	var tab_id : Int;
 }

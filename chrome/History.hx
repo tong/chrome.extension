@@ -1,6 +1,6 @@
 package chrome;
 
-private typedef HistoryItem = {
+typedef HistoryItem = {
 	var id : String;
 	var url : String;
 	var title : String;
@@ -9,7 +9,7 @@ private typedef HistoryItem = {
 	var typedCount : Int;
 }
 
-private typedef VisitItem = {
+typedef VisitItem = {
 	var id : String;
 	var visitId : String;
 	var visitTime : Float;

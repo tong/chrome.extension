@@ -1,11 +1,11 @@
 package chrome;
 
-private typedef IconInfo = {
+typedef IconInfo = {
 	var size : Int;
 	var url : String;
 }
 	
-private typedef ExtensionInfo = {
+typedef ExtensionInfo = {
 	var id : String;
 	var name : String;
 	var version : String;

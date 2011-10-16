@@ -1,6 +1,6 @@
 package chrome;
 
-private typedef Cookie = {
+typedef Cookie = {
 	var name : String;
 	var value : String;
 	var domain : String;
@@ -13,7 +13,7 @@ private typedef Cookie = {
 	var storeId : String;
 }
 
-private typedef CookieStore = {
+typedef CookieStore = {
 	var id : String;
 	var tabIds : Array<Int>;
 }
