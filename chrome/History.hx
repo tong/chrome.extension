@@ -23,7 +23,7 @@ typedef VisitItem = {
 	static function deleteRange( cb : Void->Void ) : Void;
 	static function deleteUrl( details : Dynamic )  : Void;
 	static function getVisits( details : Dynamic, cb : Array<VisitItem>->Void ) : Void;
-	static function search( details : Dynamic, cb : Array<VisitItem>->Void ) : Void;
+	static function search( details : Dynamic, cb : Array<HistoryItem>->Void ) : Void;
 	static var onVisitRemoved(default,null) : Event<Dynamic->Void>;
 	static var onVisited(default,null) : Event<HistoryItem->Void>;
 }
