@@ -13,6 +13,7 @@ typedef ExtensionInfo = {
 	var isApp : Bool;
 	var appLaunchUrl : String;
 	var homepageUrl : String;
+	var offlineEnabled : Bool;
 	var optionsUrl : String;
 	var icons : Array<IconInfo>;
 }
@@ -20,6 +21,8 @@ typedef ExtensionInfo = {
 @:native("chrome.management") extern class Management {
 	static function get( id : String, cb : ExtensionInfo->Void ) : Void;
 	static function getAll( cb : ExtensionInfo->Void ) : Void;
+	static function getPermissionWarningsById( id : String, ?cb : Array<String>->Void ) : Void;
+	static function getPermissionWarningsByManifest( manifestStr : String, ?cb : Array<String>->Void ) : Void;
 	static function launchApp( id : String, ?cb : Void->Void ) : Void;
 	static function setEnabled( id : String, enabled : Bool, ?cb : Void->Void ) : Void;
 	static function uninstall( id : String, ?cb : Void->Void ) : Void;
