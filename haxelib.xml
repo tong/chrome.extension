@@ -1,5 +1,5 @@
-<project name="chrome-extension" url="http://disktree.net" license="Public">
+<project name="chrome-extension" url="https://github.com/tong/chrome.extension" license="Public">
 	<user name="tong"/>
-	<description>Chrome browser extension type definitions</description>
-	<version name="1.14">API updates (14)</version>
+	<description>GoogleChrome extension type definitions</description>
+	<version name="1.15">API updates (15)</version>
 </project>
