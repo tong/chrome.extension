@@ -1,6 +1,6 @@
 package chrome;
 
-typedef BookMarkTreeNode = {
+typedef BookmarkTreeNode = {
 	var id : String;
 	var parentId : String;
 	var index : Int;
@@ -8,5 +8,5 @@ typedef BookMarkTreeNode = {
 	var title : String;
 	var dateAdded : Float;
 	var dateGroupModified : Float;
-	var children : Array<BookMarkTreeNode>;
+	var children : Array<BookmarkTreeNode>;
 }
