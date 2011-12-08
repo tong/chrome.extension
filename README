@@ -1,20 +1,11 @@
 
 CHROME.EXTENSION
 ================
-Type definitions for the chrome-browser extension API.
-
-
-SOURCE
-------
-git://github.com/tong/chrome.extension.git
-https://github.com/tong/chrome.extension
+HaXe/Javascript type definitions for the google-chrome extension API.
 
 
 LINKS
 -----
+git://github.com/tong/chrome.extension.git
+https://github.com/tong/chrome.extension
 http://code.google.com/chrome/extensions
-
-
-HAXE-REMOTING
--------------
-#TODO
