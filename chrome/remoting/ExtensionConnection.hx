@@ -17,25 +17,25 @@ class ExtensionConnection implements AsyncConnection,
 	
 	var data : { id : String, error : Dynamic->Void };
 	var path : Array<String>;
-	var divName : String;
+	var div_id : String;
 	var event : js.Event;
 	var div : Dynamic; //js.HtmlDom;
 	var onResult : Dynamic->Void;
 	
-	function new( data, path, divName : String = "ext_com" ) {
+	function new( data, path, div_id : String = "ext_com" ) {
 		
 		this.data = data;
 		this.path = path;
-		this.divName = divName;
+		this.div_id = div_id;
 		
 		event = untyped document.createEvent( 'Event' );
 		untyped event.initEvent( 'chrome.site.event', true, true );
-		div = js.Lib.document.getElementById( divName );
+		div = js.Lib.document.getElementById( div_id );
 		div.addEventListener( 'chrome.extension.event', handleContentScriptEvent );
 	}
 	
 	public function resolve( name : String ) : AsyncConnection {
-		var c = new ExtensionConnection( data, path.copy(), divName );
+		var c = new ExtensionConnection( data, path.copy(), div_id );
 		c.path.push( name );
 		return c;
 	}
