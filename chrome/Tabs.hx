@@ -30,18 +30,50 @@ typedef ChangeInfo = {
 	var pinned : Bool;
 }
 
+/* not working, why ?
+@:fakeEnum(String) extern enum CaptureFormat {
+	jpeg;
+	png;
+}
+*/
+
+typedef CaptureOptions = {
+	var quality : Int;
+	var format : String; // "png" or "jpeg"
+	//var format : CaptureFormat;  //TODO
+}
+
+private typedef CreateProperties = {
+	var windowId : Int; // optional
+	var index : Int; // optional
+	var url : String; // optional
+	var selected : Bool; // optional
+	var pinned : Bool; // optional
+}
+
+private typedef InserCSSDetails = {
+	var code : String; // optional
+	var file : Int; // optional
+	var allFrames : String; // optional
+}
+
+private typedef MoveProperties = {
+	var index : String;
+	var windowId : Int; // optional
+}
+
 @:native("chrome.tabs") extern class Tabs {
-	static function captureVisibleTab( windowId : Int, options : Dynamic, cb : String->Void ) : Void;
-	static function connect( tabId : Int, ?connectInfo : Dynamic ) : Port;
-	static function create( createProperties : Dynamic, ?cb : Tab->Void ) : Void;
+	static function captureVisibleTab( windowId : Int, options : CaptureOptions, cb : String->Void ) : Void;
+	static function connect( tabId : Int, ?connectInfo : { name : String } ) : Port;
+	static function create( createProperties : CreateProperties, ?cb : Tab->Void ) : Void;
 	static function detectLanguage( tabId : Int, cb : String->Void ) : Void; 
-	static function executeScript( tabId : Int, details : Dynamic, ?cb : Void->Void ) : Void;
+	static function executeScript( tabId : Int, details : CreateProperties, ?cb : Void->Void ) : Void;
 	static function get( tabId : Int, cb : Tab->Void ) : Void;
 	static function getAllInWindow( ?windowId : Int, cb : Array<Tab>->Void ) : Void;
 	static function getCurrent( cb : Tab->Void ) : Void;
 	static function getSelected( windowId : Int, cb : Tab->Void  ) : Void;
-	static function insertCSS( ?tabId : Int, details : Dynamic, ?cb : Void->Void ) : Void;
-	static function move( tabId : Int, moveProperties : Dynamic, ?cb : Tab->Void ) : Void;
+	static function insertCSS( ?tabId : Int, details : InserCSSDetails, ?cb : Void->Void ) : Void;
+	static function move( tabId : Int, moveProperties : MoveProperties, ?cb : Tab->Void ) : Void;
 	static function remove( tabId : Int, ?cb : Void->Void ) : Void;
 	static function sendRequest( tabId : Int, any : Dynamic, responseCallback : Dynamic->Void ) : Void;
 	static function update( tabId : Int, updateProperties : Dynamic, ?cb : Tab->Void ) : Void;

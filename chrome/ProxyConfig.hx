@@ -1,7 +1,7 @@
 package chrome;
 
 typedef ProxyConfig = {
-	var rules : ProxyRules;
-	var pacScript : PacScript;
-	var mode : String;
+	var rules : ProxyRules; // optional
+	var pacScript : PacScript; // optional
+	var mode : String; //  enumerated string ["direct", "auto_detect", "pac_script", "fixed_servers", "system"]
 }
