@@ -84,16 +84,16 @@ typedef ReloadProperties = {
 	static function detectLanguage( tabId : Int, cb : String->Void ) : Void; 
 	static function executeScript( tabId : Int, details : CreateProperties, ?cb : Void->Void ) : Void;
 	static function get( tabId : Int, cb : Tab->Void ) : Void;
-	static function getAllInWindow( ?windowId : Int, cb : Array<Tab>->Void ) : Void;
+	static function getAllInWindow( ?windowId : Int, cb : Array<Tab>->Void ) : Void; // depricated in 16
 	static function getCurrent( cb : Tab->Void ) : Void;
-	static function getSelected( windowId : Int, cb : Tab->Void  ) : Void;
+	static function getSelected( windowId : Int, cb : Tab->Void  ) : Void; // depricated in 16
 	static function insertCSS( ?tabId : Int, details : InserCSSDetails, ?cb : Void->Void ) : Void;
 	static function move( tabId : Int, moveProperties : MoveProperties, ?cb : Tab->Void ) : Void;
 	static function query( queryInfo : QueryInfo, cb : Array<Tab> ) : Void;
 	static function reload( ?tabId : Int, properties : ReloadProperties, ?cb : Void->Void ) : Void;
 	static function remove( tabId : Int, ?cb : Void->Void ) : Void;
 	static function sendRequest( tabId : Int, any : Dynamic, responseCallback : Dynamic->Void ) : Void;
-	static function update( tabId : Int, updateProperties : Dynamic, ?cb : Tab->Void ) : Void;
+	static function update( ?tabId : Int, updateProperties : Dynamic, ?cb : Tab->Void ) : Void;
 	static var onAttached(default,null) : Event<Int->AttachInfo->Void>;
 	static var onCreated(default,null) : Event<Tab->Void>;
 	static var onDetached(default,null) : Event<Int->DetachInfo->Void>;
