@@ -13,9 +13,12 @@ typedef ExtensionInfo = {
 	var isApp : Bool;
 	var appLaunchUrl : String;
 	var homepageUrl : String;
+	var updateUrl : String;
 	var offlineEnabled : Bool;
 	var optionsUrl : String;
 	var icons : Array<IconInfo>;
+	var permissions : Array<String>;
+	var hostPermissions : Array<String>;
 }
 
 @:native("chrome.management") extern class Management {
