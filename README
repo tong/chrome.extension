@@ -2,8 +2,4 @@
 CHROME.EXTENSION
 ================
 HaXe/Javascript type definitions for the google-chrome extension API.
-
-
-LINKS
------
 http://code.google.com/chrome/extensions
