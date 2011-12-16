@@ -62,6 +62,21 @@ private typedef MoveProperties = {
 	var windowId : Int; // optional
 }
 
+typedef QueryInfo = {
+	var active : Bool; // optional
+	var pinned : Bool; // optional
+	var highlighted : Bool; // optional
+	var status : String; // optional
+	var title : String; // optional
+	var url : String; // optional
+	var windowId : String; // optional
+	var windowType : String; // optional enumerated string ["normal", "popup", "panel", "app"]
+}
+
+typedef ReloadProperties = {
+	var bypassCache : Bool; // optional
+}
+
 @:native("chrome.tabs") extern class Tabs {
 	static function captureVisibleTab( windowId : Int, options : CaptureOptions, cb : String->Void ) : Void;
 	static function connect( tabId : Int, ?connectInfo : { name : String } ) : Port;
@@ -74,6 +89,8 @@ private typedef MoveProperties = {
 	static function getSelected( windowId : Int, cb : Tab->Void  ) : Void;
 	static function insertCSS( ?tabId : Int, details : InserCSSDetails, ?cb : Void->Void ) : Void;
 	static function move( tabId : Int, moveProperties : MoveProperties, ?cb : Tab->Void ) : Void;
+	static function query( queryInfo : QueryInfo, cb : Array<Tab> ) : Void;
+	static function reload( ?tabId : Int, properties : ReloadProperties, ?cb : Void->Void ) : Void;
 	static function remove( tabId : Int, ?cb : Void->Void ) : Void;
 	static function sendRequest( tabId : Int, any : Dynamic, responseCallback : Dynamic->Void ) : Void;
 	static function update( tabId : Int, updateProperties : Dynamic, ?cb : Tab->Void ) : Void;
