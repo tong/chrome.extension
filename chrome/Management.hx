@@ -10,6 +10,7 @@ typedef ExtensionInfo = {
 	var name : String;
 	var version : String;
 	var enabled : Bool;
+	var disabledReason : String;
 	var isApp : Bool;
 	var appLaunchUrl : String;
 	var homepageUrl : String;
