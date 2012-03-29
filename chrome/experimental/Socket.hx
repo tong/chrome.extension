@@ -17,8 +17,9 @@ typedef SocketInfo = {
 }
 
 @:native("chrome.experimental.socket") extern class Socket {
-	static function connect( socketId : Int, hostname : String, port : Int, cb : Bool->Void ) : Void;
-	static function create( type : String, ?options : Dynamic, cb : SocketInfo->Void ) : Void;
+	static function create( type : String, host : String, port : Int, options : Dynamic, cb : SocketInfo->Void ) : Void;
+	static function connect( socketId : Int, cb : Dynamic->Void ) : Void;
+	//static function connect( socketId : Int, hostname : String, port : Int, cb : Bool->Void ) : Void;
 	static function disconnect( socketId : Int, cb : Bool->Void ) : Void;
 	static function write( socketId : Int, data : String, cb : SocketSendInfo->Void ) : Void;
 }

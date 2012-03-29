@@ -1,5 +1,5 @@
 <project name="chrome-extension" url="https://github.com/tong/chrome.extension" license="Public">
 	<user name="tong"/>
 	<description>Type definitions for the google-chrome extension API</description>
-	<version name="1.17">API updates (17)</version>
+	<version name="1.18">API updates (18)</version>
 </project>
