@@ -49,6 +49,7 @@ private typedef CreateProperties = {
 	var url : String; // optional
 	var selected : Bool; // optional
 	var pinned : Bool; // optional
+	var openerTabId : Int; // optional
 }
 
 private typedef InserCSSDetails = {
