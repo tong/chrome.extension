@@ -1,7 +1,8 @@
 package chrome;
 
 @:native("chrome.windows") extern class Windows {
-	static var WINDOW_ID_NONE : Int;
+	static var WINDOW_ID_NONE(default,never) : Int;
+	static var WINDOW_ID_CURRENT(default,never) : Int;
 	static function create( ?createData : Dynamic, ?cb : Window->Void ) : Void;
 	static function get( windowId : Int, cb : Window->Void ) : Void;
 	static function getAll( ?getInfo : Dynamic, cb : Array<Window>->Void ) : Void;
