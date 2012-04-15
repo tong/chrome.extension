@@ -18,7 +18,9 @@ private typedef FetchProperties = {
 	static function getViews( ?fetchProperties : FetchProperties ) : Array<js.Window>;
 	static function isAllowedFileSchemeAccess( cb : Bool->Void ) : Void;
 	static function isAllowedIncognitoAccess( cb : Bool->Void ) : Void;
-	static function sendRequest( ?extensionId : String, request : Dynamic, ?responseCallback : Dynamic->Void ) : Void;
+	
+	@:overload(function( ?extensionId : String, request : Dynamic, ?responseCallback : Dynamic->Void ) : Void {} )
+	static function sendRequest( request : Dynamic, ?responseCallback : Dynamic->Void ) : Void;
 	
 	static var onConnect(default,null) : chrome.Event<Port->Void>;
 	static var onConnectExternal(default,null) : chrome.Event<Port->Void>;
