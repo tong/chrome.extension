@@ -10,13 +10,6 @@ package chrome;
 	complete;
 }
 
-@:fakeEnum(String) enum WindowType {
-	normal;
-	popup;
-	panel;
-	app;
-}
-
 private typedef RemoveInfo = {
 	isWindowClosing : Bool
 }

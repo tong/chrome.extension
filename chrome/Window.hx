@@ -1,13 +1,15 @@
 package chrome;
 
+import chrome.Windows;
+
 typedef Window = {
-	var id : Int;
-	var focused : Bool;
-	var top : Int;
-	var left : Int;
-	var width : Int;
-	var height : Int;
-	var tabs : Array<Tab>;
-	var incognito : Bool;
-	var type : String;
+	id : Int,
+	focused : Bool,
+	top : Int,
+	left : Int,
+	width : Int,
+	height : Int,
+	?tabs : Array<Tab>,
+	incognito : Bool,
+	type : String
 }
