@@ -1,7 +1,14 @@
 package chrome;
 
+@:fakeEnum(String) enum Scheme {
+	http;
+	https;
+	socks4;
+	socks5;
+}
+
 typedef ProxyServer = {
-	var scheme : String; // optional enumerated string ["http", "https", "socks4", "socks5"]
-	var host : String;
-	var port : Int;
+	scheme : Scheme,
+	host : String,
+	?port : Int
 }

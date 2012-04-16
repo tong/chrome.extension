@@ -1,5 +1,7 @@
 package chrome;
 
+import chrome.types.ChromeSetting;
+
 private typedef ProxyError = {
 	var fatal : Bool;
 	var error : String;
@@ -7,6 +9,6 @@ private typedef ProxyError = {
 }
 
 @:native("chrome.proxy") extern class Proxy {
-	static var settings : chrome.types.ChromeSetting;
-	static var onProxyError(default,null) : Event<ProxyError->Void>;
+	static var settings : ChromeSetting;
+	static var onProxyError(default,never) : Event<ProxyError->Void>;
 }
