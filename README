@@ -3,5 +3,23 @@ CHROME.EXTENSION
 ================
 HaXe/Javascript type definitions for the google-chrome extension API.
 http://code.google.com/chrome/extensions
-
 API version: 18
+
+
+
+SOURCE
+------
+https://github.com/tong/chrome.extension
+
+
+HAXELIB
+-------
+http://lib.haxe.org/p/chrome-extension
+
+
+EXTENSIONS
+----------
+DoX - HaXe API omnibox search: https://chrome.google.com/webstore/detail/oocmdgebgfalcjefajhpkdkmlfcanljg
+XMPP/XEP-search: https://chrome.google.com/webstore/detail/agikkldfdhbpaocpoidjcfefaahobeap
+[Send email to: tong.disktree@gmail.com to get listed here]
+
