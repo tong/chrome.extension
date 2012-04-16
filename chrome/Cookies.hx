@@ -29,7 +29,6 @@ typedef CookieStore = {
 typedef CookieChangeInfo = {
 	var removed : Bool;
 	var cookie : Cookie;
-	//var cause : String; //  ( enumerated string ["evicted", "expired", "explicit", "expired_overwrite", "overwrite"] )
 	var cause : CookieChangeInfoCause;
 }
 
