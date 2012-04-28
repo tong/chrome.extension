@@ -65,6 +65,8 @@ private typedef UpdateInfo = {
 	
 	static function get( tabId : Int, cb : Tab->Void ) : Void;
 	
+	static function getSelected( cb : Tab->Void ) : Void;
+	
 	static function getCurrent( cb : Tab->Void ) : Void;
 	
 	@:overload( function(
