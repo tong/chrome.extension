@@ -13,17 +13,17 @@ typedef OffscreenTab = {
 	var height : Int;
 }
 
-private @:fakeEnum(String) enum ToDataURLOptionsFormat {
+@:fakeEnum(String) private enum ToDataURLOptionsFormat {
 	jpeg;
 	png;
 }
 
-private ToDataURLOptions = {
+private typedef ToDataURLOptions = {
 	?format : ToDataURLOptionsFormat,
 	?quality : Int
 }
 
-private UpdateProperties = {
+private typedef UpdateProperties = {
 	?url : String,
 	?width : Int,
 	?height: Int
@@ -33,7 +33,7 @@ private typedef ChangeInfo = {
 	?url : String
 }
 
-private @:fakeEnum(String) enum KeyboardEventType {
+@:fakeEnum(String) private enum KeyboardEventType {
 	keypress;
 	keydown;
 	keyup;
@@ -49,7 +49,7 @@ private typedef KeyboardEvent = {
 	?metaKey : Bool
 }
 
-private @:fakeEnum(String) enum KeyboardEventType {
+@:fakeEnum(String) private enum MouseEventType {
 	mousedown;
 	mouseup;
 	click;
@@ -72,7 +72,7 @@ private typedef MouseEvent = {
 	
 	static function create( createProperties : CreateProperties, ?cb : OffscreenTab->Void ) : Void;
 	static function get( offscreenTabId : Int, cb : OffscreenTab->Void ) : Void;
-	static function getAll( cb : Array<>OffscreenTab>->Void ) : Void;
+	static function getAll( cb : Array<OffscreenTab>->Void ) : Void;
 	static function remove( offscreenTabId : Int, ?cb : Void->Void ) : Void;
 	static function sendKeyboardEvent( offscreenTabId : Int, keyboardEvent : KeyboardEvent, ?cb : Void->Void ) : Void;
 	static function sendMouseEvent( offscreenTabId : Int, mouseEvent : MouseEvent, ?position : {x:Int,y:Int}, ?cb : Void->Void ) : Void;

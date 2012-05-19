@@ -66,7 +66,7 @@ typedef FontName = {
 	static function getFont( details : { ?script : ScriptCode, genericFamily : GenericFamily }, ?cb : Dynamic->Void ) : Void;
 	static function getFontList( cb : Array<FontName>->Void ) : Void;
 	static function getMinimumFontSize( ?details : Dynamic, ?cb : Array<FontName>->Void ) : Void;
-	static function setDefaultCharacterSet( details : { charset : String } ?cb : Void->Void ) : Void;
+	static function setDefaultCharacterSet( details : { charset : String }, ?cb : Void->Void ) : Void;
 	static function setDefaultFixedFontSize( details : { pixelSize : Int }, ?cb : Void->Void ) : Void;
 	static function setDefaultFontSize( details : { pixelSize : Int }, ?cb : Void->Void ) : Void;
 	static function setFont( details : { script : ScriptCode, genericFamily : GenericFamily, fontName : String }, ?cb : Void->Void ) : Void;

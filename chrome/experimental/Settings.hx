@@ -1,6 +1,6 @@
 package chrome.experimental;
 
-import chrome.type.ChromeSetting;
+import chrome.types.ChromeSetting;
 
 @:native("chrome.experimental.settings") extern class Settings {
 	static function clear( ?cb : Void->Void ) : Void;
