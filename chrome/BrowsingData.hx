@@ -20,7 +20,7 @@ typedef DataToRemove = {
 	?webSQL : Bool
 }
 
-@:native("chrome.BrowsingData") extern class BrowsingData {
+@:native("chrome.browsingData") extern class BrowsingData {
 	static function remove( options : RemovalOptions, dataToRemove : DataToRemove, ?cb : Void->Void ) : Void;
 	static function removeAppcache( options : RemovalOptions, ?cb : Void->Void ) : Void;
 	static function removeCache( options : RemovalOptions, ?cb : Void->Void ) : Void;
