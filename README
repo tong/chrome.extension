@@ -3,7 +3,7 @@ CHROME.EXTENSION
 ================
 HaXe/Javascript type definitions for the google-chrome extension API.
 http://code.google.com/chrome/extensions
-API version: 18
+API version: 19
 
 
 
