@@ -11,5 +11,7 @@ typedef Window = {
 	height : Int,
 	?tabs : Array<Tab>,
 	incognito : Bool,
-	type : String
+	type : String,
+	state : String,
+	alwaysOnTop : Bool
 }

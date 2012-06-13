@@ -11,6 +11,7 @@ package chrome;
 	static var onAuthRequired(default,never) : Event<Dynamic>;
 	static var onBeforeRedirect(default,never) : Event<Dynamic>;
 	static var onBeforeRequest(default,never) : Event<Dynamic>;
+	
 	static var onBeforeSendHeaders(default,never) : Event<Dynamic>;
 	static var onCompleted(default,never) : Event<Dynamic>;
 	static var onErrorOccurred(default,never) : Event<Dynamic>;

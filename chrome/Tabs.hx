@@ -110,6 +110,8 @@ private typedef UpdateInfo = {
 			?active : Bool,
 			?pinned : Bool,
 			?highlighted : Bool,
+			?currentWindow : Bool,
+			?lastFocusedWindow : Bool,
 			?status : QueryStatus,
 			?title : String,
 			?url : String,
