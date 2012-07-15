@@ -145,7 +145,7 @@ private typedef UpdateInfo = {
 		?cb : Void->Void
 	) : Void;
 	
-	static function sendRequest( tabId : Int, request : Dynamic, ?responseCallback : Dynamic->Void ) : Void;
+	static function sendMessage( tabId : Int, request : Dynamic, ?responseCallback : Dynamic->Void ) : Void;
 
 	static function update(
 		?tabId : Int,
