@@ -20,6 +20,12 @@ private typedef UpdateInfo = {
 	?pinned : Bool
 }
 
+@:fakeEnum(String) enum RunAt {
+	document_start;
+	document_end;
+	document_idle;
+}
+
 /**
  * http://code.google.com/chrome/extensions/tabs.html
  */
@@ -58,7 +64,8 @@ private typedef UpdateInfo = {
 		details : {
 			?code : String,
 			?file : String,
-			?allFrames : String
+			?allFrames : String,
+			?runAt : RunAt
 		},
 		?cb : Void->Void
 	) : Void;
@@ -83,7 +90,8 @@ private typedef UpdateInfo = {
 		details : {
 			?code : String,
 			?file : String,
-			?allFrames : Bool
+			?allFrames : Bool,
+			?runAt : RunAt
 		},
 		?cb : Void->Void
 	) : Void;
@@ -119,7 +127,7 @@ private typedef UpdateInfo = {
 			?windowType : WindowType,
 			?index : Int
 		},
-		cb : Array<Tab>
+		cb : Array<Tab>->Void
 	) : Void;
 
 	static function reload(
