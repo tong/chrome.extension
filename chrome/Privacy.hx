@@ -8,6 +8,7 @@ private typedef Services = {
 	var instantEnabled : ChromeSetting;
 	var safeBrowsingEnabled : ChromeSetting;
 	var searchSuggestEnabled : ChromeSetting;
+	var spellingServiceEnabled : ChromeSetting;
 	var translationServiceEnabled : ChromeSetting;
 }
 

@@ -23,7 +23,8 @@ typedef OnClickData = {
 			?onclick : OnClickData->Tab->Void,
 			?parentId : Int,
 			?documentUrlPatterns : Array<String>,
-			?targetUrlPatterns : Array<String>
+			?targetUrlPatterns : Array<String>,
+			?enabled : Bool
 		},
 		?cb : Void->Void
 	) : Int;
@@ -37,7 +38,17 @@ typedef OnClickData = {
 	
 	static function update(
 		id : Int,
-		updateProperties : Dynamic,
+		updateProperties : {
+			?type : String,
+			?title : String,
+			?checked : Bool,
+			?contexts : String,
+			?onclick : Void->Void,
+			?parentId : Int,
+			?documentUrlPatterns : Array<String>,
+			?targetUrlPatterns : Array<String>,
+			?enabled : Bool
+		},
 		?cb : Void->Void
 	) : Void;
 	
