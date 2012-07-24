@@ -28,7 +28,7 @@ typedef RecvFromInfo = {
 @:native("chrome.experimental.socket") extern class Socket {
 	static function bind( socketId : Int, address : String, port : Int, cb : Int->Void ) : Void;
 	static function connect( socketId : Int, hostname : String, port : Int, cb : Dynamic->Void ) : Void;
-	//static function create( type : SocketType, ?options : Dynamic, cb : CreateInfo->Void ) : Void;
+	//TODO: static function create( type : SocketType, ?options : Dynamic, cb : CreateInfo->Void ) : Void;
 	static function create( type : String, ?options : Dynamic, cb : CreateInfo->Void ) : Void;
 	static function destroy( socketId : Int ) : Void;
 	static function disconnect( socketId : Int ) : Void;
