@@ -1,7 +1,12 @@
 package chrome;
 
 typedef RemovalOptions = {
-	?since : Float
+	?since : Float,
+	originTypes : {
+		?unprotectedWeb : Bool,
+		?protectedWeb : Bool,
+		?extension : Bool
+	}
 }
 
 typedef DataToRemove = {
