@@ -77,11 +77,11 @@ private typedef UpdateInfo = {
 	static function getCurrent( cb : Tab->Void ) : Void;
 	
 	@:overload( function(
-		highlightInfo : { windowId : Int, tabs : Int },
+		highlightInfo : { ?windowId : Int, tabs : Int },
 		cb : Window->Void
 	) : Void {} )
 	static function highlight(
-		highlightInfo : { windowId : Int, tabs : Array<Int> },
+		highlightInfo : { ?windowId : Int, tabs : Array<Int> },
 		cb : Window->Void
 	) : Void;
 	
