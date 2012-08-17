@@ -38,7 +38,7 @@ typedef ExtensionInfo = {
 	static function getPermissionWarningsByManifest( manifestStr : String, ?cb : Array<String>->Void ) : Void;
 	static function launchApp( id : String, ?cb : Void->Void ) : Void;
 	static function setEnabled( id : String, enabled : Bool, ?cb : Void->Void ) : Void;
-	static function uninstall( id : String, ?cb : Void->Void ) : Void;
+	static function uninstall( id : String, ?options : { ?showConfirmDialog : Bool }, ?cb : Void->Void ) : Void;
 	
 	static var onDisabled(default,null) : Event<ExtensionInfo->Void>;
 	static var onEnabled(default,null) : Event<ExtensionInfo->Void>;
