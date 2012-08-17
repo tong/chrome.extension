@@ -19,7 +19,7 @@ typedef OnClickData = {
 			?type : String,
 			?title : String,
 			?checked : Bool,
-			?contexts : String,
+			?contexts : Array<String>,
 			?onclick : OnClickData->Tab->Void,
 			?parentId : Int,
 			?documentUrlPatterns : Array<String>,
