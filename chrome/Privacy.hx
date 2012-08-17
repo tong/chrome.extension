@@ -14,9 +14,9 @@ private typedef Services = {
 
 private typedef Websites = {
 	var thirdPartyCookiesAllowed : ChromeSetting;
-	var autofillEnabled : ChromeSetting;
 	var hyperlinkAuditingEnabled : ChromeSetting;
 	var referrersEnabled : ChromeSetting;
+	var protectedContentEnabled : ChromeSetting;
 }
 
 /**
