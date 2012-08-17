@@ -1,4 +1,4 @@
-package chrome.devtools;
+package chrome.input;
 
 private typedef KeyboardEvent = {
 	var type(default,null) : String; // enumerated string ["keyup", "keydown"] 
@@ -15,14 +15,94 @@ private typedef InputContext = {
 }
 
 @:native("chrome.input.ime") extern class Ime {
-	static function clearComposition( parameters : Dynamic, ?cb : Bool->Void ) : Void;
-	static function commitText( parameters : Dynamic, ?cb : Bool->Void ) : Void;
-	static function setCandidateWindowProperties( parameters : Dynamic, ?cb : Bool->Void ) : Void;
-	static function setCandidates( parameters : Dynamic, ?cb : Bool->Void ) : Void;
-	static function setComposition( parameters : Dynamic, ?cb : Bool->Void ) : Void;
-	static function setCursorPosition( parameters : Dynamic, ?cb : Bool->Void ) : Void;
-	static function setMenuItems( parameters : Dynamic, ?cb : Void->Void ) : Void;
-	static function updateMenuItems( parameters : Dynamic, ?cb : Void->Void ) : Void;
+
+	static function clearComposition( parameters : { contextID : Int }, ?cb : Bool->Void ) : Void;
+	
+	static function commitText( parameters : { contextID : Int, text : String }, ?cb : Bool->Void ) : Void;
+	
+	static function setCandidateWindowProperties(
+		parameters : {
+			engineID : String,
+			properties : {
+				?visible : Bool,
+				?cursorVisible : Bool,
+				?vertical : Bool,
+				?pageSize : Int,
+				?auxiliaryText : String,
+				?auxiliaryTextVisible : Bool
+			}
+		},
+		?cb : Bool->Void
+	) : Void;
+	
+	static function setCandidates(
+		parameters : {
+			contextID : Int,
+			candidates : Array<{
+				candidate : String,
+				id : Int,
+				?parentId : Int,
+				?label : String,
+				?annotation : String
+			}>
+		},
+		?cb : Bool->Void
+	) : Void;
+	
+	static function setComposition(
+		parameters : {
+			contextID : Int,
+			text : String,
+			?selectionStart : Int,
+			?selectionEnd : Int,
+			cursor : Int,
+			?segments : Array<{
+				start : Int,
+				end : Int,
+				style : String
+			}>,
+		},
+		?cb : Bool->Void
+	) : Void;
+	
+	static function setCursorPosition(
+		parameters : {
+			contextID : Int,
+			candidateID : Int
+		},
+		?cb : Bool->Void
+	) : Void;
+	
+	static function setMenuItems(
+		parameters : {
+			engineID : String,
+			items : Array<{
+				id : String,
+				?label : String,
+				?style : String,
+				?visible : Bool,
+				?checked : Bool,
+				?enabled : Bool
+			}>
+		},
+		?cb : Void->Void
+	) : Void;
+	
+	static function updateMenuItems(
+		parameters : {
+			engineID : String,
+			items : Array<{
+				id : String,
+				?label : String,
+				?style : String,
+				?visible : Bool,
+				?checked : Bool,
+				?enabled : Bool
+			}>
+		},
+		?cb : Void->Void
+	) : Void;
+	
 	static var onActivate(default,null) : Event<String->Void>;
 	static var onBlur(default,null) : Event<Int->Void>;
 	static var onCandidateClicked(default,null) : Event<String->Int->String->Void>;
