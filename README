@@ -21,6 +21,7 @@ http://lib.haxe.org/p/chrome-extension
 
 RELEASED EXTENSIONS
 -------------------
-DoX - HaXe API omnibox search: https://chrome.google.com/webstore/detail/oocmdgebgfalcjefajhpkdkmlfcanljg
-XMPP/XEP-search: https://chrome.google.com/webstore/detail/agikkldfdhbpaocpoidjcfefaahobeap
-Javadoc-2-haXe: https://chrome.google.com/webstore/detail/apgbpdhjnmdmcdjfdffpemjaflcnjjef
+* DoX - HaXe API omnibox search: https://chrome.google.com/webstore/detail/oocmdgebgfalcjefajhpkdkmlfcanljg
+* XMPP/XEP-search: https://chrome.google.com/webstore/detail/agikkldfdhbpaocpoidjcfefaahobeap
+* Javadoc-2-haXe: https://chrome.google.com/webstore/detail/apgbpdhjnmdmcdjfdffpemjaflcnjjef
+* Post To Tumblr: https://chrome.google.com/webstore/detail/dbpicbbcpanckagpdjflgojlknomoiah
