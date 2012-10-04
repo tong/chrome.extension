@@ -2,25 +2,33 @@
 CHROME.EXTENSION
 ================
 HaXe/Javascript type definitions for the google chrome extension api and packed apps.
-http://code.google.com/chrome/extensions
-http://developer.chrome.com/apps
 
-API version: 22
 
+API VERSION
+-----------
+22
 
 
 SOURCE
 ------
 https://github.com/tong/chrome.extension
-
-
-HAXELIB
--------
 http://lib.haxe.org/p/chrome-extension
 
 
-RELEASED EXTENSIONS
--------------------
+LINKS
+-----
+http://code.google.com/chrome/extensions
+http://developer.chrome.com/apps
+
+
+AUTHOR
+------
+http://disktree.net
+tong@disktree.net
+
+
+RELEASED/KNOWN EXTENSIONS
+-------------------------
 * DoX - HaXe API omnibox search: https://chrome.google.com/webstore/detail/oocmdgebgfalcjefajhpkdkmlfcanljg
 * XMPP/XEP-search: https://chrome.google.com/webstore/detail/agikkldfdhbpaocpoidjcfefaahobeap
 * Javadoc-2-haXe: https://chrome.google.com/webstore/detail/apgbpdhjnmdmcdjfdffpemjaflcnjjef
