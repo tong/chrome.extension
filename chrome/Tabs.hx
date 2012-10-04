@@ -10,11 +10,11 @@ package chrome;
 	complete;
 }
 
-private typedef RemoveInfo = {
+typedef RemoveInfo = {
 	isWindowClosing : Bool
 }
 
-private typedef UpdateInfo = {
+typedef UpdateInfo = {
 	?status : String,
 	?url : String,
 	?pinned : Bool
