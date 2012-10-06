@@ -20,6 +20,6 @@ typedef LaunchData = {
 
 @:native("chrome.app.runtime")
 extern class Runtime {
-	static function onLaunched() : chrome.Event<LaunchData>;
+	static var onLaunched(default,null) : chrome.Event<LaunchData>;
 	
 }
