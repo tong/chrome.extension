@@ -53,7 +53,7 @@ private typedef BookmarkRemoveInfo = {
 @:native("chrome.bookmarks") extern class Bookmarks {
 
 	static function create( bookmark : Bookmark, ?cb : BookmarkTreeNode->Void ) : Void;	
-	@:overload(function get( ?idList:Array<String>, cb:Array<BookmarkTreeNode>->Void ) : Void {} )
+	@:overload(function( ?idList:Array<String>, cb:Array<BookmarkTreeNode>->Void ) : Void {} )
 	static function get( id : String, cb : Array<BookmarkTreeNode>->Void ) : Void;	
 	static function getChildren( id : String, cb : Array<BookmarkTreeNode>->Void ) : Void;	
 	static function getRecent( numberOfItems : Int, cb : Array<BookmarkTreeNode>->Void ) : Void;
