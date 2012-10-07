@@ -7,7 +7,7 @@ typedef AppWindow = {
 	function maximize() : Void;
 	function focus() : Void;
 	var contentWindow : Dynamic;
-	function resizeTo() : Void;
+	function resizeTo( width : Int, height : Int ) : Void;
 	
 }
 
@@ -17,7 +17,7 @@ typedef CreateWindowOptions = {
 	?defaultWidth : Int,
 	?top : Int,
 	?minHeight : Int,
-	?maxHeight . Int,
+	?maxHeight : Int,
 	?height : Int,
 	?minWidth : Int,
 	?width : Int,
