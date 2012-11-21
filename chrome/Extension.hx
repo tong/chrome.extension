@@ -10,7 +10,7 @@ import js.Dom;
 	static var lastError : { message : String };
 	static var inIncognitoContext : Bool;
 	
-	static function connect( extensionId : String, ?connectInfo : { name : String } ) : Port;
+	static function connect( ?extensionId : String, ?connectInfo : { name : String } ) : Port;
 	static function getBackgroundPage() : Dynamic; //js.Window; // DOMWindow
 	static function getURL( path : String ) : String;
 	static function getViews( ?fetchProperties : { ?type : String, ?windowId : Int } ) : Array<js.Window>; // type : enumerated string ["tab", "infobar", "notification", "popup"] 
