@@ -7,7 +7,7 @@ typedef Alarm = {
 }
 
 typedef AlarmCreateInfo = {
-	?delayInSeconds : Float,
+	?delayInMinutes : Float,
 	?periodInMinutes : Float,
 	?when : Float
 }

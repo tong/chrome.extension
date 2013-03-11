@@ -2,20 +2,16 @@
 CHROME-EXTENSION
 ================
 Haxe/Javascript type definitions for the google chrome extension api.
+http://code.google.com/chrome/extensions
 
 
 #### API VERSION
-Chome 22
+Chome 25
 
 
 #### SOURCE
 https://github.com/tong/chrome.extension
 http://lib.haxe.org/p/chrome-extension
-
-
-#### LINKS
-http://code.google.com/chrome/extensions
-http://developer.chrome.com/apps
 
 
 #### RELEASED/KNOWN EXTENSIONS
