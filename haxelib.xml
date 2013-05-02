@@ -3,6 +3,7 @@
 	<tag v="javascript"/>
     <tag v="chrome"/>
     <tag v="google"/>
+    <tag v="extension"/>
 	<description>Type definitions for the google-chrome extension API</description>
-	<version name="1.25">API updates (25)</version>
+	<version name="1.25.1">API updates (25)</version>
 </project>
