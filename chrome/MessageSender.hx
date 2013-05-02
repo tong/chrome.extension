@@ -1,6 +1,7 @@
 package chrome;
 
 typedef MessageSender = {
-	var id : String;
-	var tab : Null<Tab>;
+	?tab : Tab,
+	id : String,
+	?url : String
 }
