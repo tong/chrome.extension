@@ -6,10 +6,18 @@ typedef StorageChange = {
 }
 
 typedef StorageArea = {
-	function get( ?keys : Dynamic, cb : Dynamic->Void ) : Void;
-	function getBytesInUse( ?keys : Dynamic, cb : Int->Void ) : Void;
+	
+	@:overload(function( ?keys : Array<String>, cb : Dynamic->Void ):Void{})
+	function get( ?keys : String, cb : Dynamic->Void ) : Void;
+
+	@:overload(function( ?keys : Array<String>, cb : Int->Void ):Void{})
+	function getBytesInUse( ?keys : String, cb : Int->Void ) : Void;
+
+	@:overload(function( ?keys : Array<String>, ?cb : Dynamic->Void ):Void{})
 	function remove( keys : Dynamic, ?cb : Void->Void ) : Void;
+
 	function set( items : Dynamic, ?cb : Void->Void ) : Void;
+	
 	function clear( ?cb : Void->Void ) : Void;
 }
 
