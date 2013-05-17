@@ -9,9 +9,6 @@ private typedef Suggestion = {
 	var description : String;
 }
 
-/**
-	http://code.google.com/chrome/extensions/omnibox.html
-*/
 @:native("chrome.omnibox") extern class Omnibox {
 	
 	static function setDefaultSuggestion( suggestion : Suggestion ) : Void;
