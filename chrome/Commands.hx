@@ -8,5 +8,5 @@ typedef Command = {
 
 @:native("chrome.commands") class Commands {
 	static function getAll( ?cb : Array<Command>->Void ) : Void;
-	static var onCommand(default,null) : EventDispatcher<String->Void>;
+	static var onCommand(default,null) : Event<String->Void>;
 }
