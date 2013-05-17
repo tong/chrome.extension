@@ -1,7 +1,7 @@
 package chrome;
 
 @:fakeEnum(String)
-private enum Levek {
+private enum Level {
 	system;
 	display;
 }

@@ -1,12 +1,14 @@
 package chrome.devtools;
 
+import js.html.DOMWindow;
+
 private typedef ExtensionSidebarPane = {
 	function setExpression( expression : String, ?rootTitle : String, ?cb : Void->Void ) : Void;
 	function setHeight( height : String ) : Void;
 	function setObject( jsonObject : String, ?rootTitle : String, ?cb : Void->Void ) : Void;
 	function setPage( path : String ) : Void;
 	var onHidden(default,null) : Event<Void->Void>;
-	var onShown(default,null) : Event<js.Window->Void>;
+	var onShown(default,null) : Event<DOMWindow->Void>;
 }
 
 private typedef ElementsPanel = {
@@ -18,7 +20,7 @@ private typedef ExtensionPanel = {
 	function createStatusBarButton( iconPath : String, tooltipText : String, disabled : Bool ) : Button;
 	var onHidden(default,null) : Event<Void->Void>;
 	var onSearch(default,null) : Event<String->String->Void>;
-	var onShown(default,null) : Event<js.Window->Void>;
+	var onShown(default,null) : Event<DOMWindow->Void>;
 }
 
 private typedef Button = {
