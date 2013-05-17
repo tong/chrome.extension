@@ -1,9 +1,0 @@
-<project name="chrome-extension" url="https://github.com/tong/chrome.extension" license="Public">
-	<user name="tong"/>
-	<tag v="javascript"/>
-    <tag v="chrome"/>
-    <tag v="google"/>
-    <tag v="extension"/>
-	<description>Type definitions for the google-chrome extension API</description>
-	<version name="1.25.1">API updates (25)</version>
-</project>
