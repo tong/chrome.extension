@@ -37,7 +37,7 @@ typedef ManifestDetails = {
 	static function requestUpdateCheck( f : RequestUpdateCheck->Dynamic->Void ) : Void;
 
 	/** Attempts to connect to other listeners within the extension/app */
-	static function connect( extensionId : String, connectInfo : Dynamic ) : Port;
+	static function connect( ?extensionId : String, ?connectInfo : Dynamic ) : Port;
 
 	/** Connects to a native application in the host machine */
 	static function connectNative( application : String ) : Port;
