@@ -1,5 +1,7 @@
 package chrome;
 
+typedef TemplateType = Dynamic;
+
 typedef NotificationButton = {
 	var title : String;
 	var message : String;
