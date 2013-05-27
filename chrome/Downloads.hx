@@ -9,7 +9,7 @@ private enum DangerType {
 	content;
 	uncommon;
 	host;
-	safeM
+	safe;
 }
 
 @:fakeEnum(String)
