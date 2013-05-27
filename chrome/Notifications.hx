@@ -2,12 +2,12 @@ package chrome;
 
 typedef TemplateType = Dynamic;
 
-typedef NotificationButton = {
+typedef NotificationItem = {
 	var title : String;
 	var message : String;
 }
 
-typedef NotificationItem = {
+typedef NotificationButton = {
 	title : String,
 	?iconUrl : String
 }
@@ -21,7 +21,6 @@ typedef NotificationOptions = {
 	?eventTime : Float,
 	?secondIconUrl : String,
 	?buttons : Array<NotificationButton>,
-	?expandedMessage : String,
 	?expandedMessage : String,
 	?imageUrl : String,
 	?items : Array<NotificationItem>
