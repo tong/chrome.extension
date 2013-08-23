@@ -2,9 +2,9 @@
 	"name": "chrome-extension",
 	"url": "https://github.com/tong/chrome.extension",
 	"license": "Public",
-	"tags": ["javascript","chrome","google","extension","web"],
+	"tags": ["javascript","js","chrome","chromium","google","extension","web","ext","browser","theme"],
 	"description": "Type definitions for the google-chrome extension API",
-	"version": "1.25.1",
-	"releasenote": "API updates (25)",
-	"contributors": ["tong"],
+	"version": "1.28",
+	"releasenote": "API updates (28)",
+	"contributors": ["tong"]
 }
