@@ -7,11 +7,13 @@ typedef ManifestDetails = {
 	?permissions : Array<String>
 }
 
+/*
 @:fakeEnum(String) enum RequestUpdateCheck {
 	throttled;
 	no_update;
 	update_available;
 }
+*/
 
 @:native("chrome.runtime") extern class Runtime {
 	
@@ -34,7 +36,8 @@ typedef ManifestDetails = {
 	static function reload() : Void;
 
 	/** Requests an update check for this app/extension */
-	static function requestUpdateCheck( f : RequestUpdateCheck->Dynamic->Void ) : Void;
+	static function requestUpdateCheck( f : String->Dynamic->Void ) : Void;
+	//static function requestUpdateCheck( f : RequestUpdateCheck->Dynamic->Void ) : Void;
 
 	/** Attempts to connect to other listeners within the extension/app */
 	static function connect( ?extensionId : String, ?connectInfo : Dynamic ) : Port;

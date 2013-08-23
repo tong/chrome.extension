@@ -26,7 +26,7 @@ typedef NotificationOptions = {
 	?items : Array<NotificationItem>
 }
 
-@:native("notifications") extern class Notifications {
+@:native("chrome.notifications") extern class Notifications {
 	static function create( notificationId : String, options : NotificationOptions, f : String->Void ) : Void;
 	static function update( notificationId : String, options : NotificationOptions, f : String->Void ) : Void;
 	static function clear( notificationId : String, f : String->Void ) : Void;

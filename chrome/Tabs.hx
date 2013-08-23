@@ -1,5 +1,6 @@
 package chrome;
 
+/*
 @:fakeEnum(String) enum CaptureFormat {
 	jpeg;
 	png;
@@ -9,6 +10,7 @@ package chrome;
 	loading;
 	complete;
 }
+*/
 
 typedef RemoveInfo = {
 	isWindowClosing : Bool
@@ -20,11 +22,13 @@ typedef UpdateInfo = {
 	?pinned : Bool
 }
 
+/*
 @:fakeEnum(String) enum RunAt {
 	document_start;
 	document_end;
 	document_idle;
 }
+*/
 
 /**
  * http://code.google.com/chrome/extensions/tabs.html
@@ -34,7 +38,7 @@ typedef UpdateInfo = {
 	static function captureVisibleTab(
 		?windowId : Int,
 		?options : {
-			?format : CaptureFormat,
+			?format : String, //CaptureFormat,
 			?quality : Int
 		},
 		cb : String->Void
@@ -65,7 +69,7 @@ typedef UpdateInfo = {
 			?code : String,
 			?file : String,
 			?allFrames : String,
-			?runAt : RunAt
+			?runAt : String //RunAt
 		},
 		?cb : Void->Void
 	) : Void;
@@ -91,7 +95,7 @@ typedef UpdateInfo = {
 			?code : String,
 			?file : String,
 			?allFrames : Bool,
-			?runAt : RunAt
+			?runAt : String //RunAt
 		},
 		?cb : Void->Void
 	) : Void;
@@ -120,7 +124,7 @@ typedef UpdateInfo = {
 			?highlighted : Bool,
 			?currentWindow : Bool,
 			?lastFocusedWindow : Bool,
-			?status : QueryStatus,
+			?status : String, // QueryStatus,
 			?title : String,
 			?url : String,
 			?windowId : Int,
