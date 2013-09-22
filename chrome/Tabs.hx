@@ -13,13 +13,13 @@ package chrome;
 */
 
 typedef RemoveInfo = {
-	isWindowClosing : Bool
+	var isWindowClosing : Bool;
 }
 
 typedef UpdateInfo = {
-	?status : String,
-	?url : String,
-	?pinned : Bool
+	@:optional var status : String;
+	@:optional var url : String;
+	@:optional var pinned : Bool;
 }
 
 /*

@@ -1,8 +1,8 @@
 package chrome;
 
 typedef StorageChange = {
-	?oldValue : Dynamic,
-	?newValue : Dynamic
+	@:optional var oldValue : Dynamic;
+	@:optional var newValue : Dynamic;
 }
 
 typedef StorageArea = {

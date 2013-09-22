@@ -1,10 +1,10 @@
 package chrome;
 
 typedef ProxyRules = {
-	?singleProxy : ProxyServer,
-	?proxyForHttp : ProxyServer,
-	?proxyForHttps : ProxyServer,
-	?proxyForFtp : ProxyServer,
-	?fallbackProxy : ProxyServer,
-	?bypassList : Array<String>
+	@:optional var singleProxy : ProxyServer;
+	@:optional var proxyForHttp : ProxyServer;
+	@:optional var proxyForHttps : ProxyServer;
+	@:optional var proxyForFtp : ProxyServer;
+	@:optional var fallbackProxy : ProxyServer;
+	@:optional var bypassList : Array<String>;
 }

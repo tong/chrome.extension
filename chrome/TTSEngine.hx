@@ -3,12 +3,12 @@ package chrome;
 import chrome.TTS;
 
 typedef TTSEngineListenerOptions = {
-	?voiceName : String,
-	?lang : String,
-	?gender : TtsGender,
-	?rate : Float,
-	?pitch : Float,
-	?volume : Float,
+	@:optional var voiceName : String;
+	@:optional var lang : String;
+	@:optional var gender : TtsGender;
+	@:optional var rate : Float;
+	@:optional var pitch : Float;
+	@:optional var volume : Float;
 }
 
 /**

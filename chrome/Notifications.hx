@@ -8,22 +8,22 @@ typedef NotificationItem = {
 }
 
 typedef NotificationButton = {
-	title : String,
-	?iconUrl : String
+	var title : String;
+	@:optional var iconUrl : String;
 }
 
 typedef NotificationOptions = {
-	type : TemplateType,
-	iconUrl : String,
-	title : String,
-	message : String,
-	?priority : Int,
-	?eventTime : Float,
-	?secondIconUrl : String,
-	?buttons : Array<NotificationButton>,
-	?expandedMessage : String,
-	?imageUrl : String,
-	?items : Array<NotificationItem>
+	var type : TemplateType;
+	var iconUrl : String;
+	var title : String;
+	var message : String;
+	@:optional var priority : Int;
+	@:optional var eventTime : Float;
+	@:optional var secondIconUrl : String;
+	@:optional var buttons : Array<NotificationButton>;
+	@:optional var expandedMessage : String;
+	@:optional var imageUrl : String;
+	@:optional var items : Array<NotificationItem>;
 }
 
 @:native("chrome.notifications") extern class Notifications {

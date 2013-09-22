@@ -1,28 +1,30 @@
 package chrome;
 
+private typedef OriginTypes = {
+	@:optional var unprotectedWeb : Bool;
+	@:optional var protectedWeb : Bool;
+	@:optional var extension : Bool;
+}
+
 typedef RemovalOptions = {
-	?since : Float,
-	originTypes : {
-		?unprotectedWeb : Bool,
-		?protectedWeb : Bool,
-		?extension : Bool
-	}
+	@:optional var since : Float;
+	var originTypes : OriginTypes;
 }
 
 typedef DataToRemove = {
-	?appcache : Bool,
-	?cache : Bool,
-	?cookies : Bool,
-	?downloads : Bool,
-	?fileSystems : Bool,
-	?formData : Bool,
-	?history : Bool,
-	?indexedDB : Bool,
-	?localStorage : Bool,
-	?serverBoundCertificates : Bool,
-	?pluginData : Bool,
-	?passwords : Bool,
-	?webSQL : Bool
+	@:optional var appcache : Bool;
+	@:optional var cache : Bool;
+	@:optional var cookies : Bool;
+	@:optional var downloads : Bool;
+	@:optional var fileSystems : Bool;
+	@:optional var formData : Bool;
+	@:optional var history : Bool;
+	@:optional var indexedDB : Bool;
+	@:optional var localStorage : Bool;
+	@:optional var serverBoundCertificates : Bool;
+	@:optional var pluginData : Bool;
+	@:optional var passwords : Bool;
+	@:optional var webSQL : Bool;
 }
 
 @:native("chrome.browsingData") extern class BrowsingData {

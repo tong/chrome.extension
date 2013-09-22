@@ -6,11 +6,11 @@ package chrome;
 }
 
 typedef TtsVoice = {
-	?voiceName : String,
-	?lang : String,
-	?gender : TtsGender,
-	?extensionId : String,
-	?eventTypes : Array<String>,
+	@:optional var voiceName : String;
+	@:optional var lang : String;
+	@:optional var gender : TtsGender;
+	@:optional var extensionId : String;
+	@:optional var eventTypes : Array<String>;
 }
 
 @:fakeEnum(String) enum TtsEventType {
@@ -25,16 +25,15 @@ typedef TtsVoice = {
 }
 
 typedef TtsEvent = {
-	type : TtsEventType,
-	?charIndex : Float,
-	?errorMessage : String	
+	var type : TtsEventType;
+	@:optional var charIndex : Float;
+	@:optional var errorMessage : String;	
 }
 
 /**
  * http://code.google.com/chrome/extensions/tts.html
  */
 @:native("chrome.tts") extern class TTS {
-	
 	static function getVoices( ?cb : Array<TtsVoice>->Void ) : Void;
 	static function isSpeaking( ?cb : Bool->Void ) : Void;
 	static function speak(
@@ -55,7 +54,6 @@ typedef TtsEvent = {
 		?cb : Void->Void
 	) : Void;
 	static function stop() : Void;
-	
 	static var onSpeak : Event<String->Dynamic->(Void->Void)->Void>;
 	static var onStop : Event<Void->Void>;
 }

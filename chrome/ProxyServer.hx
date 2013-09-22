@@ -8,7 +8,7 @@ package chrome;
 }
 
 typedef ProxyServer = {
-	scheme : Scheme,
-	host : String,
-	?port : Int
+	@:optional var scheme : Scheme;
+	var host : String;
+	@:optional var port : Int;
 }

@@ -1,10 +1,10 @@
 package chrome;
 
 typedef ManifestDetails = {
-	version : String,
-	name : String,
-	?manifest_version : Int,
-	?permissions : Array<String>
+	var version : String;
+	var name : String;
+	@:optional var manifest_version : Int;
+	@:optional var permissions : Array<String>;
 }
 
 /*

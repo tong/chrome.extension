@@ -6,10 +6,8 @@ package chrome;
 	http://code.google.com/chrome/extensions/extension.html
 */
 @:native("chrome.extension") extern class Extension {
-	
 	static var lastError : { message : String };
 	static var inIncognitoContext : Bool;
-	
 	static function connect( ?extensionId : String, ?connectInfo : { name : String } ) : Port;
 	static function getBackgroundPage() : Dynamic; //js.Window; // DOMWindow
 	static function getURL( path : String ) : String;
@@ -19,7 +17,6 @@ package chrome;
 	static function isAllowedIncognitoAccess( cb : Bool->Void ) : Void;
 	@:overload(function( ?extensionId : String, request : Dynamic, ?responseCallback : Dynamic->Void ) : Void {} )
 	static function sendMessage( request : Dynamic, ?responseCallback : Dynamic->Void ) : Void;
-
 	static var onConnect(default,null) : chrome.Event<Port->Void>;
 	static var onConnectExternal(default,null) : chrome.Event<Port->Void>;
 	static var onMessage(default,null) : chrome.Event<Dynamic->MessageSender->Void>;

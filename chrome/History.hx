@@ -32,7 +32,6 @@ typedef VisitItem = {
 }
 
 @:native("chrome.history") extern class History {
-	
 	static function addUrl( details : { url : String } ) : Void;
 	static function deleteAll( cb : Void->Void ) : Void;
 	static function deleteRange( range : { startTime : Float, endTime : Float }, cb : Void->Void ) : Void;
@@ -47,8 +46,6 @@ typedef VisitItem = {
 		},
 		cb : Array<HistoryItem>->Void
 	) : Void;
-	
 	static var onVisitRemoved(default,null) : Event<Dynamic->Void>;
 	static var onVisited(default,null) : Event<HistoryItem->Void>;
-	
 }

@@ -1,9 +1,9 @@
 package chrome;
 
 typedef Command = {
-	?name : String,
-	?description : String,
-	?shortcut : String
+	@:optional var name : String;
+	@:optional var description : String;
+	@:optional var shortcut : String;
 }
 
 @:native("chrome.commands") extern class Commands {
