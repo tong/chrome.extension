@@ -1,0 +1,4 @@
+-js api.js
+-xml haxedoc.xml
+--no-output
+--macro include('chrome')
