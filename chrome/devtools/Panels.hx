@@ -28,8 +28,9 @@ private typedef Button = {
 	var onShown(default,null) : Event<Void->Void>;
 }
 
-@:native("chrome.devtools.panels") extern class Panels {
+@:native("chrome.devtools.panels")
+extern class Panels {
 	static var elements : ElementsPanel;
-	static function create( title : String, iconPath : String, pagePath : String, ?cb : ExtensionPanel->Void ) : Void;
-	static function setOpenResourceHandler( ?cb : Resource->Void ) : Void;
+	static function create( title : String, iconPath : String, pagePath : String, ?f : ExtensionPanel->Void ) : Void;
+	static function setOpenResourceHandler( ?f : Resource->Void ) : Void;
 }

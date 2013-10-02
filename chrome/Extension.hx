@@ -1,11 +1,9 @@
 package chrome;
 
-//import js.Dom;
+//TODO update api
 
-/**
-	http://code.google.com/chrome/extensions/extension.html
-*/
-@:native("chrome.extension") extern class Extension {
+@:native("chrome.extension")
+extern class Extension {
 	static var lastError : { message : String };
 	static var inIncognitoContext : Bool;
 	static function connect( ?extensionId : String, ?connectInfo : { name : String } ) : Port;

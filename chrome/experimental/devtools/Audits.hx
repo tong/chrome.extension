@@ -1,15 +1,7 @@
 package chrome.experimental.devtools;
 
-@:fakeEnum(String)
-enum Severity{
-	Tip;
-	Debug;
-	Log;
-	Warning;
-	Error;
-}
-
 typedef FormattedValue = Dynamic;
+typedef AuditResultNode = Dynamic;
 
 @:fakeEnum(String)
 enum AuditResultSeverity{

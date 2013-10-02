@@ -1,14 +1,5 @@
 package chrome.experimental.devtools;
 
-@:fakeEnum(String)
-enum Severity{
-	Tip;
-	Debug;
-	Log;
-	Warning;
-	Error;
-}
-
 typedef ConsoleMessage = {
 	var severity : Severity;
 	var text : String;
