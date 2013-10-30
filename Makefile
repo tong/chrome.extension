@@ -7,7 +7,7 @@ haxedoc.xml:
 	haxe haxedoc.hxml
 
 chrome-extension.zip: haxedoc.xml
-	zip -r $@ chrome/ extraParameters.hxml haxedoc.xml haxelib.json README.md
+	zip -r $@ chrome/ extraParameters.hxml haxedoc.hxml haxelib.json README.md
 
 install: chrome-extension.zip
 	haxelib install chrome-extension.zip
