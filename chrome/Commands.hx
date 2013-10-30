@@ -6,7 +6,8 @@ typedef Command = {
 	@:optional var shortcut : String;
 }
 
-@:native("chrome.commands") extern class Commands {
+@:native("chrome.commands")
+extern class Commands {
 	static function getAll( ?cb : Array<Command>->Void ) : Void;
 	static var onCommand(default,null) : Event<String->Void>;
 }

@@ -1,11 +1,13 @@
 package chrome.devtools;
 
 private typedef Request = {
-	function getContent( cb : String->String->Void ) : Void;	
+	function getContent( f : String->String->Void ) : Void;	
 }
 
-@:native("chrome.devtools.network") extern class Network {
-	static function getHAR( cb : Dynamic->Void ) : Void; // HAR specs: http://www.softwareishard.com/blog/har-12-spec/
+@:native("chrome.devtools.network")
+extern class Network {
+	// HAR specs: http://www.softwareishard.com/blog/har-12-spec/
+	static function getHAR( f : Dynamic->Void ) : Void;
 	static var onNavigated(default,null) : Event<String->Void>;
 	static var onRequestFinished(default,null) : Event<Request->Void>;
 }

@@ -12,6 +12,7 @@ package chrome;
 }
 */
 
+/*
 typedef RemoveInfo = {
 	var isWindowClosing : Bool;
 }
@@ -21,6 +22,7 @@ typedef UpdateInfo = {
 	@:optional var url : String;
 	@:optional var pinned : Bool;
 }
+*/
 
 /*
 @:fakeEnum(String) enum RunAt {
@@ -33,8 +35,10 @@ typedef UpdateInfo = {
 /**
  * http://code.google.com/chrome/extensions/tabs.html
  */
-@:native("chrome.tabs") extern class Tabs {
+@:native("chrome.tabs")
+extern class Tabs {
 	
+	/*
 	static function captureVisibleTab(
 		?windowId : Int,
 		?options : {
@@ -170,4 +174,5 @@ typedef UpdateInfo = {
 	static var onMoved(default,null) : Event<Int->(Int->Int->Int)->Void>;
 	static var onRemoved(default,null) : Event<Int->RemoveInfo->Void>;
 	static var onUpdated(default,null) : Event<Int->UpdateInfo->Tab->Void>;
+	*/
 }
