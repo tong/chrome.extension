@@ -1,14 +1,19 @@
 package chrome;
 
 typedef Tab = {
-	var id : Int;
+	@:optional var id : Int;
 	var index : Int;
 	var windowId : Int;
-	var selected : Bool;
+	@:optional var openerTabId : Int;
+	var highlighted : Bool;
+	var active : Bool;
 	var pinned : Bool;
-	var url : String;
-	var title : String;
-	var favIconUrl : String;
-	var status : String;
+	@:optional var url : String;
+	@:optional var title : String;
+	@:optional var favIconUrl : String;
+	@:optional var status : String;
 	var incognito : Bool;
+	@:optional var width : Int;
+	@:optional var height : Int;
+	@:optional var sessionId : String;
 }
