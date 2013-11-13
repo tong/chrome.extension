@@ -1,14 +1,12 @@
 package chrome;
 
 typedef PermissionsData = {
-	var permissions : Array<String>;
+	@:optional var permissions : Array<String>;
 	@:optional var origins : Array<String>;
 }
 
-/**
- * http://code.google.com/chrome/extensions/permissions.html
- */
-@:native("chrome.permissions") extern class Permissions {
+@:native("chrome.permissions")
+extern class Permissions {
 	static function contains( permissions : PermissionsData, cb : Bool->Void ) : Void;
 	static function getAll( permissions : PermissionsData ) : Void;
 	static function remove( permissions : PermissionsData, ?cb : Bool->Void ) : Void;

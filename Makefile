@@ -19,3 +19,4 @@ clean:
 	rm -f chrome-extension.zip haxedoc.xml
 
 .PHONY: install uninstall clean
+	
