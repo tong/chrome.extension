@@ -5,6 +5,8 @@ typedef MostVisitedURL = {
 	var title : String;	
 }
 
-@:native("chrome.topSites") extern class TopSites {
+@:require(chrome_ext)
+@:native("chrome.topSites")
+extern class TopSites {
 	static function get( cb : Array<MostVisitedURL>->Void ) : Void;
 }

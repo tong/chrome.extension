@@ -14,7 +14,9 @@ private typedef InputContext = {
 	var type(default,null) : Int; // enumerated string ["text", "number", "password"]
 }
 
-@:native("chrome.input.ime") extern class Ime {
+@:require(chrome)
+@:native("chrome.input.ime")
+extern class Ime {
 
 	static function clearComposition( parameters : { contextID : Int }, ?cb : Bool->Void ) : Void;
 	

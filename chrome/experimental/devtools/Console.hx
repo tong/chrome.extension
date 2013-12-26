@@ -7,6 +7,8 @@ typedef ConsoleMessage = {
 	@:optional var line : Float;
 }
 
+@:require(chrome_ext)
+@:require(chrome_experimental)
 @:native("chrome.experimental.devtools.console")
 extern class Console {
 	static function addMessage( severity : Severity, text : String ) : Void;

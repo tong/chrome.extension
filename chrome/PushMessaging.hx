@@ -9,8 +9,9 @@ typedef ChannelIdResult = {
 	var channelId : Int;
 }
 
+@:require(chrome_ext)
 @:native("chrome.pushMessaging")
 extern class PushMessaging {
 	static function getChannelId( ?interactive : Bool, cb : ChannelIdResult->Void ) : Void;
-	static var onMessage(default,null) : Event<Message>;
+	static var onMessage(default,null) : Event<Message->Void>;
 }

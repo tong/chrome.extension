@@ -1,12 +1,13 @@
 package chrome;
 
-@:fakeEnum(String)
-private enum Level {
+@:fakeEnum(String) private enum Level {
 	system;
 	display;
 }
 
-@:native("chrome.power") extern class Power {
+@:require(chrome)
+@:native("chrome.power")
+extern class Power {
 
 	/** Requests that power management be temporarily disabled */
 	static function requestKeepAwake( level : Level ) : Void;

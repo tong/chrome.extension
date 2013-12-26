@@ -8,7 +8,9 @@ private typedef ProxyError = {
 	var details : String;
 }
 
-@:native("chrome.proxy") extern class Proxy {
+@:require(chrome_ext)
+@:native("chrome.proxy")
+extern class Proxy {
 	static var settings : ChromeSetting;
 	static var onProxyError(default,never) : Event<ProxyError->Void>;
 }

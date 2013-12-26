@@ -15,7 +15,9 @@ typedef ManifestDetails = {
 }
 */
 
-@:native("chrome.runtime") extern class Runtime {
+@:require(chrome_ext)
+@:native("chrome.runtime")
+extern class Runtime {
 	
 	/***/
 	static var lastError(default,null) : { ?message : String };

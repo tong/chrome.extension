@@ -19,10 +19,9 @@ private typedef Websites = {
 	var protectedContentEnabled : ChromeSetting;
 }
 
-/**
- * http://code.google.com/chrome/extensions/privacy.html
- */
-@:native("chrome.privacy") extern class Privacy {
+@:require(chrome_ext)
+@:native("chrome.privacy")
+extern class Privacy {
 	static var network(default,never) : { networkPredictionEnabled : ChromeSetting };
 	static var services(default,never) : Services;
 	static var websites(default,never) : Websites;

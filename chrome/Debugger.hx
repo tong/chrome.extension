@@ -4,6 +4,7 @@ typedef Debuggee = {
 	var tabId : Int;
 }
 
+@:require(chrome_ext)
 @:native("chrome.debugger")
 extern class Debugger {
 	static function attach( target : Debuggee, requiredVersion : String, ?cb : Void->Void ) : Void;

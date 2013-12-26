@@ -19,7 +19,9 @@ private enum State {
 	complete;
 }
 
-@:native("chrome.downloads") extern class Downloads {
+@:require(chrome_ext)
+@:native("chrome.downloads")
+extern class Downloads {
 	static function download( options : Dynamic, ?f : Int->Void ) : Void;
 	static function search( query : Dynamic, f : Array<Dynamic>->Void ) : Void;
 	static function pause( downloadId : Int, ?f : Void->Void ) : Void;

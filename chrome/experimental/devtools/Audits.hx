@@ -26,6 +26,8 @@ typedef AuditCategory = {
 	var onAuditStarted : chrome.Event<AuditResults>;
 }
 
+@:require(chrome_ext)
+@:require(chrome_experimental)
 @:native("chrome.experimental.devtools.audits")
 extern class Audits {
 	static function addCategory( displayName : String, resultCount : Float ) : AuditCategory;

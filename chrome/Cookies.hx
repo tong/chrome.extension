@@ -32,7 +32,9 @@ typedef CookieChangeInfo = {
 	var cause : CookieChangeInfoCause;
 }
 
-@:native("chrome.cookies") extern class Cookies {
+@:require(chrome_ext)
+@:native("chrome.cookies")
+extern class Cookies {
 	
 	static function get(
 		details : {

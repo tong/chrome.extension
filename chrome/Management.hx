@@ -47,10 +47,9 @@ typedef ExtensionInfo = {
 	var installType : ExtensionInstallType;
 }
 
-/**
-	http://code.google.com/chrome/extensions/management.html
-*/
-@:native("chrome.management") extern class Management {
+@:require(chrome_ext)
+@:native("chrome.management")
+extern class Management {
 	static function get( id : String, ?cb : ExtensionInfo->Void ) : Void;
 	static function getAll( ?cb : ExtensionInfo->Void ) : Void;
 	static function getPermissionWarningsById( id : String, ?cb : Array<String>->Void ) : Void;

@@ -2,13 +2,13 @@ package chrome;
 
 typedef FileHandlerExecuteEventDetails = {
 	var entries : Array<Dynamic>;
-	var tab_id : Null<Int>;
+	@:optional var tab_id : Null<Int>;
 }
 
-/**
-	This API works only on Chrome OS
-	http://code.google.com/chrome/extensions/fileBrowserHandler.html
-*/
-@:native("chrome.fileBrowserHandler") extern class FileBrowserHandler {
+@:require(chrome)
+@:require(chrome_os)
+@:native("chrome.fileBrowserHandler")
+extern class FileBrowserHandler {
+	static function selectFile( selectionParams : {suggestedName:String,?allowedFileExtensions:Array<String>}, f : {success:Bool,?entry:Dynamic}->Void ) : Void;
 	static var onExecute(default,never) : Event<String->FileHandlerExecuteEventDetails->Void>;
 }

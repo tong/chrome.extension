@@ -1,5 +1,6 @@
 package chrome;
 
+@:require(chrome_ext)
 typedef Tab = {
 	@:optional var id : Int;
 	var index : Int;

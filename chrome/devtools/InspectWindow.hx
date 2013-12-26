@@ -1,6 +1,8 @@
 package chrome.devtools;
 
-@:native("chrome.devtools.inspectWindow") extern class InspectWindow {
+@:require(chrome_ext)
+@:native("chrome.devtools.inspectWindow")
+extern class InspectWindow {
 	static var tabId : Int;
 	static function eval( expression : String, ?cb : Dynamic->Bool->Void ) : Void;
 	static function getResources( cb : Array<Resource>->Void ) : Void;

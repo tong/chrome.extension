@@ -4,6 +4,7 @@ private typedef Request = {
 	function getContent( f : String->String->Void ) : Void;	
 }
 
+@:require(chrome_ext)
 @:native("chrome.devtools.network")
 extern class Network {
 	// HAR specs: http://www.softwareishard.com/blog/har-12-spec/

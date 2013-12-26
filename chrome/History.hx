@@ -31,12 +31,9 @@ typedef VisitItem = {
 	var transition : Transition;
 }
 
-@:native("chrome.history") extern class History {
-	static function addUrl( details : { url : String } ) : Void;
-	static function deleteAll( cb : Void->Void ) : Void;
-	static function deleteRange( range : { startTime : Float, endTime : Float }, cb : Void->Void ) : Void;
-	static function deleteUrl( details : { url : String } )  : Void;
-	static function getVisits( details : { url : String }, cb : Array<VisitItem>->Void ) : Void;
+@:require(chrome_ext)
+@:native("chrome.history")
+extern class History {
 	static function search(
 		details : {
 			text : String,
@@ -46,6 +43,11 @@ typedef VisitItem = {
 		},
 		cb : Array<HistoryItem>->Void
 	) : Void;
+	static function getVisits( details : { url : String }, cb : Array<VisitItem>->Void ) : Void;
+	static function addUrl( details : { url : String } ) : Void;
+	static function deleteUrl( details : { url : String } )  : Void;
+	static function deleteRange( range : { startTime : Float, endTime : Float }, cb : Void->Void ) : Void;
+	static function deleteAll( cb : Void->Void ) : Void;
 	static var onVisitRemoved(default,null) : Event<Dynamic->Void>;
 	static var onVisited(default,null) : Event<HistoryItem->Void>;
 }

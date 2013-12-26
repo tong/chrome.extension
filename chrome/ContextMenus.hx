@@ -12,22 +12,9 @@ typedef OnClickData = {
 	var editable : String;
 }
 
-/*
-@:fakeEnum(String) private enum Context {
-	 all;
-	 page;
-	 frame;
-	 selection;
-	 link;
-	 editable;
-	 image;
-	 video;
-	 audio;
-	 launcher;
-}
-*/
-
-@:native("chrome.contextMenus") extern class ContextMenus {
+@:require(chrome_ext)
+@:native("chrome.contextMenus")
+extern class ContextMenus {
 	
 	static function create( 
 		createProperties : {

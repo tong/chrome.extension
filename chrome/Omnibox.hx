@@ -9,7 +9,9 @@ private typedef Suggestion = {
 	var description : String;
 }
 
-@:native("chrome.omnibox") extern class Omnibox {
+@:require(chrome_ext)
+@:native("chrome.omnibox")
+extern class Omnibox {
 	static function setDefaultSuggestion( suggestion : Suggestion ) : Void;
 	static var onInputCancelled(default,never) : Event<Void->Void>;
 	static var onInputChanged(default,never) : Event<String->(Array<SuggestResult>->Void)->Void>;

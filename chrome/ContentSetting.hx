@@ -5,9 +5,7 @@ typedef ResourceIdentifier = {
 	var description : Null<String>;
 }
 
-/**
-	http://code.google.com/chrome/extensions/contentSettings.html
-*/
+@:require(chrome_ext)
 typedef ContentSetting = {
 	
 	function clear(

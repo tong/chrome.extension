@@ -85,6 +85,7 @@ private typedef ActivatedInfo = {
 	var windowId : Int;
 }
 
+@:require(chrome_ext)
 @:native("chrome.tabs")
 extern class Tabs {
 	static function get( tabId : Int, f : Tab->Void ) : Void;

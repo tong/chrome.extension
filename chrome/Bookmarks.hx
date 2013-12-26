@@ -47,11 +47,9 @@ private typedef BookmarkRemoveInfo = {
 	var index : Int;
 }
 
-/**
-	http://code.google.com/chrome/extensions/bookmarks.html
- */
-@:native("chrome.bookmarks") extern class Bookmarks {
-
+@:require(chrome)
+@:native("chrome.bookmarks")
+extern class Bookmarks {
 	static function create( bookmark : Bookmark, ?cb : BookmarkTreeNode->Void ) : Void;	
 	@:overload(function( ?idList:Array<String>, cb:Array<BookmarkTreeNode>->Void ) : Void {} )
 	static function get( id : String, cb : Array<BookmarkTreeNode>->Void ) : Void;	
@@ -63,7 +61,6 @@ private typedef BookmarkRemoveInfo = {
 	static function remove( id : String, ?cb : Void->Void ) : Void;
 	static function search( query : String, cb : Array<BookmarkTreeNode>->Void ) : Void;
 	static function update( id : String, changes : BookmarkChanges, ?cb : Array<BookmarkTreeNode>->Void ) : Void;
-	
 	static var onChanged(default,null) : Event<String->BookmarkChangeInfo->Void>;
 	static var onChildrenReordered(default,null) : Event<String->BookmarkReorderInfo->Void>;
 	static var onCreated(default,null) : Event<String->BookmarkTreeNode->Void>;

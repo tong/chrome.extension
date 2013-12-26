@@ -6,10 +6,9 @@ package chrome;
 	maximized;
 }
 
-/**
- * http://code.google.com/chrome/extensions/windows.html
- */
-@:native("chrome.windows") extern class Windows {
+@:require(chrome_ext)
+@:native("chrome.windows")
+extern class Windows {
 	
 	static var WINDOW_ID_NONE(default,never) : Int;
 	static var WINDOW_ID_CURRENT(default,never) : Int;
@@ -26,25 +25,25 @@ package chrome;
 			?incognito : Bool,
 			?type : WindowType,
 		},
-		?cb : Window->Void
+		?f : Window->Void
 	) : Void;
 	
 	static function get(
 		windowId : Int,
 		?getInfo : { ?populate : Bool },
-		cb : Window->Void
+		f : Window->Void
 	) : Void;
 	
 	static function getAll(
 		?getInfo : { ?populate : Bool },
-		cb : Array<Window>->Void
+		f : Array<Window>->Void
 	) : Void;
 	
-	static function getCurrent( ?getInfo : { ?populate : Bool }, cb : Window->Void ) : Void;
+	static function getCurrent( ?getInfo : { ?populate : Bool }, f : Window->Void ) : Void;
 	
-	static function getLastFocused( ?getInfo : { ?populate : Bool }, cb : Window->Void ) : Void;
+	static function getLastFocused( ?getInfo : { ?populate : Bool }, f : Window->Void ) : Void;
 	
-	static function remove( windowId : Int, ?cb : Void->Void ) : Void;
+	static function remove( windowId : Int, ?f : Void->Void ) : Void;
 	
 	static function update(
 		windowId : Int,
@@ -57,7 +56,7 @@ package chrome;
 			?drawAttention : Bool,
 			?state : WindowState
 		},
-		?cb : Window->Void
+		?f : Window->Void
 	) : Void;
 	
 	static var onCreated(default,null) : Event<Window->Void>;

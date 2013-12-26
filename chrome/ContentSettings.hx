@@ -1,9 +1,8 @@
 package chrome;
 
-/**
-	http://code.google.com/chrome/extensions/contentSettings.html
-*/
-@:native("chrome.contentSettings") extern class ContentSettings {
+@:require(chrome_ext)
+@:native("chrome.contentSettings")
+extern class ContentSettings {
 	static var cookies(default,never) : ContentSetting;
 	static var images(default,never) : ContentSetting;
 	static var javascript(default,never) : ContentSetting;

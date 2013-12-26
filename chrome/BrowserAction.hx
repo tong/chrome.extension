@@ -1,9 +1,8 @@
 package chrome;
 
-/**
-	http://code.google.com/chrome/extensions/browserAction.html
-*/
-@:native("chrome.browserAction") extern class BrowserAction {
+@:require(chrome)
+@:native("chrome.browserAction")
+extern class BrowserAction {
 	
 	static function setTitle( details : { title : String, ?tabId : Int } ) : Void;
 	static function getTitle( details : { ?tabId : Int  }, cb : String->Void ) : Void;

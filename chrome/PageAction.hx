@@ -1,9 +1,8 @@
 package chrome;
 
-/**
-	http://code.google.com/chrome/extensions/pageAction.html
-*/
-@:native("chrome.pageAction") extern class PageAction {
+@:require(chrome_ext)
+@:native("chrome.pageAction")
+extern class PageAction {
 	
 	static function getPopup( details : { tabId : Int }, cb : String->Void ) : Void;
 	static function getTitle( details : { tabId : Int }, cb : String->Void ) : Void;

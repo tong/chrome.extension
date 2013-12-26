@@ -28,6 +28,7 @@ private typedef Button = {
 	var onShown(default,null) : Event<Void->Void>;
 }
 
+@:require(chrome_ext)
 @:native("chrome.devtools.panels")
 extern class Panels {
 	static var elements : ElementsPanel;

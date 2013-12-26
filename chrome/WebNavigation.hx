@@ -1,6 +1,5 @@
 package chrome;
 
-
 @:fakeEnum(String) enum TransitionType {
 	link;
 	typed;
@@ -88,7 +87,9 @@ private typedef OnReferenceFragmentUpdatedEventDetails = {
 	timeStamp : Float
 }
 
-@:native("chrome.webNavigation") extern class WebNavigation {
+@:require(chrome_ext)
+@:native("chrome.webNavigation")
+extern class WebNavigation {
 	
 	static function getAllFrames(
 		details : {

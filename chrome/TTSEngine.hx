@@ -11,10 +11,9 @@ typedef TTSEngineListenerOptions = {
 	@:optional var volume : Float;
 }
 
-/**
- * http://code.google.com/chrome/extensions/ttsEngine.html
- */
-@:native("chrome.ttsEngine") extern class TTSEngine {
+@:require(chrome_ext)
+@:native("chrome.ttsEngine")
+extern class TTSEngine {
 	static var onSpeak : Event<String->TTSEngineListenerOptions->(TtsEvent->Void)->Void>;
-	static var onStop : Event<Void->Void>;
+	static var onStop(default,never) : Event<Void->Void>;
 }
