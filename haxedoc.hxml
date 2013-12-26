@@ -2,3 +2,8 @@
 -xml haxedoc.xml
 --no-output
 --macro include('chrome')
+--macro include('chrome.app')
+--macro include('chrome.devtools')
+--macro include('chrome.input')
+--macro include('chrome.system')
+--macro include('chrome.types')

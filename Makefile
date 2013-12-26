@@ -3,6 +3,8 @@
 ## chrome-extension
 ##
 
+all: haxedoc.xml
+	
 haxedoc.xml:
 	haxe haxedoc.hxml
 
