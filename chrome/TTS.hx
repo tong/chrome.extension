@@ -33,8 +33,6 @@ typedef TtsEvent = {
 @:require(chrome_ext)
 @:native("chrome.tts")
 extern class TTS {
-	static function getVoices( ?f : Array<TtsVoice>->Void ) : Void;
-	static function isSpeaking( ?f : Bool->Void ) : Void;
 	static function speak(
 		utterance : String,
 		?options : {
@@ -53,6 +51,10 @@ extern class TTS {
 		?f : Void->Void
 	) : Void;
 	static function stop() : Void;
-	static var onSpeak(default,null) : Event<String->Dynamic->(Void->Void)->Void>;
-	static var onStop(default,null) : Event<Void->Void>;
+	static function pause() : Void;
+	static function resume() : Void;
+	static function isSpeaking( ?f : Bool->Void ) : Void;
+	static function getVoices( ?f : Array<TtsVoice>->Void ) : Void;
+	//static var onSpeak(default,null) : Event<String->Dynamic->(Void->Void)->Void>;
+	//static var onStop(default,null) : Event<Void->Void>;
 }
