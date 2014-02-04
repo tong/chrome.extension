@@ -1,34 +1,26 @@
 package chrome;
 
-/**
-*/
+/*
 class ExtensionHost {
 	
-	/** */
 	public dynamic function onMessage( t : String ) {}
 	
-	var port : chrome.Port;
+	var port : Port;
 	
-	/**
-	*/
 	public function new( ?onMessage : String->Void ) {
 		this.onMessage = onMessage;
 		chrome.Extension.onConnect.addListener( handleContentScriptConnect );
 	}
 	
-	/**
-	*/
 	public function send( t : String ) {
 		if( port == null )
 			throw 'chrome extension not connected';
 		port.postMessage( t );
 	}
 	
-	/*
 	public function dispose() {
 	//TODO
 	}
-	*/
 	
 	function handleContentScriptConnect( port : chrome.Port ) {
 		this.port = port;
@@ -41,3 +33,4 @@ class ExtensionHost {
 	}
 	
 }
+*/
