@@ -2,7 +2,8 @@ package chrome.sockets;
 
 import js.html.ArrayBuffer;
 
-typedef SocketProperties = {
+@:allow(chrome.sockets.TcpServer)
+private typedef SocketProperties = {
 	@:optional var persistent : Bool;
 	@:optional var name : String;
 	@:optional var bufferSize : Int;

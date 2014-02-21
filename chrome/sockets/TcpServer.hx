@@ -2,6 +2,25 @@ package chrome.sockets;
 
 import chrome.sockets.Tcp;
 
+private typedef SocketProperties = {
+	@:optional var persistent : Bool;
+	@:optional var name : String;
+	@:optional var bufferSize : Int;
+}
+
+private typedef SocketInfo = {
+	var socketId : Int;
+	var persistent : Bool;
+	@:optional var name : String;
+	@:optional var bufferSize : Int;
+	var paused : Bool;
+	var connected : Bool;
+	@:optional var localAddress : String;
+	@:optional var localPort : Int;
+	@:optional var peerAddress : String;
+	@:optional var peerPort : Int;
+}
+
 @:require(chrome)
 @:native('chrome.sockets.tcpServer')
 extern class TcpServer {
