@@ -2,9 +2,9 @@
 	"name": "chrome-extension",
 	"url": "https://github.com/tong/chrome.extension",
 	"license": "Public",
-	"tags": ["javascript","js","chrome","chromium","google","extension","web","browser","theme","omnibox","bookmarks","desktop","gcm","cookies","devtools","i18n"],
+	"tags": ["javascript","js","chrome","chromium","google","extension","web","browser","theme","omnibox","bookmarks","gcm","cookies","devtools","i18n","socket","tcp","udp"],
 	"description": "Google chrome extension type definitions",
-	"version": "1.31.1",
+	"version": "1.33.0",
 	"releasenote": "See CHANGES",
 	"contributors": ["tong"]
 }
