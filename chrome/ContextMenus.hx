@@ -28,15 +28,8 @@ extern class ContextMenus {
 			?targetUrlPatterns : Array<String>,
 			?enabled : Bool
 		},
-		?cb : Void->Void
+		?f : Void->Void
 	) : Int;
-	
-	static function remove(
-		menuItemId : Int,
-		?cb : Void->Void
-	) : Void;
-	
-	static function removeAll( ?cb : Void->Void ) : Void;
 	
 	static function update(
 		id : Int,
@@ -51,7 +44,14 @@ extern class ContextMenus {
 			?targetUrlPatterns : Array<String>,
 			?enabled : Bool
 		},
-		?cb : Void->Void
+		?f : Void->Void
 	) : Void;
+	
+	static function remove(
+		menuItemId : Int,
+		?f : Void->Void
+	) : Void;
+	
+	static function removeAll( ?f : Void->Void ) : Void;
 	
 }

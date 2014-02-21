@@ -1,9 +1,9 @@
 package chrome;
 
 typedef Alarm = {
-	@:optional var periodInMinutes : Float;
-	var scheduledTime : Float;
 	var name : String;
+	var scheduledTime : Float;
+	@:optional var periodInMinutes : Float;
 }
 
 typedef AlarmCreateInfo = {
@@ -15,9 +15,9 @@ typedef AlarmCreateInfo = {
 @:native("chrome.alarms")
 extern class Alarms {
 	static function create( ?name : String, alarmInfo : AlarmCreateInfo ) : Void;
-	static function getAll( cb : Array<Alarm>->Void ) : Void;
-	static function clearAll() : Void;
+	static function get( ?name : String, f : Alarm->Void ) : Void;
+	static function getAll( f : Array<Alarm>->Void ) : Void;
 	static function clear( ?name : String ) : Void;
-	static function get( ?name : String, cb : Alarm->Void ) : Void;
+	static function clearAll() : Void;
 	static var onAlarm(default,null) : Event<Alarm->Void>;
 }
