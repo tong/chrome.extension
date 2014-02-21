@@ -33,7 +33,7 @@ extern class Tcp {
 	static function disconnect( socketId : Int, ?f : Void->Void ) : Void;
 	static function send( socketId : Int, data : ArrayBuffer, f : {resultCode:Int,?bytesSent:Int}->Void ) : Void;
 	static function close( socketId : Int, ?f : Void->Void ) : Void;
-	static function getInfo( socketId : Int, ?f : SocketInfo->Void ) : Void;
+	static function getInfo( socketId : Int, f : SocketInfo->Void ) : Void;
 	static function getSockets( f : Array<SocketInfo>->Void ) : Void;
 	static var onReceive(default,null) : Event<{socketId:Int,data:ArrayBuffer}->Void>;
 	static var onReceiveError(default,null) : Event<{socketId:Int,resultCode:Int}->Void>;
