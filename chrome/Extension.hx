@@ -1,10 +1,10 @@
 package chrome;
 
-@:fakeEnum(String) enum FetchPropertyType {
-	tab;
-	infobar;
-	notification;
-	popup;
+@:enum abstract FetchPropertyType(String) {
+	var tab = "tab";
+	var infobar = "infobar";
+	var notification = "notification";
+	var popup = "popup";
 }
 
 @:require(chrome_ext)
@@ -16,7 +16,6 @@ extern class Extension {
 	static function getURL( path : String ) : String;
 	static function getViews( ?fetchProperties : { ?type : FetchPropertyType, ?windowId : Int } ) : Array<Window>; 
 	static function getBackgroundPage() : Window; 
-	static function getExtensionTabs() : Array<Window>; 
 	static function isAllowedIncognitoAccess( f : Bool->Void ) : Void;
 	static function isAllowedFileSchemeAccess( f : Bool->Void ) : Void;
 	static function setUpdateUrlData( data : String ) : Void;

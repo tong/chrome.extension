@@ -2,26 +2,25 @@ package chrome.devtools;
 
 import js.html.DOMWindow;
 
-private typedef ExtensionSidebarPane = {
-	function setExpression( expression : String, ?rootTitle : String, ?cb : Void->Void ) : Void;
-	function setHeight( height : String ) : Void;
-	function setObject( jsonObject : String, ?rootTitle : String, ?cb : Void->Void ) : Void;
-	function setPage( path : String ) : Void;
-	var onHidden(default,null) : Event<Void->Void>;
-	var onShown(default,null) : Event<DOMWindow->Void>;
-}
-
-private typedef ElementsPanel = {
-	function createSidebarPane( title : String, ?cb : ExtensionSidebarPane->Void ) : Void;
+typedef ElementsPanel = {
+	function createSidebarPane( title : String, ?f : ExtensionSidebarPane->Void ) : Void;
 	var onSelectionChanged(default,null) : Event<Void->Void>;
 }
 
-private typedef ExtensionPanel = {
+typedef ExtensionPanel = {
 	function createStatusBarButton( iconPath : String, tooltipText : String, disabled : Bool ) : Button;
 	var onHidden(default,null) : Event<Void->Void>;
 	var onSearch(default,null) : Event<String->String->Void>;
 	var onShown(default,null) : Event<DOMWindow->Void>;
 }
+
+typedef ExtensionSidebarPane = {
+	function setHeight( height : String ) : Button;
+	function setExpression( expression : String, ?rootTitle : String, ?f : Void->Void ) : Void;
+	function setObject( jsonObject : String, ?rootTitle : String, ?f : Void->Void ) : Void;
+	function setPage( path : String ) : Void;
+}
+
 
 private typedef Button = {
 	function update( ?iconPath : String, ?tooltipText : String, ?disabled : Bool ) : Void;

@@ -1,7 +1,7 @@
 package chrome;
 
 typedef PacScript = {
-	var url : String;
-	var data : String;
-	var mandatory : Bool;
+	@:optional var url : String;
+	@:optional var data : String;
+	@:optional var mandatory : Bool;
 }

@@ -1,6 +1,6 @@
 package chrome;
 
-private typedef OriginTypes = {
+typedef OriginTypes = {
 	@:optional var unprotectedWeb : Bool;
 	@:optional var protectedWeb : Bool;
 	@:optional var extension : Bool;
@@ -11,7 +11,7 @@ typedef RemovalOptions = {
 	var originTypes : OriginTypes;
 }
 
-typedef DataToRemove = {
+typedef DataTypeSet = {
 	@:optional var appcache : Bool;
 	@:optional var cache : Bool;
 	@:optional var cookies : Bool;
@@ -30,17 +30,18 @@ typedef DataToRemove = {
 @:require(chrome_ext)
 @:native("chrome.browsingData")
 extern class BrowsingData {
-	static function remove( options : RemovalOptions, dataToRemove : DataToRemove, ?cb : Void->Void ) : Void;
-	static function removeAppcache( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeCache( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeCookies( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeDownloads( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeFileSystems( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeFormData( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeHistory( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeIndexedDB( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeLocalStorage( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removePasswords( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removePluginData( options : RemovalOptions, ?cb : Void->Void ) : Void;
-	static function removeWebSQL( options : RemovalOptions, ?cb : Void->Void ) : Void;
+	static function settings( f : {options:RemovalOptions,dataToRemove:DataTypeSet,dataRemovalPermitted:DataTypeSet}->Void ) : Void;
+	static function remove( options : RemovalOptions, dataToRemove : DataTypeSet, ?f : Void->Void ) : Void;
+	static function removeAppcache( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeCache( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeCookies( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeDownloads( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeFileSystems( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeFormData( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeHistory( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeIndexedDB( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeLocalStorage( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removePluginData( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removePasswords( options : RemovalOptions, ?f : Void->Void ) : Void;
+	static function removeWebSQL( options : RemovalOptions, ?f : Void->Void ) : Void;
 }

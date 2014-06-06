@@ -1,6 +1,6 @@
 package chrome.types;
 
-@:require(chrome_ext)
+@:require(chrome)
 @:native("chrome.types.chromeSetting")
 extern class ChromeSetting {
 	function clear( details : Dynamic, ?cb : Void->Void ) : Void;

@@ -1,9 +1,9 @@
 package chrome.system;
 
-@:fakeEnum(String) enum StorageUnitType {
-	fixed;
-	removable;
-	unknown;
+@:enum abstract StorageUnitType(String) {
+	var fixed = "fixed";
+	var removable = "removable";
+	var unknown = "unknown";
 }
 
 typedef StorageUnitInfo = {
@@ -13,23 +13,19 @@ typedef StorageUnitInfo = {
 	var capacity : Float;
 }
 
-typedef StorageChangeInfo = {
-	var availableCapacity : Float;
-	var id : String;
-}
-
-@:fakeEnum(String) enum StorageEjectResult {
-	success;
-	in_use;
-	no_such_device;
-	failure;
+@:enum abstract StorageEjectResult(String) {
+	var success = "success";
+	var in_use = "in_use";
+	var no_such_device = "no_such_device";
+	var failure = "failure";
 }
 
 @:require(chrome)
 @:native('chrome.system.storage')
 extern class Storage {
-	static function getInfo( cb : Array<StorageUnitInfo>->Void ) : Void;
-	static function ejectDevice( id : String, cb : StorageEjectResult->Void ) : Void;
+	static function getInfo( f : Array<StorageUnitInfo>->Void ) : Void;
+	static function ejectDevice( id : String, f : StorageEjectResult->Void ) : Void;
+	static function getAvailableCapacity( id : String, f : {id:String,availableCapacity:Float}->Void ) : Void;
 	static var onAttached(default,null) : Event<StorageUnitInfo->Void>;
 	static var onDetached(default,null) : Event<String->Void>;
 }

@@ -1,57 +1,61 @@
 package chrome;
 
-typedef OnClickData = {
-	var menuItemId : Int;
-	@:optional var parentMenuItemId : Int;
-	@:optional var mediaType : String;
-	@:optional var linkUrl : String;
-	@:optional var srcUrl : String;
-	var pageUrl : String;
-	@:optional var frameUrl : String;
-	@:optional var selectionText : String;
-	var editable : String;
+@:enum abstract ContextMenuType(String) {
+	var normal = "normal";
+	var checkbox = "checkbox";
+	var radio = "radio";
+	var separator = "separator";
 }
 
-@:require(chrome_ext)
+@:enum abstract Contexts(String) {
+	var all = "all";
+	var page = "page";
+	var frame = "frame";
+	var selection = "selection";
+	var link = "link";
+	var editable = "editable";
+	var image = "image";
+	var video = "video";
+	var audio = "audio";
+	var launcher = "launcher";
+}
+
+typedef OnClickData = Dynamic; //TODO
+
+@:require(chrome)
 @:native("chrome.contextMenus")
 extern class ContextMenus {
 	
-	static function create( 
+	static function create(
 		createProperties : {
-			?type : String,
+			?type : ContextMenuType,
+			?id : String,
 			?title : String,
 			?checked : Bool,
-			?contexts : Array<String>,
-			?onclick : OnClickData->Tab->Void,
+			?contexts : Contexts,
+			?onclick : {info:OnClickData,tab:Tab}->Void,
 			?parentId : Int,
 			?documentUrlPatterns : Array<String>,
 			?targetUrlPatterns : Array<String>,
 			?enabled : Bool
 		},
-		?f : Void->Void
-	) : Int;
-	
+		?f : Void->Void ) : Void;
 	static function update(
 		id : Int,
 		updateProperties : {
-			?type : String,
+			?type : ContextMenuType,
 			?title : String,
 			?checked : Bool,
-			?contexts : String,
+			?contexts : Contexts,
 			?onclick : Void->Void,
 			?parentId : Int,
 			?documentUrlPatterns : Array<String>,
 			?targetUrlPatterns : Array<String>,
 			?enabled : Bool
 		},
-		?f : Void->Void
-	) : Void;
-	
-	static function remove(
-		menuItemId : Int,
-		?f : Void->Void
-	) : Void;
-	
+		?f : Void->Void ) : Void;
+	static function remove( menuItemId : Int, ?f : Void->Void ) : Void;
 	static function removeAll( ?f : Void->Void ) : Void;
-	
+
+	var onClicked(default,null) : Event<Void->Void>;
 }

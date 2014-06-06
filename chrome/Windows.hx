@@ -1,9 +1,9 @@
 package chrome;
 
-@:fakeEnum(String) enum WindowState {
-	normal;
-	minimized;
-	maximized;
+@:enum abstract WindowState(String) {
+	var normal = "normal";
+	var minimized = "minimized";
+	var maximized = "maximized";
 }
 
 @:require(chrome_ext)

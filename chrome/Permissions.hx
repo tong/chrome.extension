@@ -8,10 +8,10 @@ typedef PermissionsData = {
 @:require(chrome)
 @:native("chrome.permissions")
 extern class Permissions {
+	static function getAll( f : PermissionsData->Void ) : Void;
 	static function contains( permissions : PermissionsData, f : Bool->Void ) : Void;
-	static function getAll( permissions : PermissionsData ) : Void;
-	static function remove( permissions : PermissionsData, ?f : Bool->Void ) : Void;
 	static function request( permissions : PermissionsData, ?f : Bool->Void ) : Void;
+	static function remove( permissions : PermissionsData, ?f : Bool->Void ) : Void;
 	static var onAdded(default,never) : Event<PermissionsData->Void>;
 	static var onRemoved(default,never) : Event<PermissionsData->Void>;
 }

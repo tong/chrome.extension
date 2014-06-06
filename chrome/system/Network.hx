@@ -1,12 +1,12 @@
 package chrome.system;
 
-typedef NetworkInterface = {
+private typedef NetworkInterface = {
 	var name : String;
 	var address : String;
 	var prefixLength : Int;
 }
 
-@:require(chrome)
+@:require(chrome_app)
 @:native('chrome.system.network')
 extern class Network {
 	static function getNetworkInterfaces( f : Array<NetworkInterface>->Void ) : Void;

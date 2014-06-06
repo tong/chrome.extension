@@ -1,8 +1,8 @@
 package chrome;
 
-@:fakeEnum(String) enum WindowType {
-	normal;
-	popup;
-	panel;
-	app;
+@:enum abstract WindowType(String) {
+	var normal = "normal";
+	var popup = "popup";
+	var panel = "panel";
+	var app = "app";
 }

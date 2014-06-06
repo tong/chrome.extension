@@ -1,11 +1,11 @@
 package chrome;
 
+@:require(chrome_os)
 typedef FileHandlerExecuteEventDetails = {
 	var entries : Array<Dynamic>;
 	@:optional var tab_id : Null<Int>;
 }
 
-@:require(chrome)
 @:require(chrome_os)
 @:native("chrome.fileBrowserHandler")
 extern class FileBrowserHandler {

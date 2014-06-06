@@ -1,7 +1,11 @@
 package chrome;
 
-typedef MediaStreamConstraint = Dynamic; //TODO
 typedef LocalMediaStream = Dynamic; //TODO
+
+typedef MediaStreamConstraint = {
+	var mandatory : Dynamic;
+	@:optional var optional : Dynamic;
+}
 
 typedef CaptureOptions = {
 	@:optional var audio : Bool;
@@ -10,11 +14,11 @@ typedef CaptureOptions = {
 	@:optional var videoConstraints : MediaStreamConstraint;
 }
 
-@:enum(String) enum CaptureStatus {
-	pending;
-	active;
-	stopped;
-	error;
+@:enum abstract CaptureStatus(String) {
+	var pending = "pending";
+	var active = "active";
+	var stopped = "stopped";
+	var error = "error";
 }
 
 typedef CaptureInfo = {
@@ -23,10 +27,11 @@ typedef CaptureInfo = {
 	var fullscreen : Bool;
 }
 
+
 @:require(chrome_ext)
 @:native("chrome.tabCapture")
 extern class TabCapture {
-	static function capture( options : CaptureOptions, f : Dynamic->Void ) : Void;
-	static function getCapturedTabs( f : Array<CaptureInfo> ) : Void;
+	static function capture( options : CaptureOptions, f : LocalMediaStream->Void ) : Void;
+	static function getCapturedTabs( f : Array<CaptureInfo>->Void ) : Void;
 	static var onStatusChanged(default,null) : Event<CaptureInfo->Void>;
 }

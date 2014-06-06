@@ -7,17 +7,18 @@ typedef Alarm = {
 }
 
 typedef AlarmCreateInfo = {
+	@:optional var when : Float;
 	@:optional var delayInMinutes : Float;
 	@:optional var periodInMinutes : Float;
-	@:optional var when : Float;
 }
 
+@:require(chrome)
 @:native("chrome.alarms")
 extern class Alarms {
 	static function create( ?name : String, alarmInfo : AlarmCreateInfo ) : Void;
 	static function get( ?name : String, f : Alarm->Void ) : Void;
 	static function getAll( f : Array<Alarm>->Void ) : Void;
-	static function clear( ?name : String ) : Void;
-	static function clearAll() : Void;
+	static function clear( ?name : String, ?f : Bool->Void ) : Void;
+	static function clearAll( ?f : Bool->Void ) : Void;
 	static var onAlarm(default,null) : Event<Alarm->Void>;
 }

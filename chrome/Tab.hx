@@ -6,6 +6,7 @@ typedef Tab = {
 	var index : Int;
 	var windowId : Int;
 	@:optional var openerTabId : Int;
+	var selected : Bool;
 	var highlighted : Bool;
 	var active : Bool;
 	var pinned : Bool;

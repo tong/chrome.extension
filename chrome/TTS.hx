@@ -1,8 +1,8 @@
 package chrome;
 
-@:fakeEnum(String) enum TtsGender {
-	male;
-	female;
+@:enum abstract TtsGender(String) {
+	var male = "male";
+	var female = "female";
 }
 
 typedef TtsVoice = {
@@ -13,15 +13,17 @@ typedef TtsVoice = {
 	@:optional var eventTypes : Array<String>;
 }
 
-@:fakeEnum(String) enum TtsEventType {
-	start;
-	end;
-	word;
-	sentence;
-	marker;
-	interrupted;
-	cancelled;
-	error;
+@:enum abstract TtsEventType(String) {
+	var start = "start";
+	var end = "end";
+	var word = "word";
+	var sentence = "sentence";
+	var marker = "marker";
+	var interrupted = "interrupted";
+	var cancelled = "cancelled";
+	var error = "error";
+	var pause = "pause";
+	var resume = "resume";
 }
 
 typedef TtsEvent = {
@@ -30,7 +32,7 @@ typedef TtsEvent = {
 	@:optional var errorMessage : String;	
 }
 
-@:require(chrome_ext)
+@:require(chrome)
 @:native("chrome.tts")
 extern class TTS {
 	static function speak(
@@ -55,6 +57,4 @@ extern class TTS {
 	static function resume() : Void;
 	static function isSpeaking( ?f : Bool->Void ) : Void;
 	static function getVoices( ?f : Array<TtsVoice>->Void ) : Void;
-	//static var onSpeak(default,null) : Event<String->Dynamic->(Void->Void)->Void>;
-	//static var onStop(default,null) : Event<Void->Void>;
 }

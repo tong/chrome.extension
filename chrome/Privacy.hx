@@ -5,7 +5,6 @@ import chrome.types.ChromeSetting;
 private typedef Services = {
 	var alternateErrorPagesEnabled : ChromeSetting;
 	var autofillEnabled : ChromeSetting;
-	var instantEnabled : ChromeSetting;
 	var safeBrowsingEnabled : ChromeSetting;
 	var searchSuggestEnabled : ChromeSetting;
 	var spellingServiceEnabled : ChromeSetting;

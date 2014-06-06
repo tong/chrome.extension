@@ -13,8 +13,8 @@ private typedef Suggestion = {
 @:native("chrome.omnibox")
 extern class Omnibox {
 	static function setDefaultSuggestion( suggestion : Suggestion ) : Void;
-	static var onInputCancelled(default,never) : Event<Void->Void>;
-	static var onInputChanged(default,never) : Event<String->(Array<SuggestResult>->Void)->Void>;
-	static var onInputEntered(default,never) : Event<String->Void>;
 	static var onInputStarted(default,never) : Event<Void->Void>;
+	static var onInputChanged(default,never) : Event<String->(Array<SuggestResult>->Void)->Void>;
+	static var onInputEntered(default,never) : Event<String->String->Void>;
+	static var onInputCancelled(default,never) : Event<Void->Void>;
 }
