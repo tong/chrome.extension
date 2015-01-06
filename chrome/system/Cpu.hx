@@ -1,6 +1,6 @@
 package chrome.system;
 
-private typedef Processors = {
+private typedef Processor = {
 	var usage : {
 		user : Float,
 		kernel : Float,
@@ -12,6 +12,6 @@ private typedef Processors = {
 @:require(chrome)
 @:native("chrome.system.cpu")
 extern class Cpu {
-	static function getInfo( f : {numOfProcessors:Int,archName:String,modelName:String,features:Array<String>,processors:Array<Processors>}->Void ) : Void;
+	static function getInfo( f : {numOfProcessors:Int,archName:String,modelName:String,features:Array<String>,processors:Array<Processor>}->Void ) : Void;
 
 }
