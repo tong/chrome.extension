@@ -27,7 +27,7 @@ typedef InjectDetails = {
 	@:optional var file : String;
 	@:optional var allFrames : Bool;
 	@:optional var matchAboutBlank : Bool;
-	@:optional var runAt : Bool;
+	@:optional var runAt : RunAt;
 }
 
 typedef UpdateInfo = {
