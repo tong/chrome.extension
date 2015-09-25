@@ -1,6 +1,8 @@
 -js api.js
 -xml haxedoc.xml
 --no-output
---macro include('chrome',true)
+-cp src
 -D chrome
 -D chrome_ext
+-dce std
+--macro include('chrome',true)
