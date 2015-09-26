@@ -19,7 +19,6 @@ typedef NetworkInfo = {
 }
 
 @:require(chrome)
-@:require(chrome_app)
 @:native("chrome.networking.Config")
 extern class Config {
     static function setNetworkFilter( networks : Array<NetworkInfo>, callback : Void->Void ) : Void;
