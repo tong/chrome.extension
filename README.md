@@ -1,11 +1,27 @@
 
-# Chrome-extension
+# Haxe Chrome Extension
 
-Haxe/Javascript type definitions for the [google chrome extension api](https://developer.chrome.com/extensions/api_index).
+Haxe/Javascript type definitions for [google chrome extensions](https://developer.chrome.com/extensions/api_index).
 
 API version: 45
 
+---
+
+To install from haxelib run:
+```
+$ haxelib install chrome-extension
+```
+
 For packaged apps types see: https://github.com/tong/chrome.app  
-For using types available on chrome-os only set: `-D chrome_os`  
-For using dev channel apis set: `-D chrome_dev`  
-For using experimental apis set: `-D chrome_experimental`  
+
+---
+
+### Haxe Defines
+
+* `-D chrome`  Required (added automatically when using from haxelib)
+* `-D chrome_ext`  Required (added automatically when using from haxelib)
+
+
+* `-D chrome_os`  To access apis available on chrome-os only.
+* `-D chrome_dev`  To access apis available on the dev channel only.
+* `-D chrome_experimental`  To access experimental apis.
