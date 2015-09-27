@@ -1,0 +1,11 @@
+language: haxe
+
+sudo: false
+
+haxe:
+  - "3.2.0"
+  - development
+
+script:
+  - haxelib git dox https://github.com/dpeek/dox
+  - haxe haxedoc.hxml
