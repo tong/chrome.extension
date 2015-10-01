@@ -9,7 +9,7 @@ typedef Token = {
 }
 
 @:require(chrome)
-@:native("chrome.platformKeys")
+@:native("chrome.enterprise.platformKeys")
 extern class PlatformKeys {
     static function getTokens( callback : Array<Token>->Void ) : Void;
     static function getCertificates( tokenId : String, callback : Array<ArrayBuffer>->Void ) : Void;
