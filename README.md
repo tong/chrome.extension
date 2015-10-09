@@ -1,11 +1,9 @@
 
-# Haxe Chrome Extension
+# Haxe Chrome Extension [![Build Status](https://travis-ci.org/tong/chrome.extension.svg?branch=master)](https://travis-ci.org/tong/chrome.extension)
 
 Haxe/Javascript type definitions for [google chrome extensions](https://developer.chrome.com/extensions/api_index).
 
 API version: 45
-
-[![Build Status](https://travis-ci.org/tong/chrome.extension.svg?branch=master)](https://travis-ci.org/tong/chrome.extension)
 
 ---
 

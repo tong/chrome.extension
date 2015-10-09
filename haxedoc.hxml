@@ -6,3 +6,6 @@
 -D chrome_ext
 -dce std
 --macro include('chrome',true)
+
+#--next
+#-cmd haxelib run dox -o doc/ -i ./ -D source-path https://github.com/tong/chrome.extension/blob/master/src
