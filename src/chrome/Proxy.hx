@@ -1,6 +1,7 @@
 package chrome;
 
 import chrome.Events;
+import chrome.Types;
 
 @:enum abstract ProxyServerScheme(String) from String to String {
 	var http = "http";
@@ -48,10 +49,6 @@ typedef ProxyConfig = {
 @:require(chrome_ext)
 @:native("chrome.proxy")
 extern class Proxy {
-	static var settings : {
-		get : { details:{?incognito:Bool}, callback : String->?Bool->Void }->Void,
-		set : { details:{any:Dynamic,?scope:String}, ?callback : Void->Void }->Void,
-		clear : { details:{?scope:String}, ?callback : Void->Void }->Void
-	};
+	static var settings(default,null) : ChromeSetting;
 	static var onProxyError(default,never) : Event<{fatal:Bool,error:String,details:String}->Void>;
 }
