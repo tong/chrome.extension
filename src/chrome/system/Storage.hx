@@ -29,6 +29,6 @@ extern class Storage {
 	static function ejectDevice( id : String, callback : StorageEjectResult->Void ) : Void;
 	@:require(chrome_dev)
 	static function getAvailableCapacity( id : String, callback : {id:String,availableCapacity:Float}->Void ) : Void;
-	static var onAttached(default,null) : Event<StorageUnitInfo->Void>;
-	static var onDetached(default,null) : Event<String->Void>;
+	static var onAttached(default,never) : Event<StorageUnitInfo->Void>;
+	static var onDetached(default,never) : Event<String->Void>;
 }

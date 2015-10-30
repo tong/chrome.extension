@@ -31,6 +31,6 @@ import chrome.Events;
 @:native("chrome.webstore")
 extern class Webstore {
 	static function install( ?url : String, ?successCallback : Void->Void, ?failureCallback : String->?ErrorCode->Void ) : Void;
-	static var onInstallStageChanged(default,null) : Event<InstallStage->Void>;
-	static var onDownloadProgress(default,null) : Event<Float->Void>;
+	static var onInstallStageChanged(default,never) : Event<InstallStage->Void>;
+	static var onDownloadProgress(default,never) : Event<Float->Void>;
 }

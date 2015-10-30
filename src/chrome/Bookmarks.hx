@@ -71,11 +71,11 @@ extern class Bookmarks {
 	static function remove( id : String, ?callback : Void->Void ) : Void;
 	static function removeTree( id : String, ?callback : Void->Void ) : Void;
 
-	static var onCreated(default,null) : Event<String->BookmarkTreeNode->Void>;
-	static var onRemoved(default,null) : Event<String->BookmarkRemoveInfo->Void>;
-	static var onChanged(default,null) : Event<String->BookmarkChangeInfo->Void>;
-	static var onMoved(default,null) : Event<String->BookmarkMoveInfo->Void>;
-	static var onChildrenReordered(default,null) : Event<String->BookmarkReorderInfo->Void>;
-	static var onImportEnded(default,null) : Event<Void->Void>;
-	static var onImportBegan(default,null) : Event<Void->Void>;
+	static var onCreated(default,never) : Event<String->BookmarkTreeNode->Void>;
+	static var onRemoved(default,never) : Event<String->BookmarkRemoveInfo->Void>;
+	static var onChanged(default,never) : Event<String->BookmarkChangeInfo->Void>;
+	static var onMoved(default,never) : Event<String->BookmarkMoveInfo->Void>;
+	static var onChildrenReordered(default,never) : Event<String->BookmarkReorderInfo->Void>;
+	static var onImportEnded(default,never) : Event<Void->Void>;
+	static var onImportBegan(default,never) : Event<Void->Void>;
 }

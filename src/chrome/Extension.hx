@@ -9,8 +9,8 @@ package chrome;
 @:require(chrome_ext)
 @:native("chrome.extension")
 extern class Extension {
-	static var lastError(default,null) : { message : String };
-	static var inIncognitoContext(default,null) : Bool;
+	static var lastError(default,never) : { message : String };
+	static var inIncognitoContext(default,never) : Bool;
 	static function getURL( path : String ) : String;
 	static function getViews( ?fetchProperties : { ?type : ViewType, ?windowId : Int } ) : Array<js.html.Window>;
 	static function getBackgroundPage() : js.html.Window;

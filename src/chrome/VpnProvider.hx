@@ -16,9 +16,9 @@ extern class VpnProvider {
     static function setParameters( parameters : {address:String,?broadcastAddress:String,?mtu:String,exclusionList:Array<String>,inclusionList:Array<String>,?domainSearch:Array<String>,dnsServers:Array<String>}, callback : Void->Void ) : Void;
     static function sendPacket( data : ArrayBuffer, ?callback : Void->Void ) : Void;
     static function notifyConnectionStateChanged( state : ConnectionState, ?callback : Void->Void ) : Void;
-    static var onPlatformMessage(default,null) : Event<String->String->String->Void>;
-    static var onPacketReceived(default,null) : Event<ArrayBuffer->Void>;
-    static var onConfigRemoved(default,null) : Event<String->Void>;
-    static var onConfigCreated(default,null) : Event<String->String->Dynamic->Void>;
-    static var onUIEvent(default,null) : Event<String->?String->Void>;
+    static var onPlatformMessage(default,never) : Event<String->String->String->Void>;
+    static var onPacketReceived(default,never) : Event<ArrayBuffer->Void>;
+    static var onConfigRemoved(default,never) : Event<String->Void>;
+    static var onConfigCreated(default,never) : Event<String->String->Dynamic->Void>;
+    static var onUIEvent(default,never) : Event<String->?String->Void>;
 }

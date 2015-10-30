@@ -219,9 +219,9 @@ extern class Downloads {
 	static function acceptDanger( downloadId : Int, ?callback : Void->Void ) : Void;
 	static function drag( downloadId : Int ) : Void;
 	static function setShelfEnabled( enabled : Bool ) : Void;
-	static var onCreated(default,null) : Event<DownloadItem->Void>;
-	static var onErased(default,null) : Event<Int->Void>;
-	static var onChanged(default,null) : Event<{
+	static var onCreated(default,never) : Event<DownloadItem->Void>;
+	static var onErased(default,never) : Event<Int->Void>;
+	static var onChanged(default,never) : Event<{
 			?url : StringDelta,
 			?filename : StringDelta,
 			?danger : StringDelta,
@@ -236,5 +236,5 @@ extern class Downloads {
 			?fileSize : DoubleDelta,
 			?exists : BooleanDelta
 		}->Void>;
-	static var onDeterminingFilename(default,null) : Event<DownloadItem->(?{filename:String,?conflictAction:FilenameConflictAction}->Void)->Void>;
+	static var onDeterminingFilename(default,never) : Event<DownloadItem->(?{filename:String,?conflictAction:FilenameConflictAction}->Void)->Void>;
 }

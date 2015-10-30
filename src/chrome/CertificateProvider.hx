@@ -26,6 +26,6 @@ typedef SignRequest = {
 @:require(chrome_os)
 @:native("chrome.certificateProvider")
 extern class CertificateProvider {
-    static var onCertificatesRequested : Event<(Array<CertificateInfo>->Void)->Void>;
-    static var onSignDigestRequested : Event<SignRequest->(ArrayBuffer->Void)->Void>;
+    static var onCertificatesRequested(default,never) : Event<(Array<CertificateInfo>->Void)->Void>;
+    static var onSignDigestRequested(default,never) : Event<SignRequest->(ArrayBuffer->Void)->Void>;
 }

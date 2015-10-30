@@ -87,7 +87,7 @@ extern class ContextMenus {
 	static function remove( menuItemId : EitherType<Int,String>, ?callback : Void->Void ) : Void;
 	static function removeAll( ?callback : Void->Void ) : Void;
 
-	static var onClicked(default,null) : Event<{
+	static var onClicked(default,never) : Event<{
 			menuItemId : EitherType<Int,String>,
 			?parentMenuItemId : EitherType<Int,String>,
 			?mediaType : String,

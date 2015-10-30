@@ -10,6 +10,6 @@ typedef Request = {
 @:native("chrome.devtools.network")
 extern class Network {
 	static function getHAR( callback : Dynamic->Void ) : Void;
-	static var onRequestFinished(default,null) : Event<Request->Void>;
-	static var onNavigated(default,null) : Event<String->Void>;
+	static var onRequestFinished(default,never) : Event<Request->Void>;
+	static var onNavigated(default,never) : Event<String->Void>;
 }

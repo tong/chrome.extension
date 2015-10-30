@@ -32,5 +32,5 @@ typedef DeviceInfo = {
 @:native("chrome.signedInDevices")
 extern class SignedInDevices {
     static function get( ?isLocal : Bool, callback : Array<DeviceInfo>->Void ) : Void;
-    static var onDeviceInfoChange(default,null) : Event<Array<DeviceInfo>->Void>;
+    static var onDeviceInfoChange(default,never) : Event<Array<DeviceInfo>->Void>;
 }

@@ -22,5 +22,5 @@ extern class Alarms {
 	static function getAll( callback : Array<Alarm>->Void ) : Void;
 	static function clear( ?name : String, ?callback : Bool->Void ) : Void;
 	static function clearAll( ?callback : Bool->Void ) : Void;
-	static var onAlarm(default,null) : Event<Alarm->Void>;
+	static var onAlarm(default,never) : Event<Alarm->Void>;
 }

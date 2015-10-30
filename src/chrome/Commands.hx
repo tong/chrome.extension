@@ -12,5 +12,5 @@ typedef Command = {
 @:native("chrome.commands")
 extern class Commands {
 	static function getAll( ?callback : Array<Command>->Void ) : Void;
-	static var onCommand(default,null) : Event<String->Void>;
+	static var onCommand(default,never) : Event<String->Void>;
 }

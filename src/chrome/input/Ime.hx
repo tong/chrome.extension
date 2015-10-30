@@ -101,14 +101,14 @@ extern class Ime {
 	static function updateMenuItems( parameters : { engineID : String, items : Array<MenuItem> }, ?callback : Void->Void ) : Void;
 	static function deleteSurroundingText( parameters : { engineID : String, contextID : Int, offset : Int, length : Int }, ?callback : Void->Void ) : Void;
 	static function keyEventHandled( requestId : String, response : Bool ) : Void;
-	static var onActivate(default,null) : Event<String->Void>;
-	static var onDeactivated(default,null) : Event<String->Void>;
-	static var onFocus(default,null) : Event<InputContext->Void>;
-	static var onBlur(default,null) : Event<Int->Void>;
-	static var onInputContextUpdate(default,null) : Event<InputContext->Void>;
-	static var onKeyEvent(default,null) : Event<String->KeyboardEvent->Void>;
-	static var onCandidateClicked(default,null) : Event<String->Int->MouseButton->Void>;
-	static var onMenuItemActivated(default,null) : Event<String->String->Void>;
-	static var onSurroundingTextChanged(default,null) : Event<String->{text:String,focus:Int,anchor:Int}->Void>;
-	static var onReset(default,null) : Event<String->Void>;
+	static var onActivate(default,never) : Event<String->Void>;
+	static var onDeactivated(default,never) : Event<String->Void>;
+	static var onFocus(default,never) : Event<InputContext->Void>;
+	static var onBlur(default,never) : Event<Int->Void>;
+	static var onInputContextUpdate(default,never) : Event<InputContext->Void>;
+	static var onKeyEvent(default,never) : Event<String->KeyboardEvent->Void>;
+	static var onCandidateClicked(default,never) : Event<String->Int->MouseButton->Void>;
+	static var onMenuItemActivated(default,never) : Event<String->String->Void>;
+	static var onSurroundingTextChanged(default,never) : Event<String->{text:String,focus:Int,anchor:Int}->Void>;
+	static var onReset(default,never) : Event<String->Void>;
 }

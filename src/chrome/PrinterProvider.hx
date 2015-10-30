@@ -11,9 +11,9 @@ typedef PrinterInfo = {
 @:require(chrome)
 @:native("chrome.printerProvider")
 extern class PrinterProvider {
-    static var onGetPrintersRequested(default,null) : Event<(Array<PrinterInfo>->Void)->Void>;
-    //TODO static var onGetUsbPrinterInfoRequested(default,null) : Event<(chrome.usb.Device->PrinterInfo->Void)->Void>;
-    static var onGetUsbPrinterInfoRequested(default,null) : Event<(Dynamic->PrinterInfo->Void)->Void>;
-    static var onGetCapabilityRequested(default,null) : Event<Dynamic->Void>;
-    static var onPrintRequested(default,null) : Event<{printerId:String,title:String,ticket:Dynamic,contentType:String,document:js.html.Blob}->(String->Void)->Void>;
+    static var onGetPrintersRequested(default,never) : Event<(Array<PrinterInfo>->Void)->Void>;
+    //TODO static var onGetUsbPrinterInfoRequested(default,never) : Event<(chrome.usb.Device->PrinterInfo->Void)->Void>;
+    static var onGetUsbPrinterInfoRequested(default,never) : Event<(Dynamic->PrinterInfo->Void)->Void>;
+    static var onGetCapabilityRequested(default,never) : Event<Dynamic->Void>;
+    static var onPrintRequested(default,never) : Event<{printerId:String,title:String,ticket:Dynamic,contentType:String,document:js.html.Blob}->(String->Void)->Void>;
 }

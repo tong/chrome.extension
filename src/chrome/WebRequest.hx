@@ -81,7 +81,7 @@ typedef UploadData = {
 extern class WebRequest {
 	static var MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES(default,never) : Int;
 	static function handlerBehaviorChanged( callback : Void->Void ) : Void;
-	static var onBeforeRequest(default,null) : Event<{
+	static var onBeforeRequest(default,never) : Event<{
 			requestId : String,
 			url : String,
 			method : String,
@@ -96,7 +96,7 @@ extern class WebRequest {
 			type : ResourceType,
 			timeStamp : Float,
 		}->Void>;
-	static var onBeforeSendHeaders(default,null) : Event<{
+	static var onBeforeSendHeaders(default,never) : Event<{
 			requestId : String,
 			url : String,
 			method : String,
@@ -107,7 +107,7 @@ extern class WebRequest {
 			timeStamp : Float,
 			?requestHeaders : HttpHeaders
 		}->Void>;
-	static var onHeadersReceived(default,null) : Event<{
+	static var onHeadersReceived(default,never) : Event<{
 			requestId : String,
 			url : String,
 			method : String,
@@ -120,7 +120,7 @@ extern class WebRequest {
 			?responseHeaders : HttpHeaders,
 			statusCode : Int
 		}->Void>;
-	static var onAuthRequired(default,null) : Event<{
+	static var onAuthRequired(default,never) : Event<{
 			requestId : String,
 			url : String,
 			method : String,
@@ -137,7 +137,7 @@ extern class WebRequest {
 			statusLine : String,
 			statusCode : Int
 		}->?(BlockingResponse->Void)->Void>;
-	static var onResponseStarted(default,null) : Event<{
+	static var onResponseStarted(default,never) : Event<{
 			requestId : String,
 			url : String,
 			method : String,
@@ -152,7 +152,7 @@ extern class WebRequest {
 			?responseHeaders : HttpHeaders,
 			statusLine : String
 		}->Void>;
-	static var onBeforeRedirect(default,null) : Event<{
+	static var onBeforeRedirect(default,never) : Event<{
 			requestId : String,
 			url : String,
 			method : String,
@@ -168,7 +168,7 @@ extern class WebRequest {
 			?responseHeaders : HttpHeaders,
 			statusLine : String
 		}->Void>;
-	static var onCompleted(default,null) : Event<{
+	static var onCompleted(default,never) : Event<{
 			requestId : String,
 			url : String,
 			method : String,
@@ -183,7 +183,7 @@ extern class WebRequest {
 			?responseHeaders : HttpHeaders,
 			statusLine : String
 		}->Void>;
-	static var onErrorOccurred(default,null) : Event<{
+	static var onErrorOccurred(default,never) : Event<{
 			requestId : String,
 			url : String,
 			method : String,

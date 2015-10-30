@@ -80,14 +80,14 @@ extern class Tabs {
 	static function getZoom( ?tabId : Int, callback : Float->Void ) : Void;
 	static function setZoomSettings( ?tabId : Int, zoomSettings : ZoomSettings, ?callback : Void->Void ) : Void;
 	static function getZoomSettings( ?tabId : Int, callback : ZoomSettings->Void ) : Void;
-	static var onCreated(default,null) : Event<Tab->Void>;
-	static var onUpdated(default,null) : Event<Int->{?status:String,?url:String,?pinned:Bool,?audible:Bool,?favIconUrl:String}->Tab->Void>;
-	static var onMoved(default,null) : Event<Int->{windowId:Int,fromIndex:Int,toIndex:Int}->Void>;
-	static var onActivated(default,null) : Event<{tabId:Int,windowId:Int}->Void>;
-	static var onHighlighted(default,null) : Event<{windowId:Int,tabIds:Array<Int>}->Void>;
-	static var onDetached(default,null) : Event<{oldWindowId:Int,oldPosition:Int}->Void>;
-	static var onAttached(default,null) : Event<{newWindowId:Int,newPosition:Int}->Void>;
-	static var onRemoved(default,null) :  Event<Int->{windowId:Int,isWindowClosing:Bool}->Void>;
-	static var onReplaced(default,null) :  Event<Int->Int->Void>;
-	static var onZoomChange(default,null) :  Event<{tabId:Int,oldZoomFactor:Float,newZoomFactor:Float,zoomSettings:ZoomSettings}->Void>;
+	static var onCreated(default,never) : Event<Tab->Void>;
+	static var onUpdated(default,never) : Event<Int->{?status:String,?url:String,?pinned:Bool,?audible:Bool,?favIconUrl:String}->Tab->Void>;
+	static var onMoved(default,never) : Event<Int->{windowId:Int,fromIndex:Int,toIndex:Int}->Void>;
+	static var onActivated(default,never) : Event<{tabId:Int,windowId:Int}->Void>;
+	static var onHighlighted(default,never) : Event<{windowId:Int,tabIds:Array<Int>}->Void>;
+	static var onDetached(default,never) : Event<{oldWindowId:Int,oldPosition:Int}->Void>;
+	static var onAttached(default,never) : Event<{newWindowId:Int,newPosition:Int}->Void>;
+	static var onRemoved(default,never) :  Event<Int->{windowId:Int,isWindowClosing:Bool}->Void>;
+	static var onReplaced(default,never) :  Event<Int->Int->Void>;
+	static var onZoomChange(default,never) :  Event<{tabId:Int,oldZoomFactor:Float,newZoomFactor:Float,zoomSettings:ZoomSettings}->Void>;
 }

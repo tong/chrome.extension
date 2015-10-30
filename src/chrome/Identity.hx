@@ -16,5 +16,5 @@ extern class Identity {
 	static function removeCachedAuthToken( details : {token:String}, ?callback : Void->Void ) : Void;
 	static function launchWebAuthFlow( details : {url:String,?interactive:Bool}, callback : String->Void ) : Void;
 	static function getRedirectURL( ?path : String ) : String;
-	static var onSignInChanged(default,null) : Event<AccountInfo->Bool->Void>;
+	static var onSignInChanged(default,never) : Event<AccountInfo->Bool->Void>;
 }

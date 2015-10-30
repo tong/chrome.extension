@@ -98,22 +98,22 @@ extern class FileSystemProvider {
             changes : Array<{entryPath:String,changeType:ChangeType,?tag:String}>
         },
         ?callback : Void->Void ) : Void;
-    static var onUnmountRequested(default,null) : Event<{fileSystemId:String,requestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onGetMetadataRequested(default,null) : Event<{fileSystemId:String,requestId:Int,entryPath:String,thumbnail:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onReadDirectoryRequested(default,null) : Event<{fileSystemId:String,requestId:Int,directoryPath:String}->(Array<EntryMetadata>->Bool->Void)->(ProviderError->Void)->Void>;
-    static var onOpenFileRequested(default,null) : Event<{fileSystemId:String,requestId:Int,filePath:String,mode:OpenFileMode}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onCloseFileRequested(default,null) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onReadFileRequested(default,null) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int,offset:Float,length:Float}->(ArrayBuffer->Bool->Void)->(ProviderError->Void)->Void>;
-    static var onCreateDirectoryRequested(default,null) : Event<{fileSystemId:String,requestId:Int,directoryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onDeleteEntryRequested(default,null) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onCreateFileRequested(default,null) : Event<{fileSystemId:String,requestId:Int,filePath:String}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onCopyEntryRequested(default,null) : Event<{fileSystemId:String,sourcePath:String,targetPath:String}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onMoveEntryRequested(default,null) : Event<{fileSystemId:String,requestId:Int,sourcePath:String,targetPath:String}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onTruncateRequested(default,null) : Event<{fileSystemId:String,requestId:Int,filePath:String,length:Float}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onWriteFileRequested(default,null) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int,offset:Int,data:ArrayBuffer}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onAbortRequested(default,null) : Event<{fileSystemId:String,requestId:Int,operationRequestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onConfigureRequested(default,null) : Event<{fileSystemId:String,requestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onMountRequested(default,null) : Event<(Void->Void)->(ProviderError->Void)->Void>;
-    static var onAddWatcherRequested(default,null) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onRemoveWatcherRequested(default,null) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onUnmountRequested(default,never) : Event<{fileSystemId:String,requestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onGetMetadataRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,thumbnail:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onReadDirectoryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,directoryPath:String}->(Array<EntryMetadata>->Bool->Void)->(ProviderError->Void)->Void>;
+    static var onOpenFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,filePath:String,mode:OpenFileMode}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onCloseFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onReadFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int,offset:Float,length:Float}->(ArrayBuffer->Bool->Void)->(ProviderError->Void)->Void>;
+    static var onCreateDirectoryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,directoryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onDeleteEntryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onCreateFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,filePath:String}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onCopyEntryRequested(default,never) : Event<{fileSystemId:String,sourcePath:String,targetPath:String}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onMoveEntryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,sourcePath:String,targetPath:String}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onTruncateRequested(default,never) : Event<{fileSystemId:String,requestId:Int,filePath:String,length:Float}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onWriteFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int,offset:Int,data:ArrayBuffer}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onAbortRequested(default,never) : Event<{fileSystemId:String,requestId:Int,operationRequestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onConfigureRequested(default,never) : Event<{fileSystemId:String,requestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onMountRequested(default,never) : Event<(Void->Void)->(ProviderError->Void)->Void>;
+    static var onAddWatcherRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onRemoveWatcherRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
 }

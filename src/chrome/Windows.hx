@@ -86,7 +86,7 @@ extern class Windows {
 	) : Void;
 	static function remove( windowId : Int, ?callback : Void->Void ) : Void;
 
-	static var onCreated(default,null) : Event<Window->Void>;
-	static var onRemoved(default,null) : Event<Int->Void>;
-	static var onFocusChanged(default,null) : Event<Int->Void>;
+	static var onCreated(default,never) : Event<Window->Void>;
+	static var onRemoved(default,never) : Event<Int->Void>;
+	static var onFocusChanged(default,never) : Event<Int->Void>;
 }

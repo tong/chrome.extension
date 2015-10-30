@@ -39,6 +39,6 @@ extern class Debugger {
 	static function detach( target : Debuggee, ?callback : Void->Void ) : Void;
 	static function sendCommand( target : Debuggee, method : String, ?commandParams : Dynamic, ?callback : Dynamic->Void ) : Void;
 	static function getTargets( ?callback : Array<TargetInfo>->Void ) : Void;
-	static var onEvent(default,null) : Event<Debuggee->String->?Dynamic->Void>;
-	static var onDetach(default,null) : Event<Debuggee->DetachReason->Void>;
+	static var onEvent(default,never) : Event<Debuggee->String->?Dynamic->Void>;
+	static var onDetach(default,never) : Event<Debuggee->DetachReason->Void>;
 }

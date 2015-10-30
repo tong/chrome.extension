@@ -36,5 +36,5 @@ private typedef CaptureOptions = {
 extern class TabCapture {
 	static function capture( options : {?audio:Bool,?video:Bool,?audioConstraints:MediaStreamConstraint,?videoConstraints:MediaStreamConstraint}, callback : LocalMediaStream->Void ) : Void;
 	static function getCapturedTabs( callback : Array<CaptureInfo>->Void ) : Void;
-	static var onStatusChanged(default,null) : Event<CaptureInfo->Void>;
+	static var onStatusChanged(default,never) : Event<CaptureInfo->Void>;
 }

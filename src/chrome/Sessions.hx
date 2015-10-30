@@ -26,5 +26,5 @@ extern class Sessions {
 	static function getRecentlyClosed( ?filter : Filter, callback : Array<Session>->Void ) : Void;
 	static function getDevices( ?filter : Filter, callback : Array<SessionDevice>->Void ) : Void;
 	static function restore( ?sessionId : String, ?callback : Session->Void ) : Void;
-	static var onChanged(default,null) : Event<Void->Void>;
+	static var onChanged(default,never) : Event<Void->Void>;
 }

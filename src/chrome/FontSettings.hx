@@ -197,8 +197,8 @@ extern class FontSettings {
 	static function clearMinimumFontSize( ?details : Dynamic, ?callback : Void->Void ) : Void;
 	static function getMinimumFontSize( ?details : Dynamic, ?callback : Dynamic->Void ) : Void;
 	static function setMinimumFontSize( details : {pixelSize:Int}, ?callback : Void->Void ) : Void;
-	static var onFontChanged(default,null) : Event<{fontId:String,?script:ScriptCode,genericFamily:GenericFamily,levelOfControl:LevelOfControl}->Void>;
-	static var onDefaultFontSizeChanged(default,null) : Event<{pixelSize:Int,levelOfControl:LevelOfControl}->Void>;
-	static var onDefaultFixedFontSizeChanged(default,null) : Event<{pixelSize:Int,levelOfControl:LevelOfControl}->Void>;
-	static var onMinimumFontSizeChanged(default,null) : Event<{pixelSize:Int,levelOfControl:LevelOfControl}->Void>;
+	static var onFontChanged(default,never) : Event<{fontId:String,?script:ScriptCode,genericFamily:GenericFamily,levelOfControl:LevelOfControl}->Void>;
+	static var onDefaultFontSizeChanged(default,never) : Event<{pixelSize:Int,levelOfControl:LevelOfControl}->Void>;
+	static var onDefaultFixedFontSizeChanged(default,never) : Event<{pixelSize:Int,levelOfControl:LevelOfControl}->Void>;
+	static var onMinimumFontSizeChanged(default,never) : Event<{pixelSize:Int,levelOfControl:LevelOfControl}->Void>;
 }

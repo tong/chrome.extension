@@ -73,8 +73,8 @@ extern class Management {
 	static function createAppShortcut( id : String, ?callback : Void->Void ) : Void;
 	static function setLaunchType( id : String, launchType : LaunchType, ?callback : Void->Void ) : Void;
 	static function generateAppForLink( url : String, title : String, ?callback : ExtensionInfo->Void ) : Void;
-	static var onInstalled(default,null) : Event<ExtensionInfo->Void>;
-	static var onUninstalled(default,null) : Event<String->Void>;
-	static var onEnabled(default,null) : Event<ExtensionInfo->Void>;
-	static var onDisabled(default,null) : Event<ExtensionInfo->Void>;
+	static var onInstalled(default,never) : Event<ExtensionInfo->Void>;
+	static var onUninstalled(default,never) : Event<String->Void>;
+	static var onEnabled(default,never) : Event<ExtensionInfo->Void>;
+	static var onDisabled(default,never) : Event<ExtensionInfo->Void>;
 }

@@ -42,6 +42,6 @@ extern class History {
 	static function deleteUrl( details : { url : String }, ?callback : Void->Void )  : Void;
 	static function deleteRange( range : { startTime : Float, endTime : Float }, callback : Void->Void ) : Void;
 	static function deleteAll( callback : Void->Void ) : Void;
-	static var onVisited(default,null) : Event<HistoryItem->Void>;
-	static var onVisitRemoved(default,null) : Event<{allHistory:Bool,?urls:Array<String>}->Void>;
+	static var onVisited(default,never) : Event<HistoryItem->Void>;
+	static var onVisitRemoved(default,never) : Event<{allHistory:Bool,?urls:Array<String>}->Void>;
 }

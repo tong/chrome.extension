@@ -49,6 +49,6 @@ typedef ProxyConfig = {
 @:require(chrome_ext)
 @:native("chrome.proxy")
 extern class Proxy {
-	static var settings(default,null) : ChromeSetting;
+	static var settings(default,never) : ChromeSetting;
 	static var onProxyError(default,never) : Event<{fatal:Bool,error:String,details:String}->Void>;
 }

@@ -17,6 +17,6 @@ extern class InspectedWindow {
 	static function eval( expression : String, ?f : Dynamic->Bool->Void ) : Void;
 	static function reload( reloadOptions : {?ignoreCache:Bool,?userAgent:String,?injectedScript:String} ) : Void;
 	static function getResources( f : Array<Resource>->Void ) : Void;
-	static var onResourceAdded(default,null) : Event<Resource->Void>;
-	static var onResourceContentCommitted(default,null) : Event<Resource->String->Void>;
+	static var onResourceAdded(default,never) : Event<Resource->Void>;
+	static var onResourceContentCommitted(default,never) : Event<Resource->String->Void>;
 }

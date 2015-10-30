@@ -46,5 +46,5 @@ typedef RequestContentScript = {
 @:require(chrome_ext)
 @:native("chrome.declerativeContent")
 extern class DeclerativeContent {
-	static var onPageChanged(default,null) : Event<Dynamic>; //TODO
+	static var onPageChanged(default,never) : Event<Dynamic>; //TODO
 }

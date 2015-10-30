@@ -9,7 +9,7 @@ import chrome.Events;
 extern class Location {
 	static function watchLocation( name : String, requestInfo : {?minDistanceInMeters:Float,?minTimeInMilliseconds:Float,?maximumAge:Float} ) : Void;
 	static function clearWatch( name : String ) : Void;
-	static var onLocationUpdate(default,null) : Event<{
+	static var onLocationUpdate(default,never) : Event<{
 			name : String,
 			coords : {
 				latitude : Float,
@@ -22,5 +22,5 @@ extern class Location {
 			},
 			timestamp : Float
 		}->Void>;
-	static var onLocationError(default,null) : Event<String->Void>;
+	static var onLocationError(default,never) : Event<String->Void>;
 }

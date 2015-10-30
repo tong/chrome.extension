@@ -33,8 +33,8 @@ typedef StorageArea = {
 @:require(chrome)
 @:native("chrome.storage")
 extern class Storage {
-	static var sync(default,null) : StorageArea;
-	static var local(default,null) : StorageArea;
-	static var managed(default,null) : StorageArea;
-	static var onChanged(default,null) : Event<Dynamic->String->Void>;
+	static var sync(default,never) : StorageArea;
+	static var local(default,never) : StorageArea;
+	static var managed(default,never) : StorageArea;
+	static var onChanged(default,never) : Event<Dynamic->String->Void>;
 }

@@ -86,15 +86,15 @@ extern class Runtime {
 	static function sendNativeMessage( ?application : String, message : Dynamic, ?callback : Dynamic->Void ) : Port;
 	static function getPlatformInfo( callback : PlatformInfo->Void ) : Port;
 	static function getPackageDirectoryEntry( callback : DirectoryEntry->Void ) : Port;
-	static var onStartup(default,null) : Event<Void->Void>;
-	static var onInstalled(default,null) : Event<{reason:OnInstalledReason,?previousVersion:String,?id:String}->Void>;
-	static var onSuspend(default,null) : Event<Void->Void>;
-	static var onSuspendCanceled(default,null) : Event<Void->Void>;
-	static var onUpdateAvailable(default,null) : Event<{version:String}->Void>;
-	//static var onBrowserUpdateAvailable(default,null) : Event<Void->Void>;
-	static var onConnect(default,null) : Event<Port->Void>;
-	static var onConnectExternal(default,null) : Event<Port->Void>;
-	static var onMessage(default,null) : Event<?Dynamic->MessageSender->(Void->Void)->Void>;
-	static var onMessageExternal(default,null) : Event<?Dynamic->MessageSender->(Void->Void)->Void>;
-	static var onRestartRequired(default,null) : Event<OnRestartRequiredReason->Void>;
+	static var onStartup(default,never) : Event<Void->Void>;
+	static var onInstalled(default,never) : Event<{reason:OnInstalledReason,?previousVersion:String,?id:String}->Void>;
+	static var onSuspend(default,never) : Event<Void->Void>;
+	static var onSuspendCanceled(default,never) : Event<Void->Void>;
+	static var onUpdateAvailable(default,never) : Event<{version:String}->Void>;
+	//static var onBrowserUpdateAvailable(default,never) : Event<Void->Void>;
+	static var onConnect(default,never) : Event<Port->Void>;
+	static var onConnectExternal(default,never) : Event<Port->Void>;
+	static var onMessage(default,never) : Event<?Dynamic->MessageSender->(Void->Void)->Void>;
+	static var onMessageExternal(default,never) : Event<?Dynamic->MessageSender->(Void->Void)->Void>;
+	static var onRestartRequired(default,never) : Event<OnRestartRequiredReason->Void>;
 }

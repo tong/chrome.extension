@@ -36,5 +36,5 @@ extern class Cookies {
 	static function set( details : { url : String, ?name : String, ?value : String, ?domain : String, ?path : String, ?secure : Bool, ?httpOnly : Bool, ?expirationDate : Float, ?storeId : String }, callback : ?Cookie->Void ) : Void;
 	static function remove( details : { url : String, name : String, ?storeId : String }, callback : {url:String,name:String,storeId:String}->Void ) : Void;
 	static function getAllCookieStores( callback : Array<CookieStore>->Void ) : Void;
-	static var onChanged(default,null) : Event<(Bool->Cookie->OnChangedCause)->Void>;
+	static var onChanged(default,never) : Event<(Bool->Cookie->OnChangedCause)->Void>;
 }

@@ -23,5 +23,5 @@ typedef NetworkInfo = {
 extern class Config {
     static function setNetworkFilter( networks : Array<NetworkInfo>, callback : Void->Void ) : Void;
     static function finishAuthentication( GUID : String, result : Result, ?callback : Void->Void ) : Void;
-    static var onCaptivePortalDetected(default,null) : Event<NetworkInfo->Void>;
+    static var onCaptivePortalDetected(default,never) : Event<NetworkInfo->Void>;
 }
