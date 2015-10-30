@@ -1,2 +1,3 @@
 -D chrome
--D chrome_ext
+#-D chrome_ext
+--macro ChromeExt.setupCompiler()
