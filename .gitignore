@@ -1,6 +1,6 @@
-TODO
+_*
+doc/*
+examples/*
 test/*
 haxedoc.xml
-_*
-examples/*
-doc/*
+TODO*

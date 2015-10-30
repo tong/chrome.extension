@@ -1,6 +1,11 @@
 package chrome.enterprise;
 
+/**
+    Note: This API is only for extensions pre-installed by policy.
+*/
 @:require(chrome)
+@:require(chrome_ext)
+@:require(chrome_os)
 @:require(chrome_dev)
 @:native("chrome.enterprise.deviceAttributes")
 extern class DeviceAttributes {
