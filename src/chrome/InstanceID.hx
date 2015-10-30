@@ -4,7 +4,6 @@ import chrome.Events;
 
 //@chrome_permissions(["gcm"])
 @:require(chrome)
-@:require(chrome_ext)
 @:native("chrome.instanceID")
 extern class InstanceID {
     static function getID( callback : String->Void ) : Void;
