@@ -9,5 +9,11 @@ package chrome;
 @:require(chrome_os)
 @:native("chrome.wallpaper")
 extern class Wallpaper {
-    static function setWallpaper( details : {?data:Dynamic,?url:String,layout:WallpaperLayout,filename:String,?thumbnail:Bool}, callback : Dynamic->Void ) : Void;
+    static function setWallpaper( details : {
+            ?data:Dynamic,
+            ?url:String,
+            layout:WallpaperLayout,
+            filename:String,
+            ?thumbnail:Bool
+        }, callback : Dynamic->Void ) : Void;
 }
