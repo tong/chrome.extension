@@ -3,7 +3,7 @@
 
 Haxe/Javascript type definitions for [google chrome extensions](https://developer.chrome.com/extensions/api_index).
 
-API version: 47
+API version: 49
 
 ---
 
@@ -12,7 +12,7 @@ To install from haxelib run:
 $ haxelib install chrome-extension
 ```
 
-For packaged apps types see: https://github.com/tong/chrome.app  
+For chrome apps types see: https://github.com/tong/chrome.app
 
 ---
 
