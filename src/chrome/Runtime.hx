@@ -16,7 +16,7 @@ typedef Port = {
 	var disconnect : Void->Void;
 	var onDisconnect : Dynamic;
 	var onMessage : Dynamic;
-	var postMessage : Void->Void;
+	var postMessage : Dynamic->Void;
 	@:optional var sender : Void->Void;
 }
 
