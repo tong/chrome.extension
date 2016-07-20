@@ -1,11 +1,12 @@
--js api.js
--xml haxedoc.xml
 --no-output
+-js x
+-xml haxedoc.xml
 -cp src
 -D chrome
 -D chrome_ext
--dce std
+-dce no
 --macro include('chrome',true)
 
 #--next
+#-cmd haxelib run dox -o doc -i . -in chrome.* -D version 3.2.1 -D source-path https://github.com/tong/chrome.extension/master/src/ -theme ~/dev/lib/dox-theme-void/void
 #-cmd haxelib run dox -o doc/ -i ./ -D source-path https://github.com/tong/chrome.extension/blob/master/src

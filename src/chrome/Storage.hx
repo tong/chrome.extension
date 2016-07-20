@@ -30,6 +30,7 @@ typedef StorageArea = {
 	var managed = "managed";
 }
 
+@requiresChromePermissions("storage")
 @:require(chrome)
 @:native("chrome.storage")
 extern class Storage {

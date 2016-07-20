@@ -21,8 +21,6 @@ typedef Tab = {
 	var active : Bool;
 	var pinned : Bool;
 	@:optional var audible : Bool;
-	@:requires(chrome_dev)
-	//@:optional var mutedInfo : MutedInfo;
 	@:optional var url : String;
 	@:optional var title : String;
 	@:optional var favIconUrl : String;

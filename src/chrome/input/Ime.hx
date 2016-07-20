@@ -70,10 +70,12 @@ typedef MenuItem = {
 	var secondary_login = "secondary-login";
 }
 
+/*
 @:enum abstract CallbackStyle(String) from String to String {
 	//TODO is missing in documentation
 	var async = "async";
 }
+*/
 
 @:enum abstract MouseButton(String) from String to String {
 	var left = "left";
