@@ -1,9 +1,10 @@
 
-# Haxe Chrome Extension [![Build Status](https://travis-ci.org/tong/chrome.extension.svg?branch=master)](https://travis-ci.org/tong/chrome.extension)
+# Haxe Chrome Extension [![Build Status](https://travis-ci.org/tong/chrome.extension.svg?branch=master)](https://travis-ci.org/tong/chrome.extension) [![Haxelib Version](https://img.shields.io/github/tag/tong/chrome.extension.svg?style=flat&label=haxelib)](http://lib.haxe.org/p/chrome.extension.svg)
+
 
 Haxe/Javascript type definitions for [google chrome extensions](https://developer.chrome.com/extensions/api_index).
 
-API version: 49
+API version: 51
 
 ---
 
