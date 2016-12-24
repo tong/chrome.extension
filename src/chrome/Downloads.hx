@@ -58,6 +58,7 @@ import chrome.Events;
 typedef DownloadItem = {
 	var id : String;
 	var url : String;
+	var finalUrl : String;
 	var referrer : String;
 	var filename : String;
 	var incognito : Bool;
@@ -164,10 +165,12 @@ extern class Downloads {
 			?totalBytesLess : Float,
 			?filenameRegex : String,
 			?urlRegex : String,
+			?finalUrlRegex : String,
 			?limit : Int,
 			?orderBy : Array<String>,
 			?id : Int,
 			?url : String,
+			?finalUrl : String,
 			?filename : String,
 			?danger : DangerType,
 			?mime : String,
@@ -198,10 +201,12 @@ extern class Downloads {
 			?totalBytesLess : Float,
 			?filenameRegex : String,
 			?urlRegex : String,
+			?finalUrlRegex : String,
 			?limit : Int,
 			?orderBy : Array<String>,
 			?id : Int,
 			?url : String,
+			?finalUrl : String,
 			?filename : String,
 			?danger : DangerType,
 			?mime : String,
