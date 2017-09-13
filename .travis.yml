@@ -4,9 +4,16 @@ os:
   - linux
 
 haxe:
-  - "3.4.0"
+  - "3.4.3"
   - development
 
+matrix:
+  allow_failures:
+    - haxe: development
+
+install:
+    - haxelib git chrome-app https://github.com/tong/chrome.app
+    - haxelib dev chrome-extension .
+
 script:
-  - haxelib git chrome-extension https://github.com/tong/chrome.extension
   - haxe haxedoc.hxml
