@@ -3,7 +3,7 @@
 
 Haxe/Javascript type definitions for [google chrome extensions](https://developer.chrome.com/extensions/api_index).
 
-API version: 54
+API version: 62
 
 
 ### Install
