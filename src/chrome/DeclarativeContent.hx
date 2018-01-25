@@ -4,7 +4,7 @@ import js.html.ImageData;
 import haxe.extern.EitherType;
 import chrome.Events;
 
-typedef PageStateMatcher = {
+typedef PageStateMatcherArgs = {
 	@:optional var pageUrl : {
 		?hostContains : String,
 		?hostEquals : String,
@@ -30,8 +30,6 @@ typedef PageStateMatcher = {
 	@:optional var css : Array<String>;
 }
 
-typedef ShowPageAction = Dynamic;
-
 typedef SetIcon = {
 	@:optional var imageData : EitherType<ImageData,Dynamic>;
 };
@@ -44,7 +42,19 @@ typedef RequestContentScript = {
 }
 
 @:require(chrome_ext)
-@:native("chrome.declerativeContent")
-extern class DeclerativeContent {
+@:native("chrome.declarativeContent")
+extern class DeclarativeContent {
 	static var onPageChanged(default,never) : Event<Dynamic>; //TODO
+}
+
+@:require(chrome_ext)
+@:native("chrome.declarativeContent.PageStateMatcher")
+extern class PageStateMatcher {
+	public function new(properties : PageStateMatcherArgs) {}
+}
+
+@:require(chrome_ext)
+@:native("chrome.declarativeContent.ShowPageAction")
+extern class ShowPageAction {
+	public function new() {}
 }
