@@ -50,11 +50,11 @@ extern class DeclarativeContent {
 @:require(chrome_ext)
 @:native("chrome.declarativeContent.PageStateMatcher")
 extern class PageStateMatcher {
-	public function new(properties : PageStateMatcherArgs) {}
+	function new(properties : PageStateMatcherArgs) : Void;
 }
 
 @:require(chrome_ext)
 @:native("chrome.declarativeContent.ShowPageAction")
 extern class ShowPageAction {
-	public function new() {}
+	function new() : Void;
 }
