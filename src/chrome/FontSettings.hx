@@ -185,7 +185,7 @@ typedef FontName = {
 @:native("chrome.fontSettings")
 extern class FontSettings {
 	static function clearFont( details : {?script:ScriptCode,genericFamily:GenericFamily}, ?callback : Void->Void ) : Void;
-	static function getFont( details : {?script:ScriptCode,genericFamily:GenericFamily}, callback : {fontId:String,levelOfControl:LevelOfControl}->Void ) : Void;
+	static function getFont( details : {?script:ScriptCode,genericFamily:GenericFamily}, ?callback : {fontId:String,levelOfControl:LevelOfControl}->Void ) : Void;
 	static function setFont( details : {?script:ScriptCode,genericFamily:GenericFamily,fontId:String}, ?callback : Void->Void ) : Void;
 	static function getFontList( callback : Array<FontName>->Void ) : Void;
 	static function clearDefaultFontSize( ?details : Dynamic, ?callback : Void->Void ) : Void;
