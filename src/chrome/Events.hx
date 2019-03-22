@@ -1,11 +1,13 @@
 package chrome;
 
+import haxe.extern.EitherType;
+
 @:require(chrome)
 typedef Rule = {
 	@:optional var id : String;
 	@:optional var tags : Array<String>;
 	var conditions : Array<Dynamic>;
-	@:optional var actions : Array<Dynamic>;
+	var actions : Array<Dynamic>;
 	@:optional var priority : Int;
 }
 
@@ -41,5 +43,5 @@ typedef UrlFilter = {
 	@:optional var urlPrefix : String;
 	@:optional var urlSuffix : String;
 	@:optional var schemes : Array<String>;
-	@:optional var ports : Array<Int>;
+	@:optional var ports : Array<EitherType<Int,Array<Int>>>;
 }
