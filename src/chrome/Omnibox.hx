@@ -17,6 +17,7 @@ import chrome.Events;
 typedef SuggestResult = {
 	var content : String;
 	var description : String;
+	@:optional var deletable : Bool;
 }
 
 @:require(chrome_ext)
@@ -27,4 +28,5 @@ extern class Omnibox {
 	static var onInputChanged(default,never) : Event<String->(Array<SuggestResult>->Void)->Void>;
 	static var onInputEntered(default,never) : Event<String->OnInputEnteredDisposition->Void>;
 	static var onInputCancelled(default,never) : Event<Void->Void>;
+	static var onDeleteSuggestion(default,never) : Event<String->Void>;
 }
