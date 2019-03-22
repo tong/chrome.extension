@@ -2,8 +2,8 @@ package chrome;
 
 import chrome.Events;
 
-enum BookmarkTreeNodeUnmodifiable {
-	managed;
+@:enum abstract BookmarkTreeNodeUnmodifiable(String) from String to String{
+	var managed = "managed";
 }
 
 typedef BookmarkTreeNode = {
