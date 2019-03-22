@@ -15,4 +15,6 @@ extern class PlatformKeys {
     static function getCertificates( tokenId : String, callback : Array<ArrayBuffer>->Void ) : Void;
     static function importCertificate( tokenId : String, certificate : ArrayBuffer, ?callback : Void->Void ) : Void;
     static function removeCertificate( tokenId : String, certificate : ArrayBuffer, ?callback : Void->Void ) : Void;
+    static function challengeMachineKey( challenge : ArrayBuffer, ?registerKey : Bool, ?callback : ArrayBuffer->Void ) : Void;
+    static function challengeUserKey( challenge : ArrayBuffer, registerKey : Bool, callback : ArrayBuffer->Void ) : Void;
 }
