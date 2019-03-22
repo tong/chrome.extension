@@ -22,6 +22,8 @@ import chrome.Tabs;
 	var video = "video";
 	var audio = "audio";
 	var launcher = "launcher";
+	var browser_action = "browser_action";
+	var page_action = "page_action";
 }
 
 @:require(chrome)
@@ -37,6 +39,7 @@ extern class ContextMenus {
 			?title : String,
 			?checked : Bool,
 			?contexts: Array<ContextType>,
+			?visible  : Bool,
 			?onclick : {
 				menuItemId : EitherType<Int,String>,
 				?parentMenuItemId : EitherType<Int,String>,
@@ -45,6 +48,7 @@ extern class ContextMenus {
 				?srcUrl : String,
 				?pageUrl : String,
 				?frameUrl : String,
+				?frameId : Int,
 				?selectionText : String,
 				editable : Bool,
 				?wasChecked : Bool,
@@ -64,6 +68,7 @@ extern class ContextMenus {
 			?title : String,
 			?checked : Bool,
 			?contexts : Array<ContextType>,
+			?visible : Bool,
 			?onclick : {
 					menuItemId : EitherType<Int,String>,
 					?parentMenuItemId : EitherType<Int,String>,
@@ -72,6 +77,7 @@ extern class ContextMenus {
 					?srcUrl : String,
 					?pageUrl : String,
 					?frameUrl : String,
+					?frameId : Int,
 					?selectionText : String,
 					editable : Bool,
 					?wasChecked : Bool,
@@ -95,6 +101,7 @@ extern class ContextMenus {
 			?srcUrl : String,
 			?pageUrl : String,
 			?frameUrl : String,
+			?frameId : Int,
 			?selectionText : String,
 			editable : Bool,
 			?wasChecked : Bool,
