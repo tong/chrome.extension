@@ -18,7 +18,6 @@ typedef Debuggee = {
 @:enum abstract DetachReason(String) from String to String {
 	var target_closed = "target_closed";
 	var canceled_by_user = "canceled_by_user";
-	var replaced_with_devtools = "replaced_with_devtools";
 }
 
 typedef TargetInfo = {
