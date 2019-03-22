@@ -14,7 +14,7 @@ typedef Session = {
 	@:optional var window : Window;
 }
 
-typedef SessionDevice = {
+typedef Device = {
 	var deviceName : String;
 	var sessions : Array<Session>;
 }
@@ -24,7 +24,7 @@ typedef SessionDevice = {
 extern class Sessions {
 	static var MAX_SESSION_RESULTS(default,never) : Int;
 	static function getRecentlyClosed( ?filter : Filter, callback : Array<Session>->Void ) : Void;
-	static function getDevices( ?filter : Filter, callback : Array<SessionDevice>->Void ) : Void;
+	static function getDevices( ?filter : Filter, callback : Array<Device>->Void ) : Void;
 	static function restore( ?sessionId : String, ?callback : Session->Void ) : Void;
 	static var onChanged(default,never) : Event<Void->Void>;
 }
