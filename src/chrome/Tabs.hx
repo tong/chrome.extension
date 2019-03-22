@@ -93,7 +93,6 @@ extern class Tabs {
 			?autoDiscardable:Bool,
 			?currentWindow:Bool,
 			?lastFocusedWindow:Bool,
-			?currentWindow:Bool,
 			?status:TabStatus,
 			?title:String,
 			?url:EitherType<String,Array<String>>,
@@ -102,7 +101,7 @@ extern class Tabs {
 			?index:Int
 		},
 		callback : Array<Tab>->Void ) : Void;
-	static function highlight( highlightInfo : {?windowId:Int,tabs:Either<Array<Int>,insertCSS>}, ?callback : Window->Void ) : Void;
+	static function highlight( highlightInfo : {?windowId:Int,tabs:EitherType<Array<Int>,Int>}, ?callback : Window->Void ) : Void;
 	static function update(
 		?tabId : Int,
 		updateProperties : {
