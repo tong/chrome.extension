@@ -3,7 +3,7 @@ package chrome;
 import chrome.Events;
 import chrome.Types;
 
-@:enum abstract ProxyServerScheme(String) from String to String {
+@:enum abstract Scheme(String) from String to String {
 	var http = "http";
 	var https = "https";
 	var quic = "quic";
@@ -11,8 +11,16 @@ import chrome.Types;
 	var socks5 = "socks5";
 }
 
+@:enum abstract Mode(String) from String to String {
+	var direct = "direct";
+	var auto_detect = "auto_detect";
+	var pac_script = "pac_script";
+	var fixed_servers = "fixed_servers";
+	var system = "system";
+}
+
 typedef ProxyServer = {
-	@:optional var scheme : ProxyServerScheme;
+	@:optional var scheme : Scheme;
 	var host : String;
 	@:optional var port : Int;
 }
@@ -32,18 +40,10 @@ typedef PacScript = {
 	@:optional var mandatory : Bool;
 }
 
-@:enum abstract ProxyConfigMode(String) from String to String {
-	var direct = "direct";
-	var auto_detect = "auto_detect";
-	var pac_script = "pac_script";
-	var fixed_servers = "fixed_servers";
-	var system = "system";
-}
-
 typedef ProxyConfig = {
 	@:optional var rules : ProxyRules;
 	@:optional var pacScript : PacScript;
-	var mode : PacScript;
+	var mode : Mode;
 }
 
 @:require(chrome_ext)
