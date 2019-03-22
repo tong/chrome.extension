@@ -37,5 +37,5 @@ extern class Storage {
 	static var sync(default,never) : StorageArea;
 	static var local(default,never) : StorageArea;
 	static var managed(default,never) : StorageArea;
-	static var onChanged(default,never) : Event<Dynamic->String->Void>;
+	static var onChanged(default,never) : Event<Dynamic->StorageAreaName->Void>;
 }
