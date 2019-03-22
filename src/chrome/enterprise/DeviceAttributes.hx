@@ -10,4 +10,7 @@ package chrome.enterprise;
 @:native("chrome.enterprise.deviceAttributes")
 extern class DeviceAttributes {
     static function getDirectoryDeviceId( callback : String->Void ) : Void;
+    static function getDeviceSerialNumber( callback : String->Void ) : Void;
+    static function getDeviceAssetId( callback : String->Void ) : Void;
+    static function getDeviceAnnotatedLocation( callback : String->Void ) : Void;
 }
