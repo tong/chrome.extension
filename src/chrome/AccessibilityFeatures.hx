@@ -12,4 +12,10 @@ extern class AcessibilityFeatures {
 	static var screenMagnifier(default,never) : ChromeSetting;
 	static var autoclick(default,never) : ChromeSetting;
 	static var virtualKeyboard(default,never) : ChromeSetting;
+	static var caretHighlight(default,never) : ChromeSetting;
+	static var cursorHighlight(default,never) : ChromeSetting;
+	static var focusHighlight(default,never) : ChromeSetting;
+	static var selectToSpeak(default,never) : ChromeSetting;
+	static var switchAccess(default,never) : ChromeSetting;
+	static var animationPolicy(default,never) : ChromeSetting;
 }
