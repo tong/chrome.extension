@@ -41,7 +41,9 @@ typedef ExtensionInfo = {
 	var shortName : String;
 	var description : String;
 	var version : String;
+	@:optional var versionName : String;
 	var mayDisable : Bool;
+	@:optional var mayEnable : Bool;
 	var enabled : Bool;
 	@:optional var disabledReason : ExtensionDisabledReason;
 	var isApp : Bool;
@@ -64,6 +66,7 @@ typedef ExtensionInfo = {
 extern class Management {
 	static function getAll( ?callback : Array<ExtensionInfo>->Void ) : Void;
 	static function get( id : String, ?callback : ExtensionInfo->Void ) : Void;
+	static function getSelf( ?callback : ExtensionInfo->Void ) : Void;
 	static function getPermissionWarningsById( id : String, ?callback : Array<String>->Void ) : Void;
 	static function getPermissionWarningsByManifest( manifestStr : String, ?callback : Array<String>->Void ) : Void;
 	static function setEnabled( id : String, enabled : Bool, ?callback : Void->Void ) : Void;
