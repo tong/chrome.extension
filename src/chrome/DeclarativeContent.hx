@@ -28,6 +28,7 @@ typedef PageStateMatcherArgs = {
 		?ports : Array<Int>
 	};
 	@:optional var css : Array<String>;
+	@:optional var isBookmarked : Bool;
 }
 
 typedef SetIcon = {
