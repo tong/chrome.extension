@@ -1,4 +1,7 @@
-doc/*
+api/
+doc/
 examples/*
+res/
 test/*
 haxedoc.xml
+run.n
