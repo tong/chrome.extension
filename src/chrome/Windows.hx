@@ -89,5 +89,4 @@ extern class Windows {
 	static var onCreated(default,never) : Event<Window->Void>;
 	static var onRemoved(default,never) : Event<Int->Void>;
 	static var onFocusChanged(default,never) : Event<Int->Void>;
-
 }
