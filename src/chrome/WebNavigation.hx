@@ -4,7 +4,7 @@ import haxe.extern.EitherType;
 import chrome.Events;
 import chrome.History;
 
-@:enum abstract TransitionType(String) from String to String {
+@:enum private abstract TransitionType(String) from String to String {
 	var link = "link";
 	var typed = "typed";
 	var auto_bookmark = "auto_bookmark";

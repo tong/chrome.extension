@@ -74,8 +74,6 @@ typedef RequestFilter = {
 	@:optional var windowId : Int;
 }
 
-typedef HttpHeaders = Array<Dynamic>;
-
 typedef BlockingResponse = {
 	@:optional var cancel : Bool;
 	@:optional var redirectUrl : String;

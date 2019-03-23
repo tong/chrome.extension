@@ -29,7 +29,7 @@ extern class Cpu {
 			archName:String,
 			modelName:String,
 			features:Array<ProcessorFeature>,
-			processors:Array<Processor>
+			processors:Array<Processor>,
 			temperatures:Array<Float>
 		}->Void ) : Void;
 

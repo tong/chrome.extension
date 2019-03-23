@@ -3,7 +3,7 @@ package chrome;
 import chrome.Types;
 
 @:enum abstract IPHandlingPolicy(String) from String to String {
-	var default = "default";
+	var default_ = "default";
 	var default_public_and_private_interfaces = "default_public_and_private_interfaces";
 	var default_public_interface_only = "default_public_interface_only";
 	var disable_non_proxied_udp = "disable_non_proxied_udp";

@@ -67,7 +67,7 @@ typedef ResourceIdentifier = {
 	var ask = "ask";
 }
 
-@:enum abstract PpapiBrokerContentSetting(String) from String to String{
+@:enum abstract MultipleAutomaticDownloadsContentSetting(String) from String to String{
 	var allow = "allow";
 	var block = "block";
 	var ask = "ask";
