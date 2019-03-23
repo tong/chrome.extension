@@ -19,6 +19,8 @@ import chrome.Events;
 	var FILE_BLOCKED = "FILE_BLOCKED";
 	var FILE_SECURITY_CHECK_FAILED = "FILE_SECURITY_CHECK_FAILED";
 	var FILE_TOO_SHORT = "FILE_TOO_SHORT";
+	var FILE_HASH_MISMATCH = "FILE_HASH_MISMATCH";
+	var FILE_SAME_AS_SOURCE = "FILE_SAME_AS_SOURCE";
 	var NETWORK_FAILED = "NETWORK_FAILED";
 	var NETWORK_TIMEOUT = "NETWORK_TIMEOUT";
 	var NETWORK_DISCONNECTED = "NETWORK_DISCONNECTED";
@@ -26,8 +28,13 @@ import chrome.Events;
 	var NETWORK_INVALID_REQUEST = "NETWORK_INVALID_REQUEST";
 	var SERVER_FAILED = "SERVER_FAILED";
 	var SERVER_NO_RANGE = "SERVER_NO_RANGE";
-	var SERVER_PRECONDITION = "SERVER_PRECONDITION";
 	var SERVER_BAD_CONTENT = "SERVER_BAD_CONTENT";
+	var SERVER_UNAUTHORIZED = "SERVER_UNAUTHORIZED";
+	var SERVER_CERT_PROBLEM = "SERVER_CERT_PROBLEM";
+	var SERVER_FORBIDDEN = "SERVER_FORBIDDEN";
+	var SERVER_UNREACHABLE = "SERVER_UNREACHABLE";
+	var SERVER_CONTENT_LENGTH_MISMATCH = "SERVER_CONTENT_LENGTH_MISMATCH";
+	var SERVER_CROSS_ORIGIN_REDIRECT = "SERVER_CROSS_ORIGIN_REDIRECT";
 	var USER_CANCELED = "USER_CANCELED";
 	var USER_SHUTDOWN = "USER_SHUTDOWN";
 	var CRASH = "CRASH";
@@ -155,7 +162,8 @@ extern class Downloads {
 			?body:String
 		},
 		?callback : Int->Void ) : Void;
-	static function search( query : {
+	static function search(
+		query : {
 			?query : Array<String>,
 			?startedBefore : String,
 			?startedAfter : String,
@@ -187,11 +195,12 @@ extern class Downloads {
 	static function pause( downloadId : Int, ?callback : Void->Void ) : Void;
 	static function resume( downloadId : Int, ?callback : Void->Void ) : Void;
 	static function cancel( downloadId : Int, ?callback : Void->Void ) : Void;
-	static function getFileIcon( downloadId : Int, options : {?size:Int}, ?callback : String->Void ) : Void;
+	static function getFileIcon( downloadId : Int, ?options : { ?size:Int }, ?callback : String->Void ) : Void;
 	static function open( downloadId : Int ) : Void;
 	static function show( downloadId : Int ) : Void;
 	static function showDefaultFolder() : Void;
-	static function erase( query : {
+	static function erase(
+		query : {
 			?query : Array<String>,
 			?startedBefore : String,
 			?startedAfter : String,
@@ -227,7 +236,9 @@ extern class Downloads {
 	static var onCreated(default,never) : Event<DownloadItem->Void>;
 	static var onErased(default,never) : Event<Int->Void>;
 	static var onChanged(default,never) : Event<{
+			id : Int,
 			?url : StringDelta,
+			?finalUrl : StringDelta,
 			?filename : StringDelta,
 			?danger : StringDelta,
 			?mime : StringDelta,

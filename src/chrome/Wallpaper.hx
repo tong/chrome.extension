@@ -15,5 +15,7 @@ extern class Wallpaper {
             layout:WallpaperLayout,
             filename:String,
             ?thumbnail:Bool
-        }, callback : Dynamic->Void ) : Void;
+        },
+        callback : Dynamic->Void
+    ) : Void;
 }

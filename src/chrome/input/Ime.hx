@@ -13,6 +13,7 @@ typedef KeyboardEvent = {
 	@:optional var extensionId : String;
 	var key : String;
 	var code : String;
+	@:optional var keyCode : Int;
 	@:optional var altKey : Bool;
 	@:optional var ctrlKey : Bool;
 	@:optional var shiftKey : Bool;
@@ -29,12 +30,20 @@ typedef KeyboardEvent = {
 	var password = "password";
 }
 
+@:enum abstract AutoCapitalizeType(String) from String to String {
+	var characters = "characters";
+	var words = "words";
+	var sentences = "sentences";
+}
+
 typedef InputContext = {
 	var contextID : Int;
 	var type : InputContextType;
 	var autoCorrect : Bool;
 	var autoComplete : Bool;
+	var autoCapitalize : AutoCapitalizeType;
 	var spellCheck : Bool;
+	var shouldDoLearning : Bool;
 }
 
 @:enum abstract MenuItemStyle(String) from String to String {
@@ -83,27 +92,66 @@ typedef MenuItem = {
 	var right = "right";
 }
 
-@:enum abstract SegmentStyle(String) from String to String {
-	var underline = "underline";
-	var doubleUnderline = "doubleUnderline";
+@:enum abstract WindowType(String) from String to String {
+	var normal = "normal";
+	var followCursor = "followCursor";
+}
+
+typedef Bounds = {
+	var left : Int;
+	var top : Int;
+	var width : Int;
+	var height : Int;
+}
+
+typedef CreateWindowOptions = {
+	var windowType : WindowType;
+	@:optional var url : String;
+	@:optional var bounds : Bounds;
 }
 
 @:require(chrome_ext)
 @:native("chrome.input.ime")
 extern class Ime {
-	static function setComposition( parameters : { contextID : Int, text : String, ?selectionStart : Int, ?selectionEnd : Int,cursor : Int, ?segments : Array<{start:Int,end:Int,style:SegmentStyle}>, }, ?callback : Bool->Void ) : Void;
+	static function setComposition(
+		parameters : {
+			contextID : Int,
+			text : String,
+			?selectionStart : Int,
+			?selectionEnd : Int,
+			cursor : Int,
+			?segments : Array<{start:Int,end:Int,style:UnderlineStyle}>,
+		}, ?callback : Bool->Void ) : Void;
 	static function clearComposition( parameters : { contextID : Int }, ?callback : Bool->Void ) : Void;
 	static function commitText( parameters : { contextID : Int, text : String }, ?callback : Bool->Void ) : Void;
 	static function sendKeyEvents( parameters : { contextID : Int, keyData : Array<KeyboardEvent> }, ?callback : Void->Void ) : Void;
 	static function hideInputView() : Void;
-	static function setCandidateWindowProperties( parameters : {?visible:Bool,?cursorVisible:Bool,?vertial:Bool,?pageSize:Int,?auxiliaryText:String,?auxiliaryTextVisible:Bool,?windowPosition:WindowPosition}, ?callback : Bool->Void ) : Void;
-	static function setCandidates( parameters : {contextID:Int,candidates:Array<{candidate:String,id:Int,?parentId:Int,?label:String,?annotation:String,?usage:Dynamic}>}, ?callback : Bool->Void ) : Void;
+	static function setCandidateWindowProperties(
+		parameters : {
+			?visible:Bool,
+			?cursorVisible:Bool,
+			?vertial:Bool,
+			?pageSize:Int,
+			?auxiliaryText:String,
+			?auxiliaryTextVisible:Bool,
+			?windowPosition:WindowPosition
+		}, ?callback : Bool->Void ) : Void;
+	static function setCandidates(
+		parameters : {
+			contextID:Int,
+			candidates:Array<{candidate:String,id:Int,?parentId:Int,?label:String,?annotation:String,?usage:Dynamic}>
+		}, ?callback : Bool->Void ) : Void;
 	static function setCursorPosition( parameters : { contextID : Int, candidateID : Int },?callback : Bool->Void ) : Void;
 	static function setMenuItems( parameters : { engineID : String, items : Array<MenuItem> }, ?callback : Void->Void ) : Void;
 	static function updateMenuItems( parameters : { engineID : String, items : Array<MenuItem> }, ?callback : Void->Void ) : Void;
 	static function deleteSurroundingText( parameters : { engineID : String, contextID : Int, offset : Int, length : Int }, ?callback : Void->Void ) : Void;
 	static function keyEventHandled( requestId : String, response : Bool ) : Void;
-	static var onActivate(default,never) : Event<String->Void>;
+	static function createWindow( options : CreateWindowOptions, callback : js.html.Window->Void ) : Void;
+	static function showWindow( windowId : Int, ?callback : Void->Void ) : Void;
+	static function hideWindow( windowId : Int, ?callback : Void->Void ) : Void;
+	static function activate( ?callback : Void->Void ) : Void;
+	static function deactivate( ?callback : Void->Void ) : Void;
+	static var onActivate(default,never) : Event<String->ScreenType->Void>;
 	static var onDeactivated(default,never) : Event<String->Void>;
 	static var onFocus(default,never) : Event<InputContext->Void>;
 	static var onBlur(default,never) : Event<Int->Void>;
@@ -111,6 +159,7 @@ extern class Ime {
 	static var onKeyEvent(default,never) : Event<String->KeyboardEvent->Void>;
 	static var onCandidateClicked(default,never) : Event<String->Int->MouseButton->Void>;
 	static var onMenuItemActivated(default,never) : Event<String->String->Void>;
-	static var onSurroundingTextChanged(default,never) : Event<String->{text:String,focus:Int,anchor:Int}->Void>;
+	static var onSurroundingTextChanged(default,never) : Event<String->{text:String,focus:Int,anchor:Int,offset:Int}->Void>;
 	static var onReset(default,never) : Event<String->Void>;
+	static var onCompositionBoundsChanged(default,never) : Event<Array<Bounds>->Void>;
 }

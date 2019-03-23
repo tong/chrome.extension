@@ -16,10 +16,17 @@ typedef ImageDetails = {
     var document_idle = "document_idle";
 }
 
+@:enum abstract CSSOrigin(String) from String to String {
+    var author = "author";
+    var user = "user";
+}
+
 typedef InjectDetails = {
     @:optional var code : String;
     @:optional var file : String;
     @:optional var allFrames : Bool;
+    @:optional var frameId : Int;
     @:optional var matchAboutBlank : Bool;
     @:optional var runAt : RunAt;
+    @:optional var cssOrigin : CSSOrigin;
 }

@@ -1,6 +1,6 @@
 package chrome;
 
-@:enum abstract TtsEventType(String) from String to String {
+@:enum abstract EventType(String) from String to String {
 	var start = "start";
 	var end = "end";
 	var word = "word";
@@ -13,23 +13,24 @@ package chrome;
 	var resume = "resume";
 }
 
-typedef TtsEvent = {
-	var type : TtsEventType;
-	@:optional var charIndex : Float;
-	@:optional var errorMessage : String;
-}
-
-@:enum abstract TtsGender(String) from String to String {
+@:enum abstract VoiceGender(String) from String to String {
 	var male = "male";
 	var female = "female";
+}
+
+typedef TtsEvent = {
+	var type : EventType;
+	@:optional var charIndex : Float;
+	@:optional var errorMessage : String;
+	@:optional var length : Int;
 }
 
 typedef TtsVoice = {
 	@:optional var voiceName : String;
 	@:optional var lang : String;
-	@:optional var gender : TtsGender;
+	@:optional var remote : Bool;
 	@:optional var extensionId : String;
-	@:optional var eventTypes : Array<String>;
+	@:optional var eventTypes : Array<EventType>;
 }
 
 @:require(chrome)
@@ -42,7 +43,6 @@ extern class Tts {
 			?voiceName : String,
 			?extensionId : String,
 			?lang : String,
-			?gender : TtsGender,
 			?rate : Float,
 			?pitch : Float,
 			?volume : Float,

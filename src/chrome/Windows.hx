@@ -38,7 +38,6 @@ typedef Window = {
 	var normal = "normal";
 	var popup = "popup";
 	var panel = "panel";
-	var detached_panel = "detached_panel";
 }
 
 @:require(chrome_ext)
@@ -68,6 +67,7 @@ extern class Windows {
 			?incognito : Bool,
 			?type : WindowType,
 			?state : WindowState,
+			?setSelfAsOpener : Bool
 		},
 		?callback : ?Window->Void
 	) : Void;

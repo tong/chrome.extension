@@ -14,6 +14,7 @@ typedef Processor = {
 	var sse = "sse";
 	var sse2 = "sse2";
 	var sse3 = "sse3";
+	var ssse3 = "ssse3";
 	var sse4_1 = "sse4_1";
 	var sse4_2 = "sse4_2";
 	var avx = "avx";
@@ -22,6 +23,14 @@ typedef Processor = {
 @:require(chrome)
 @:native("chrome.system.cpu")
 extern class Cpu {
-	static function getInfo( callback : {numOfProcessors:Int,archName:String,modelName:String,features:Array<ProcessorFeature>,processors:Array<Processor>}->Void ) : Void;
+	static function getInfo(
+		callback : {
+			numOfProcessors:Int,
+			archName:String,
+			modelName:String,
+			features:Array<ProcessorFeature>,
+			processors:Array<Processor>,
+			temperatures:Array<Float>
+		}->Void ) : Void;
 
 }

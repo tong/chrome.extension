@@ -10,6 +10,7 @@ import chrome.Events;
 	var manual_subframe = "manual_subframe";
 	var generated = "generated";
 	var start_page = "start_page";
+	var auto_toplevel = "auto_toplevel";
 	var form_submit = "form_submit";
 	var reload = "reload";
 	var keyword = "keyword";

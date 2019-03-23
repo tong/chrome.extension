@@ -15,8 +15,22 @@ typedef Match = {
 @:require(chrome)
 @:native("chrome.platformKeys")
 extern class PlatformKeys {
-	static function getAll( request : {certificateTypes:CertificateTypes,?certificateAuthorities:Array<ArrayBuffer>}, callback : Array<Match>->Void ) : Void;
+	static function getAll(
+		details : {
+			request : {
+				certificateTypes : CertificateTypes,
+				certificateAuthorities : Array<ArrayBuffer>
+			},
+			?clientCerts : Array<ArrayBuffer>,
+			interactive : Bool
+		},
+		callback : Array<Match>->Void ) : Void;
 	static function getKeyPair( certificate : ArrayBuffer, parameters : Dynamic, callback : Dynamic->?Dynamic->Void ) : Void;
 	static function subtleCrypto() : js.html.SubtleCrypto;
-	static function verifyTLSServerCertificate( details : { serverCertificateChain : Array<ArrayBuffer>, hostname : String }, callback : Bool->Array<String>->Void ) : Void;
+	static function verifyTLSServerCertificate(
+		details : {
+			serverCertificateChain : Array<ArrayBuffer>,
+			hostname : String
+		},
+		callback : { trusted : Bool, debug_errors : Array<String> }->Void ) : Void;
 }

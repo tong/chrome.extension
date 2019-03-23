@@ -2,6 +2,10 @@ package chrome;
 
 import chrome.Events;
 
+@:enum abstract BookmarkTreeNodeUnmodifiable(String) from String to String{
+	var managed = "managed";
+}
+
 typedef BookmarkTreeNode = {
 	var id : String;
 	@:optional var parentId : Null<String>;
@@ -10,6 +14,7 @@ typedef BookmarkTreeNode = {
 	var title : String;
 	@:optional var dateAdded : Float;
 	@:optional var dateGroupModified : Float;
+	@:optional var unmodifiable : BookmarkTreeNodeUnmodifiable;
 	@:optional var children : Array<BookmarkTreeNode>;
 }
 

@@ -3,14 +3,18 @@ package chrome;
 import js.html.LocalMediaStream;
 import chrome.Events;
 
-/*
-typedef CaptureInfo = {
-	var tabId : Int;
-	var status : CaptureStatus;
-	var fullscreen : Bool;
+@:enum abstract CaptureInfoStatus(String) from String to String {
+	var pending = "pending";
+	var active = "active";
+	var stopped = "stopped";
+	var error = "error";
 }
 
-*/
+typedef CaptureInfo = {
+	var tabId : Int;
+	var status : CaptureInfoStatus;
+	var fullscreen : Bool;
+}
 
 typedef MediaStreamConstraint = {
 	var mandatory : Dynamic;
@@ -24,17 +28,12 @@ private typedef CaptureOptions = {
 	@:optional var videoConstraints : MediaStreamConstraint;
 }
 
-@:enum abstract CaptureInfo(String) from String to String {
-	var pending = "pending";
-	var active = "active";
-	var stopped = "stopped";
-	var error = "error";
-}
-
 @:require(chrome_ext)
 @:native("chrome.tabCapture")
 extern class TabCapture {
-	static function capture( options : {?audio:Bool,?video:Bool,?audioConstraints:MediaStreamConstraint,?videoConstraints:MediaStreamConstraint}, callback : LocalMediaStream->Void ) : Void;
+	static function capture( options : CaptureOptions, callback : LocalMediaStream->Void ) : Void;
 	static function getCapturedTabs( callback : Array<CaptureInfo>->Void ) : Void;
+	static function captureOffscreenTab( startUrl : String, options : CaptureOptions, callback : LocalMediaStream->Void ) : Void;
+	static function getMediaStreamId( ?options : { ?consumerTabId:Int,?targetTabId:Int }, callback : String->Void ) : Void;
 	static var onStatusChanged(default,never) : Event<CaptureInfo->Void>;
 }

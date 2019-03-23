@@ -40,10 +40,10 @@ import chrome.Events;
 }
 
 typedef EntryMetadata = {
-	var isDirectory : Bool;
-	var name : String;
-	var size : Float;
-	var modificationTime : Date;
+	@:optional var isDirectory : Bool;
+	@:optional var name : String;
+	@:optional var size : Float;
+	@:optional var modificationTime : Date;
 	@:optional var mimeType : String;
 	@:optional var thumbnail : String;
 }
@@ -80,34 +80,39 @@ typedef ExecuteActionRequestedOptions = {
 @:require(chrome_ext)
 @:native("chrome.fileSystemProvider")
 extern class FileSystemProvider {
-    static function mount( options : {
+    static function mount(
+        options : {
             fileSystemId : String,
             displayName : String,
             ?writable : Bool,
             ?openedFilesLimit : Int,
-            ?supportsNotifyTag : Bool
+            ?supportsNotifyTag : Bool,
+            ?persistent : Bool
         }, ?callback : Void->Void) : Void;
     static function unmount( options : {fileSystemId:String}, ?callback : Void->Void ) : Void;
-    static function getAll( options : {fileSystemId:String}, ?callback : Void->Void ) : Void;
+    static function getAll( callback : Array<FileSystemInfo>->Void ) : Void;
     static function get( fileSystemId : String, callback : FileSystemInfo->Void ) : Void;
-    static function notify( options : {
+    static function notify(
+        options : {
             fileSystemId : String,
             observedPath : String,
             recursive : Bool,
             changeType : ChangeType,
-            changes : Array<{entryPath:String,changeType:ChangeType,?tag:String}>
+            ?changes : Array<{entryPath:String,changeType:ChangeType}>,
+            ?tag : String
         },
         ?callback : Void->Void ) : Void;
     static var onUnmountRequested(default,never) : Event<{fileSystemId:String,requestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onGetMetadataRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,thumbnail:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onReadDirectoryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,directoryPath:String}->(Array<EntryMetadata>->Bool->Void)->(ProviderError->Void)->Void>;
+    static var onGetMetadataRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,isDirectory:Bool,name:Bool,size:Bool,modificationTime:Bool,mimeType:Bool,thumbnail:Bool}->(EntryMetadata->Void)->(ProviderError->Void)->Void>;
+    static var onGetActionsRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String}->(Array<{id:String,?title:String}>->Void)->(ProviderError->Void)->Void>;
+    static var onReadDirectoryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,directoryPath:String,isDirectory:Bool,name:Bool,size:Bool,modificationTime:Bool,mimeType:Bool,thumbnail:Bool}->(Array<EntryMetadata>->Bool->Void)->(ProviderError->Void)->Void>;
     static var onOpenFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,filePath:String,mode:OpenFileMode}->(Void->Void)->(ProviderError->Void)->Void>;
     static var onCloseFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int}->(Void->Void)->(ProviderError->Void)->Void>;
     static var onReadFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int,offset:Float,length:Float}->(ArrayBuffer->Bool->Void)->(ProviderError->Void)->Void>;
     static var onCreateDirectoryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,directoryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
     static var onDeleteEntryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
     static var onCreateFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,filePath:String}->(Void->Void)->(ProviderError->Void)->Void>;
-    static var onCopyEntryRequested(default,never) : Event<{fileSystemId:String,sourcePath:String,targetPath:String}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onCopyEntryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,sourcePath:String,targetPath:String}->(Void->Void)->(ProviderError->Void)->Void>;
     static var onMoveEntryRequested(default,never) : Event<{fileSystemId:String,requestId:Int,sourcePath:String,targetPath:String}->(Void->Void)->(ProviderError->Void)->Void>;
     static var onTruncateRequested(default,never) : Event<{fileSystemId:String,requestId:Int,filePath:String,length:Float}->(Void->Void)->(ProviderError->Void)->Void>;
     static var onWriteFileRequested(default,never) : Event<{fileSystemId:String,requestId:Int,openRequestId:Int,offset:Int,data:ArrayBuffer}->(Void->Void)->(ProviderError->Void)->Void>;
@@ -116,4 +121,5 @@ extern class FileSystemProvider {
     static var onMountRequested(default,never) : Event<(Void->Void)->(ProviderError->Void)->Void>;
     static var onAddWatcherRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
     static var onRemoveWatcherRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPath:String,recursive:Bool}->(Void->Void)->(ProviderError->Void)->Void>;
+    static var onExecuteActionRequested(default,never) : Event<{fileSystemId:String,requestId:Int,entryPaths:Array<String>,actionId:String}->(Void->Void)->(ProviderError->Void)->Void>;
 }
