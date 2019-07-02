@@ -9,6 +9,8 @@ typedef OriginTypes = {
 typedef RemovalOptions = {
 	@:optional var since : Float;
 	var originTypes : OriginTypes;
+	@:optional var origins : Array<String>;
+	@:optional var excludeOrigins : Array<String>;
 }
 
 typedef DataTypeSet = {
