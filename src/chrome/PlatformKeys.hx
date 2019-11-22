@@ -1,6 +1,10 @@
 package chrome;
 
+#if (haxe_ver < 4)
 import js.html.ArrayBuffer;
+#else
+import js.lib.ArrayBuffer;
+#end
 
 typedef Match = {
 	var certificate : ArrayBuffer;

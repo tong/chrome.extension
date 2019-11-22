@@ -14,7 +14,7 @@ typedef Session = {
 	@:optional var window : Window;
 }
 
-typedef Device = {
+private typedef Device = {
 	var deviceName : String;
 	var sessions : Array<Session>;
 }
