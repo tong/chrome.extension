@@ -101,7 +101,7 @@ extern class Runtime {
 	static var onConnect(default,never) : Event<Port->Void>;
 	static var onConnectExternal(default,never) : Event<Port->Void>;
 	static var onConnectNative(default,never) : Event<Port->Void>;
-	static var onMessage(default,never) : Event<?Dynamic->MessageSender->(Void->Void)->Void>;
-	static var onMessageExternal(default,never) : Event<?Dynamic->MessageSender->(Void->Void)->Void>;
+	static var onMessage(default,never) : Event<?Dynamic->MessageSender->(Dynamic->Void)->Void>;
+	static var onMessageExternal(default,never) : Event<?Dynamic->MessageSender->(Dynamic->Void)->Void>;
 	static var onRestartRequired(default,never) : Event<OnRestartRequiredReason->Void>;
 }
