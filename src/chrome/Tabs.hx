@@ -80,7 +80,7 @@ extern class Tabs {
 			?pinned:Bool,
 			?openerTabId:Int
 		},
-		callback : Tab->Void ) : Void;
+		?callback : Tab->Void ) : Void;
 	static function duplicate( tabId : Int, ?callback : Tab->Void ) : Void;
 	static function query(
 		queryInfo : {
