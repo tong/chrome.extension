@@ -1,6 +1,6 @@
 package chrome;
 
-import js.html.ArrayBuffer;
+import js.lib.ArrayBuffer;
 import chrome.Events;
 
 @:enum abstract ProviderError(String) from String to String {

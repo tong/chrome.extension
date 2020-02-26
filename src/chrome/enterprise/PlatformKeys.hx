@@ -1,7 +1,7 @@
 package chrome.enterprise;
 
-import js.html.ArrayBuffer;
 import js.html.SubtleCrypto;
+import js.lib.ArrayBuffer;
 
 typedef Token = {
     var id : String;

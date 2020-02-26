@@ -1,7 +1,7 @@
 package chrome;
 
-import js.html.ArrayBuffer;
 import chrome.Events;
+import js.lib.ArrayBuffer;
 
 @:enum abstract ConnectionState(String) from String to String {
     var connected = "connected";
