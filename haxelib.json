@@ -4,7 +4,7 @@
 	"license": "Public",
 	"tags": ["extern","javascript","js","chrome","chromium","google","extension","web","browser","theme","omnibox","bookmarks","gcm","cookies","devtools","i18n","socket","tcp","udp"],
 	"description": "Google chrome extension type definitions",
-	"version": "75.0.1",
+	"version": "80.0.0",
 	"releasenote": "See CHANGES",
 	"contributors": ["tong"],
 	"classPath" : "src/"
